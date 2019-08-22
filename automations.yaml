@@ -1,0 +1,100 @@
+#Outside lights
+- alias: Turn Outside Lights On at Sunset
+  trigger:
+  - event: sunset
+    offset: -0:15
+    platform: sun
+  action:
+  - data:
+      entity_id: group.outside_lights
+      brightness: 255
+    service: homeassistant.turn_on
+
+#Inside lights
+- alias: Turn Inside Lights On at Sunset
+  trigger:
+  - event: sunset
+    offset: -0:30
+    platform: sun
+  action:
+  - data:
+      entity_id: group.inside_lights
+    service: homeassistant.turn_on
+
+- alias: Turn Most Inside Lights Off at Night
+  trigger:
+  - platform: time
+    at: "00:10:00"
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_1
+        - switch.plug_2
+        - switch.plug_4
+        - switch.plug_5
+        - switch.plug_6 
+    service: homeassistant.turn_off
+
+#Sunrise
+- alias: Turn All Off at Sunrise
+  trigger:
+  - event: sunrise
+    offset: +01:30
+    platform: sun
+  action:
+  - data:
+      entity_id: group.home_lights
+    service: homeassistant.turn_off
+
+#Night light
+- alias: Turn Night Lights On by Motion Detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_3
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '00:10:00'
+      - condition: sun
+        before: sunrise
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_4
+    service: homeassistant.turn_on
+- alias: Turn Night Lights Off Automatically
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_3
+      to: 'off'
+      for:
+        minutes: 5
+        seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '00:10:00'
+      - condition: sun
+        before: sunrise
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_4
+    service: homeassistant.turn_off
+
+#Dimmer
+- alias: Dimmer On
+  trigger:
+    platform: state
+    entity_id: sensor.tradfri_wireless_dimmer_battery_level
+  condition:
+    condition: template
+    value_template: "{{ trigger.to_state.state|int != 0 }}"
+  action:
+    service: light.turn_on
+    entity_id: light.outside_lights
+    data_template:
+      brightness: "{{ trigger.to_state.state|int }}"

@@ -1,0 +1,89 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Https settings
+http:
+  server_port: 8123
+  ssl_certificate: /config/fullchain.pem
+  ssl_key: /config/privkey.pem
+
+# System log
+system_log:
+  max_entries: 100
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+# Sensibo
+climate:
+  - platform: sensibo
+    api_key: !secret sensibo_api_key
+
+# Google Assistant
+google_assistant:
+  project_id: !secret google_project_id
+  api_key: !secret google_api_key
+  exposed_domains:
+    - light
+  entity_config:
+    group.all_automations:
+      expose: false
+    light.tradfri_wireless_dimmer_2:
+      expose: false
+
+# Includes
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+#input_select: !include input_select.yaml
+
+# Input booleans
+input_boolean:
+  bed_1:
+    name: Sovrummet
+    initial: off
+    icon: mdi:bed-empty
+  bed_2:
+    name: Blå rummet
+    initial: off
+    icon: mdi:bed-empty
+  bed_3:
+    name: Helenas rum
+    initial: off
+    icon: mdi:bed-empty
+  bed_4:
+    name: Biblioteket
+    initial: off
+    icon: mdi:bed-empty
+  sleeping:
+    name: Sovläge
+    initial: off
+    icon: mdi:sleep
+
+# Light switches
+light:
+  - platform: switch
+    name: Bastun
+    entity_id: switch.plug_1
+  - platform: switch
+    name: Biblioteket
+    entity_id: switch.plug_2
+  - platform: switch
+    name: Vardagsrummet
+    entity_id: switch.plug_3
+  - platform: switch
+    name: Hallen
+    entity_id: switch.plug_4
+  - platform: switch
+    name: Helenas rum
+    entity_id: switch.plug_5
+  - platform: switch
+    name: Blå rummet
+    entity_id: switch.plug_6
+  - platform: switch
+    name: Sovrummet
+    entity_id: switch.plug_7
+  

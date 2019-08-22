@@ -1,0 +1,172 @@
+{
+    "data": {
+        "config": {
+            "title": "Steninge",
+            "views": [
+                {
+                    "badges": [
+                        "binary_sensor.tradfri_motion_sensor_3",
+                        "person.martin",
+                        "sensor.daylight",
+                        "sun.sun",
+                        "input_boolean.away"
+                    ],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entity": "group.all_lights",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:lightbulb-on-outline",
+                                    "icon_height": "40px",
+                                    "name": "Alla Lampor",
+                                    "show_icon": true,
+                                    "show_name": true,
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "entity-button"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.plug_4"
+                                        },
+                                        {
+                                            "entity": "switch.plug_5"
+                                        },
+                                        {
+                                            "entity": "switch.plug_6"
+                                        },
+                                        {
+                                            "entity": "switch.plug_7"
+                                        },
+                                        {
+                                            "entity": "switch.plug_3"
+                                        },
+                                        {
+                                            "entity": "switch.plug_2"
+                                        },
+                                        {
+                                            "entity": "switch.plug_1"
+                                        },
+                                        {
+                                            "entity": "light.light_3"
+                                        }
+                                    ],
+                                    "theme": "default",
+                                    "title": "Inomhus",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "light.light_1"
+                                        },
+                                        {
+                                            "entity": "light.light_2"
+                                        }
+                                    ],
+                                    "title": "Utomhus",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "weather.steninge",
+                                    "name": "V\u00e4derleksrapport",
+                                    "type": "weather-forecast"
+                                },
+                                {
+                                    "entity": "climate.steninge",
+                                    "name": "V\u00e4rmepump",
+                                    "type": "thermostat"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "climate.steninge"
+                                        }
+                                    ],
+                                    "hours_to_show": 72,
+                                    "title": "Temperatur",
+                                    "type": "history-graph"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_number.min_temp_threshold",
+                                            "icon": "mdi:alert-circle-outline",
+                                            "name": "Varning"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_boolean.bed_1"
+                                        },
+                                        {
+                                            "entity": "input_boolean.bed_2"
+                                        },
+                                        {
+                                            "entity": "input_boolean.bed_3"
+                                        },
+                                        {
+                                            "entity": "input_boolean.bed_4"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "G\u00e4ster",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_datetime.sleep_time"
+                                        },
+                                        {
+                                            "entity": "input_boolean.sleeping"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_boolean.away",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.tradfri_motion_sensor_3",
+                                            "secondary_info": "last-changed"
+                                        }
+                                    ],
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "path": "default_view",
+                    "title": "Home"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

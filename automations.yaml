@@ -1,26 +1,16 @@
-#Outside lights
-- alias: Turn Outside Lights On at Sunset
-  trigger:
-  - event: sunset
-    offset: -0:15
-    platform: sun
-  action:
-  - data:
-      entity_id: group.outside_lights
-      brightness: 255
-    service: homeassistant.turn_on
-
-#Inside lights
-- alias: Turn Inside Lights On at Sunset
+# All lights
+- alias: Turn On All Lights at Sunset
   trigger:
   - event: sunset
     offset: -0:30
     platform: sun
   action:
   - data:
-      entity_id: group.inside_lights
+      entity_id: group.all_lights
+      brightness: 255
     service: homeassistant.turn_on
 
+# Inside lights
 - alias: Activate Sleeping at Sleep Time
   trigger:
   - platform: template
@@ -39,7 +29,7 @@
   - service: scene.turn_on
     entity_id: scene.sleeping
 
-#Sunrise
+# Sunrise
 - alias: Turn All Off at Sunrise
   trigger:
   - event: sunrise
@@ -47,13 +37,13 @@
     platform: sun
   action:
   - data:
-      entity_id: group.home_lights
+      entity_id: group.all_lights
     service: homeassistant.turn_off
   - data:
       entity_id: input_boolean.sleeping
     service: input_boolean.turn_off
 
-#Night light
+# Night light
 - alias: Turn Night Lights On by Motion Detected
   trigger:
     - platform: state
@@ -73,9 +63,7 @@
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_3
       to: 'off'
-      for:
-        minutes: 5
-        seconds: 00
+      for: "00:05:00"
   condition:
     condition: and
     conditions:
@@ -89,7 +77,7 @@
         - switch.plug_4
     service: homeassistant.turn_off
 
-#Dimmer
+# Dimmer
 - alias: Dimmer On
   trigger:
     platform: state
@@ -98,10 +86,71 @@
     condition: template
     value_template: "{{ trigger.to_state.state|int != 0 }}"
   action:
-    service: light.turn_on
-    entity_id: light.outside_lights
-    data_template:
-      brightness: "{{ trigger.to_state.state|int }}"
+    - service: light.turn_on
+      entity_id: light.light_1
+      data_template:
+        brightness: "{{ trigger.to_state.state|int }}"
+    - service: light.turn_on
+      entity_id: light.light_2
+      data_template:
+        brightness: "{{ trigger.to_state.state|int }}"
+
+# Detect presence
+- alias: Turn Off Away On Motion Detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_3
+      to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.away
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: 
+        - input_boolean.away
+  - service: persistent_notification.create
+    data: 
+      title: "Motion"
+      message: "Presence detected, away mode turned OFF"
+- alias: Turn On Away After No Motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_3
+      to: 'off'
+      for: "08:00:00"
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - input_boolean.away
+  - service: persistent_notification.create
+    data: 
+      title: "No motion"
+      message: "No presence, away mode turned ON"
+- alias: Turn On Away Automatically
+  trigger:
+    - platform: time
+      at: "12:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.away
+        state: 'off'
+      - condition: template
+        value_template: "{{ as_timestamp(now()) - as_timestamp(states.binary_sensor.tradfri_motion_sensor_3.last_changed) > 21600 }}"
+        # 21600 = 6h ago
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - input_boolean.away
+  - service: persistent_notification.create
+    data: 
+      title: "No motion"
+      message: "It's mid day and still no presence, away mode turned ON"
 
 # Low indoor temperature
 # - alias: Low Temperature Alert

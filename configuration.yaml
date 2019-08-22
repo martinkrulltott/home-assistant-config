@@ -91,6 +91,10 @@ input_boolean:
     name: Sovläge
     initial: off
     icon: mdi:sleep
+  away:
+    name: Bortaläge
+    initial: on
+    icon: mdi:car-side
 
 input_datetime:
   sleep_time:

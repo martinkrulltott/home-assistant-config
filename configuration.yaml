@@ -12,9 +12,35 @@ http:
 system_log:
   max_entries: 100
 
+# Notify
+notify:
+  - platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret email_sender
+    encryption: starttls
+    username: !secret email_username
+    password: !secret email_password
+    recipient: !secret email_recipient
+    sender_name: My Home Assistant
+    
+    
+# notify:
+#   - platform: html5
+#     vapid_pub_key: !secret vapid_pub_key
+#     vapid_prv_key: !secret vapid_prv_key
+#     vapid_email: !secret vapid_email
+
 # Text to speech
 tts:
   - platform: google_translate
+
+# Time
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
 
 # Sensibo
 climate:
@@ -32,15 +58,18 @@ google_assistant:
       expose: false
     light.tradfri_wireless_dimmer_2:
       expose: false
+    input_boolean.sleeping:
+      expose: true
+    input_datetime.sleep_time:
+      expose: true
 
 # Includes
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
 #input_select: !include input_select.yaml
 
-# Input booleans
+# Inputs
 input_boolean:
   bed_1:
     name: Sovrummet
@@ -48,11 +77,11 @@ input_boolean:
     icon: mdi:bed-empty
   bed_2:
     name: Blå rummet
-    initial: off
+    initial: on
     icon: mdi:bed-empty
   bed_3:
     name: Helenas rum
-    initial: off
+    initial: on
     icon: mdi:bed-empty
   bed_4:
     name: Biblioteket
@@ -62,6 +91,21 @@ input_boolean:
     name: Sovläge
     initial: off
     icon: mdi:sleep
+
+input_datetime:
+  sleep_time:
+    name: Sovtid
+    has_date: false
+    has_time: true
+    initial: '23:45'
+
+input_number:
+  min_temp_threshold:
+    name: Lägsta temperatur
+    initial: 17
+    min: 15
+    max: 25
+    step: 0.25
 
 # Light switches
 light:
@@ -86,4 +130,10 @@ light:
   - platform: switch
     name: Sovrummet
     entity_id: switch.plug_7
-  
+
+# Scenes
+scene:
+  - name: Sleeping
+    entities:
+      script.sleep_scene:
+        state: true

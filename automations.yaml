@@ -21,19 +21,23 @@
       entity_id: group.inside_lights
     service: homeassistant.turn_on
 
-- alias: Turn Most Inside Lights Off at Night
+- alias: Activate Sleeping at Sleep Time
   trigger:
-  - platform: time
-    at: "00:10:00"
+  - platform: template
+    value_template: "{{ states('sensor.time') == (state_attr('input_datetime.sleep_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   action:
   - data:
-      entity_id: 
-        - switch.plug_1
-        - switch.plug_2
-        - switch.plug_4
-        - switch.plug_5
-        - switch.plug_6 
-    service: homeassistant.turn_off
+      entity_id: input_boolean.sleeping
+    service: input_boolean.turn_on
+
+- alias: Turn off some lights at Sleeping
+  trigger:
+  - platform: state
+    entity_id: input_boolean.sleeping
+    to: 'on'
+  action:
+  - service: scene.turn_on
+    entity_id: scene.sleeping
 
 #Sunrise
 - alias: Turn All Off at Sunrise
@@ -45,6 +49,9 @@
   - data:
       entity_id: group.home_lights
     service: homeassistant.turn_off
+  - data:
+      entity_id: input_boolean.sleeping
+    service: input_boolean.turn_off
 
 #Night light
 - alias: Turn Night Lights On by Motion Detected
@@ -53,12 +60,9 @@
       entity_id: binary_sensor.tradfri_motion_sensor_3
       to: 'on'
   condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '00:10:00'
-      - condition: sun
-        before: sunrise
+    condition: state
+    entity_id: input_boolean.sleeping
+    state: 'on'
   action:
   - data:
       entity_id: 
@@ -98,3 +102,9 @@
     entity_id: light.outside_lights
     data_template:
       brightness: "{{ trigger.to_state.state|int }}"
+
+# Low indoor temperature
+# - alias: Low Temperature Alert
+#   trigger:
+#     platform: template
+#     value_template: "{{ state_attr('climate.steninge', 'current_temperature') < states('input_number.min_temp_threshold') }}"

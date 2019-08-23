@@ -12,6 +12,25 @@ http:
 system_log:
   max_entries: 100
 
+# Logger
+logger:
+  default: info
+  logs:
+    homeassistant.components.switch: critical
+
+# Logbook
+logbook:
+  exclude:
+    entities:
+      - device_tracker.hixs
+      - device_tracker.hi6s
+      - device_tracker.mmbp
+      - device_tracker.ms10
+      - sensor.date
+      - sensor.time
+    domains:
+      - switch
+
 # Notify
 notify:
   - platform: smtp
@@ -36,11 +55,23 @@ notify:
 tts:
   - platform: google_translate
 
-# Time
+# Time and uptime
 sensor:
   - platform: time_date
     display_options:
       - 'time'
+  - platform: uptime
+    name: Uptime
+    unit_of_measurement: days
+
+# Ping
+device_tracker:
+  - platform: ping
+    hosts:
+      hi6s: !secret hi6s_ip
+      hixs: !secret hixs_ip
+      mmbp: !secret mmbp_ip
+      ms10: !secret ms10_ip
 
 # Sensibo
 climate:

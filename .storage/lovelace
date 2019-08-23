@@ -4,13 +4,6 @@
             "title": "Steninge",
             "views": [
                 {
-                    "badges": [
-                        "binary_sensor.tradfri_motion_sensor_3",
-                        "person.martin",
-                        "sensor.daylight",
-                        "sun.sun",
-                        "input_boolean.away"
-                    ],
                     "cards": [
                         {
                             "cards": [
@@ -32,28 +25,36 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "switch.plug_4"
+                                            "entity": "switch.plug_4",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "switch.plug_5"
+                                            "entity": "switch.plug_5",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "switch.plug_6"
+                                            "entity": "switch.plug_6",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "switch.plug_7"
+                                            "entity": "switch.plug_7",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "switch.plug_3"
+                                            "entity": "switch.plug_3",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "switch.plug_2"
+                                            "entity": "switch.plug_2",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "switch.plug_1"
+                                            "entity": "switch.plug_1",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.light_3"
+                                            "entity": "light.light_3",
+                                            "secondary_info": "last-changed"
                                         }
                                     ],
                                     "theme": "default",
@@ -63,10 +64,12 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.light_1"
+                                            "entity": "light.light_1",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.light_2"
+                                            "entity": "light.light_2",
+                                            "secondary_info": "last-changed"
                                         }
                                     ],
                                     "title": "Utomhus",
@@ -135,10 +138,26 @@
                                 {
                                     "entities": [
                                         {
+                                            "entity": "device_tracker.ms10",
+                                            "name": "Martin",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "device_tracker.hi6s",
+                                            "name": "Helena",
+                                            "secondary_info": "last-changed"
+                                        }
+                                    ],
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
                                             "entity": "input_datetime.sleep_time"
                                         },
                                         {
-                                            "entity": "input_boolean.sleeping"
+                                            "entity": "input_boolean.sleeping",
+                                            "secondary_info": "last-changed"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -153,6 +172,10 @@
                                         {
                                             "entity": "binary_sensor.tradfri_motion_sensor_3",
                                             "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "sensor.uptime",
+                                            "name": "Senaste omstart"
                                         }
                                     ],
                                     "type": "entities"

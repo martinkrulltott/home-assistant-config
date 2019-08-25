@@ -1,9 +1,8 @@
-sleep_scene:
+sleeping_scene:
   sequence:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.plug_1
           - switch.plug_4
     - service: homeassistant.turn_off
       data_template:
@@ -37,48 +36,21 @@ sleep_scene:
           {% else %}
             input_boolean.bed_4
           {% endif %}
-    #   condition: state
-    #   entity_id: input_boolean.bed_1
-    #   state: 'on'
-    # - service: homeassistant.turn_off
-    #   data:
-    #     entity_id:
-    #       - switch.plug_7
-    # - condition:
-    #   condition: state
-    #   entity_id: input_boolean.bed_2
-    #   state: 'on'
-    # - service: homeassistant.turn_off
-    #   data:
-    #     entity_id:
-    #       - switch.plug_6
-    # - condition:
-    #   condition: state
-    #   entity_id: input_boolean.bed_3
-    #   state: 'on'
-    # - service: homeassistant.turn_off
-    #   data:
-    #     entity_id:
-    #       - switch.plug_5
-    # - condition:
-    #   condition: state
-    #   entity_id: input_boolean.bed_4
-    #   state: 'on'
-    # - service: homeassistant.turn_off
-    #   data:
-    #     entity_id:
-    #       - switch.plug_2
-
-    # - service: homeassistant.turn_off
-    #   data_template:
-    #     entity_id: >-
-    #       {% if is_state("input_boolean.bed_2", "on") -%}
-    #         switch.plug_6
-    #       {%- else -%}{%- endif %}
-    #       {% if is_state("input_boolean.bed_3", "on") -%}
-    #         switch.plug_5
-    #       {%- else -%}{%- endif %}
-          # - switch.plug_1
-          # - switch.plug_4
-        #switch.plug_5: false
-        #switch.plug_6: false
+sleeping_away_scene:
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - switch.plug_4
+    # - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
+    - delay: '{{ "00:00:%02d" % (range(5, 10) | random) }}' # TEST ONLY
+    - service: homeassistant.turn_off
+      data_template:
+        entity_id: >
+          {{ ['switch.plug_2','switch.plug_5','switch.plug_6','switch.plug_7'] | random }}
+    # - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
+    - delay: '{{ "00:00:%02d" % (range(5, 10) | random) }}' # TEST ONLY
+    - service: homeassistant.turn_off
+      data_template:
+        entity_id: >
+          {{ ['switch.plug_5','switch.plug_6','switch.plug_7'] | random }}

@@ -1,14 +1,25 @@
-# All lights
-- alias: Turn On All Lights at Sunset
+# Turn On Lights at Sunset
+- alias: Change to Evening Scene at Sunset
   trigger:
   - event: sunset
-    offset: -0:30
+    #offset: -0:30
     platform: sun
   action:
-  - data:
-      entity_id: group.all_lights
-      brightness: 255
-    service: homeassistant.turn_on
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state('input_boolean.away', 'on') %}
+          scene.evening_away
+        {% else %}
+          scene.evening
+        {% endif %}
+  - condition: state
+    entity_id: input_boolean.away
+    state: 'on'
+  - service: input_datetime.set_datetime
+    data_template:
+      entity_id: input_datetime.sleep_time
+      time: "{{ (range(22, 23)|random|int) }}:{{ (range(0, 59)|random|int) }}:00"
 
 # Inside lights
 - alias: Activate Sleeping at Sleep Time
@@ -16,29 +27,35 @@
   - platform: template
     value_template: "{{ states('sensor.time') == (state_attr('input_datetime.sleep_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   action:
-  - data:
-      entity_id: input_boolean.sleeping
-    service: input_boolean.turn_on
+  - service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - input_boolean.sleeping
 
-- alias: Turn off some lights at Sleeping
+- alias: Change to Sleeping Scene at Sleeping Boolean
   trigger:
   - platform: state
     entity_id: input_boolean.sleeping
     to: 'on'
   action:
   - service: scene.turn_on
-    entity_id: scene.sleeping
+    data_template:
+      entity_id: >
+        {% if is_state('input_boolean.away', 'on') %}
+          scene.sleeping_away
+        {% else %}
+          scene.sleeping
+        {% endif %}
 
-# Sunrise
-- alias: Turn All Off at Sunrise
+# Sunrise, Turn All Off at Sunrise
+- alias: Change to Day Scene at Sunrise
   trigger:
   - event: sunrise
     offset: +01:30
     platform: sun
   action:
-  - data:
-      entity_id: group.all_lights
-    service: homeassistant.turn_off
+  - service: scene.turn_on
+    entity_id: scene.day
   - data:
       entity_id: input_boolean.sleeping
     service: input_boolean.turn_off
@@ -56,9 +73,10 @@
   action:
   - data:
       entity_id: 
-        - switch.plug_1
+        #- switch.plug_1
         - switch.plug_4
     service: homeassistant.turn_on
+
 - alias: Turn Night Lights Off Automatically
   trigger:
     - platform: state
@@ -72,7 +90,7 @@
   action:
   - data:
       entity_id: 
-        - switch.plug_1
+        #- switch.plug_1
         - switch.plug_4
     service: homeassistant.turn_off
 
@@ -95,11 +113,17 @@
         brightness: "{{ trigger.to_state.state|int }}"
 
 # Detect presence
-- alias: Turn Off Away On Motion Detected
+- alias: Turn Off Away On Presence Detected
   trigger:
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_3
       to: 'on'
+    - platform: state
+      entity_id: device_tracker.ms10
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.hi6s
+      to: 'home'
   condition:
     condition: state
     entity_id: input_boolean.away
@@ -112,8 +136,29 @@
   - service: persistent_notification.create
     data: 
       title: "Motion"
-      message: "Presence detected, away mode turned OFF"
-      
+      message: "Presence (motion or wifi) detected, away mode turned OFF"
+
+# Home again
+- alias: Turn Everything On When Home Again
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away
+      to: 'off'
+  action:
+  - service: input_datetime.set_datetime
+    data_template:
+      entity_id: input_datetime.sleep_time
+      time: "23:45"
+  - condition: state  # from sunset until sunrise
+    entity_id: sun.sun
+    state: 'below_horizon'
+  - service: scene.turn_on
+    entity_id: scene.evening
+  - service: persistent_notification.create
+    data: 
+      title: "Home"
+      message: "Welcome home again, turning everything ON!"
+
 - alias: Turn On Away After No Motion
   trigger:
     - platform: state
@@ -129,7 +174,8 @@
     data: 
       title: "No motion"
       message: "No presence for 8h, away mode turned ON"
-- alias: Turn On Away Automatically
+
+- alias: Turn On Away Automatically (Backup)
   trigger:
     - platform: time
       at: "12:00:00"

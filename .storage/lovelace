@@ -138,6 +138,12 @@
                                 {
                                     "entities": [
                                         {
+                                            "entity": "group.all_devices",
+                                            "icon": "mdi:account-group",
+                                            "name": "Familjen",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
                                             "entity": "device_tracker.ms10",
                                             "name": "Martin",
                                             "secondary_info": "last-changed"

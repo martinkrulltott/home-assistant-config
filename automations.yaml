@@ -1,4 +1,4 @@
-# Turn On Lights at Sunset
+# Sunset, Lights On
 - alias: Change to Evening Scene at Sunset
   trigger:
   - event: sunset
@@ -21,7 +21,7 @@
       entity_id: input_datetime.sleep_time
       time: "{{ (range(22, 23)|random|int) }}:{{ (range(0, 59)|random|int) }}:00"
 
-# Inside lights
+# Sleeping
 - alias: Activate Sleeping at Sleep Time
   trigger:
   - platform: template
@@ -119,10 +119,7 @@
       entity_id: binary_sensor.tradfri_motion_sensor_3
       to: 'on'
     - platform: state
-      entity_id: device_tracker.ms10
-      to: 'home'
-    - platform: state
-      entity_id: device_tracker.hi6s
+      entity_id: group.all_devices
       to: 'home'
   condition:
     condition: state

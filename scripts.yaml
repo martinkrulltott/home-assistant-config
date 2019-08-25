@@ -42,14 +42,12 @@ sleeping_away_scene:
       data:
         entity_id:
           - switch.plug_4
-    # - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
-    - delay: '{{ "00:00:%02d" % (range(5, 10) | random) }}' # TEST ONLY
+    - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
           {{ ['switch.plug_2','switch.plug_5','switch.plug_6','switch.plug_7'] | random }}
-    # - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
-    - delay: '{{ "00:00:%02d" % (range(5, 10) | random) }}' # TEST ONLY
+    - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
         entity_id: >

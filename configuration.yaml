@@ -97,97 +97,11 @@ google_assistant:
 
 # Includes
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations/
 script: !include scripts.yaml
-#input_select: !include input_select.yaml
-
-# Inputs
-input_boolean:
-  bed_1:
-    name: Sovrummet
-    initial: off
-    icon: mdi:bed-empty
-  bed_2:
-    name: Blå rummet
-    initial: on
-    icon: mdi:bed-empty
-  bed_3:
-    name: Helenas rum
-    initial: on
-    icon: mdi:bed-empty
-  bed_4:
-    name: Biblioteket
-    initial: off
-    icon: mdi:bed-empty
-  sleeping:
-    name: Sovläge
-    initial: off
-    icon: mdi:sleep
-  away:
-    name: Bortaläge
-    initial: on
-    icon: mdi:car-side
-
-input_datetime:
-  sleep_time:
-    name: Sovtid
-    has_date: false
-    has_time: true
-    initial: '23:45'
-
-input_number:
-  min_temp_threshold:
-    name: Lägsta temperatur
-    initial: 17
-    min: 15
-    max: 25
-    step: 0.25
-
-# Light switches
-light:
-  - platform: switch
-    name: Altanen
-    entity_id: switch.plug_1
-  - platform: switch
-    name: Biblioteket
-    entity_id: switch.plug_2
-  - platform: switch
-    name: Vardagsrummet
-    entity_id: switch.plug_3
-  - platform: switch
-    name: Hallen
-    entity_id: switch.plug_4
-  - platform: switch
-    name: Helenas rum
-    entity_id: switch.plug_5
-  - platform: switch
-    name: Blå rummet
-    entity_id: switch.plug_6
-  - platform: switch
-    name: Sovrummet
-    entity_id: switch.plug_7
-
-# Scenes
-scene:
-  - name: Day
-    entities:
-      group.all_lights:
-        state: false
-  - name: Evening
-    entities:
-      group.all_lights:
-        state: true
-        brightness: 255
-  - name: Evening Away
-    entities:
-      group.all_lights:
-        state: true
-        brightness: 255
-  - name: Sleeping
-    entities:
-      script.sleeping_scene:
-        state: true
-  - name: Sleeping Away
-    entities:
-      script.sleeping_away_scene:
-        state: true
+#input_select: !include includes/input_select.yaml
+input_boolean: !include includes/input_boolean.yaml
+input_datetime: !include includes/input_datetime.yaml
+input_number: !include includes/input_number.yaml
+light: !include includes/light.yaml
+scene: !include includes/scene.yaml

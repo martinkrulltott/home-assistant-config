@@ -1,0 +1,5 @@
+sleep_time:
+    name: Sovtid
+    has_date: false
+    has_time: true
+    initial: '23:45'

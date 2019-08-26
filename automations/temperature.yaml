@@ -1,0 +1,5 @@
+# Low indoor temperature
+# - alias: Low Temperature Alert
+#   trigger:
+#     platform: template
+#     value_template: "{{ state_attr('climate.steninge', 'current_temperature') < states('input_number.min_temp_threshold') }}"

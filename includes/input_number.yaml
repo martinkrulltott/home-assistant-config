@@ -1,0 +1,6 @@
+min_temp_threshold:
+  name: Lägsta temperatur
+  initial: 17
+  min: 15
+  max: 25
+  step: 0.25

@@ -1,0 +1,17 @@
+# Dimmer
+- alias: Dimmer On
+  trigger:
+    platform: state
+    entity_id: sensor.tradfri_wireless_dimmer_battery_level
+  condition:
+    condition: template
+    value_template: "{{ trigger.to_state.state|int != 0 }}"
+  action:
+    - service: light.turn_on
+      entity_id: light.light_1
+      data_template:
+        brightness: "{{ trigger.to_state.state|int }}"
+    - service: light.turn_on
+      entity_id: light.light_2
+      data_template:
+        brightness: "{{ trigger.to_state.state|int }}"

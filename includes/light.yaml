@@ -1,0 +1,21 @@
+- platform: switch
+  name: Altanen
+  entity_id: switch.plug_1
+- platform: switch
+  name: Biblioteket
+  entity_id: switch.plug_2
+- platform: switch
+  name: Vardagsrummet
+  entity_id: switch.plug_3
+- platform: switch
+  name: Hallen
+  entity_id: switch.plug_4
+- platform: switch
+  name: Helenas rum
+  entity_id: switch.plug_5
+- platform: switch
+  name: Blå rummet
+  entity_id: switch.plug_6
+- platform: switch
+  name: Sovrummet
+  entity_id: switch.plug_7

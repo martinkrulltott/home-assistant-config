@@ -1,0 +1,24 @@
+bed_1:
+  name: Sovrummet
+  initial: off
+  icon: mdi:bed-empty
+bed_2:
+  name: Blå rummet
+  initial: on
+  icon: mdi:bed-empty
+bed_3:
+  name: Helenas rum
+  initial: on
+  icon: mdi:bed-empty
+bed_4:
+  name: Biblioteket
+  initial: off
+  icon: mdi:bed-empty
+sleeping:
+  name: Sovläge
+  initial: off
+  icon: mdi:sleep
+away:
+  name: Bortaläge
+  initial: on
+  icon: mdi:car-side

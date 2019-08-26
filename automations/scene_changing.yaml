@@ -1,0 +1,63 @@
+# Sunset, Lights On
+- alias: Change to Evening Scene at Sunset
+  trigger:
+  - event: sunset
+    #offset: -0:30
+    platform: sun
+  action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state('input_boolean.away', 'on') %}
+          scene.evening_away
+        {% else %}
+          scene.evening
+        {% endif %}
+  - condition: state
+    entity_id: input_boolean.away
+    state: 'on'
+  - service: input_datetime.set_datetime
+    data_template:
+      entity_id: input_datetime.sleep_time
+      time: "{{ (range(22, 23)|random|int) }}:{{ (range(0, 59)|random|int) }}:00"
+
+
+# Sleeping
+- alias: Activate Sleeping at Sleep Time
+  trigger:
+  - platform: template
+    value_template: "{{ states('sensor.time') == (state_attr('input_datetime.sleep_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - input_boolean.sleeping
+
+- alias: Change to Sleeping Scene at Sleeping Boolean
+  trigger:
+  - platform: state
+    entity_id: input_boolean.sleeping
+    to: 'on'
+  action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state('input_boolean.away', 'on') %}
+          scene.sleeping_away
+        {% else %}
+          scene.sleeping
+        {% endif %}
+
+
+# Sunrise, Turn All Off at Sunrise
+- alias: Change to Day Scene at Sunrise
+  trigger:
+  - event: sunrise
+    offset: +01:30
+    platform: sun
+  action:
+  - service: scene.turn_on
+    entity_id: scene.day
+  - data:
+      entity_id: input_boolean.sleeping
+    service: input_boolean.turn_off

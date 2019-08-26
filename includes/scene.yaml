@@ -1,0 +1,22 @@
+- name: Day
+  entities:
+    group.all_lights:
+      state: false
+- name: Evening
+  entities:
+    group.all_lights:
+      state: true
+      brightness: 255
+- name: Evening Away
+  entities:
+    group.all_lights:
+      state: true
+      brightness: 255
+- name: Sleeping
+  entities:
+    script.sleeping_scene:
+      state: true
+- name: Sleeping Away
+  entities:
+    script.sleeping_away_scene:
+      state: true

@@ -1,0 +1,13 @@
+- alias: Turn Off Away On Start If Home
+  trigger:
+    platform: homeassistant
+    event: start
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: 
+        - input_boolean.away

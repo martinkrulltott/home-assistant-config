@@ -20,3 +20,5 @@ light.bulb_3:
   friendly_name: "Badrummet"
 binary_sensor.tradfri_motion_sensor_2:
   friendly_name: "Rörelsesensor"
+sensor.altandimmer_battery_level:
+  friendly_name: "Altadimmer batteri"

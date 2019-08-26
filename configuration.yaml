@@ -86,6 +86,9 @@ device_tracker:
       hixs: !secret hixs_ip
       mmbp: !secret mmbp_ip
       ms10: !secret ms10_ip
+      jipa: !secret jipa_ip
+      eiph: !secret eiph_ip
+      aiph: !secret aiph_ip
 
 # Sensibo
 climate:

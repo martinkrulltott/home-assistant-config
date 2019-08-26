@@ -108,3 +108,66 @@
     data: 
       title: "Home"
       message: "Welcome home again, turning everything ON!"
+
+  # Device specific
+- alias: Occupy M bed on detected presence
+  trigger:
+    - platform: state
+      entity_id: device_tracker.ms10
+      to: 'home'
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_2
+    state: 'off'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.bed_2
+  - service: persistent_notification.create
+    data: 
+      title: "Home"
+      message: "Martin is home!"
+
+- alias: Unoccupy M bed on no presence
+  trigger:
+    - platform: state
+      entity_id: device_tracker.ms10
+      to: 'away'
+      for: "04:00:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_2
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.bed_2
+
+- alias: Occupy H bed on detected presence
+  trigger:
+    - platform: state
+      entity_id: device_tracker.hi6s
+      to: 'home'
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_3
+    state: 'off'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.bed_3
+  - service: persistent_notification.create
+    data: 
+      title: "Home"
+      message: "Helena is home!"
+
+- alias: Unoccupy H bed on no presence
+  trigger:
+    - platform: state
+      entity_id: device_tracker.hi6s
+      to: 'home'
+      for: "04:00:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_3
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.bed_3

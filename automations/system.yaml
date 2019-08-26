@@ -11,3 +11,17 @@
     data:
       entity_id: 
         - input_boolean.away
+
+- alias: Restart message
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: persistent_notification.create
+    data: 
+      title: "Restart"
+      message: "Home Assistant restarted"
+  - service: notify.pushbullet
+    data:
+      title: "Steninge ALERT: Restart"
+      message: "Home Assistant restarted"

@@ -1,14 +1,36 @@
 # Dimmer
-- alias: Dimmer On
+- alias: 'Dimmer up'
+  initial_state: 'on'
   trigger:
-    platform: state
-    entity_id: sensor.altandimmer_battery_level
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: tradfri_wireless_dimmer
+      event: 2002
   action:
     - service: light.turn_on
-      entity_id: light.bulb_1
       data_template:
-        brightness: "{{ 255 / 100 * states('sensor.altandimmer_battery_level')|int }}"
+        entity_id: 
+          - light.bulb_1
+          - light.bulb_2
+        brightness: >
+          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+          {{ [bri+70, 255] | min }}
+
+- alias: 'Dimmer down'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: tradfri_wireless_dimmer
+      event: 3002
+  action:
     - service: light.turn_on
-      entity_id: light.bulb_2
       data_template:
-        brightness: "{{ 255 / 100 *  states('sensor.altandimmer_battery_level')|int }}"
+        entity_id: 
+          - light.bulb_1
+          - light.bulb_2
+        brightness: >
+          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+          {{ [bri-70, 0] | max }}

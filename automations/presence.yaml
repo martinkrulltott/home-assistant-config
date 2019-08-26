@@ -2,7 +2,7 @@
 - alias: Turn On Away After No Motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.tradfri_motion_sensor_3
+      entity_id: binary_sensor.tradfri_motion_sensor_2
       to: 'off'
       for: "08:00:00"
   action:
@@ -26,7 +26,7 @@
         entity_id: input_boolean.away
         state: 'off'
       - condition: template
-        value_template: "{{ as_timestamp(now()) - as_timestamp(states.binary_sensor.tradfri_motion_sensor_3.last_changed) > 21600 }}"
+        value_template: "{{ as_timestamp(now()) - as_timestamp(states.binary_sensor.tradfri_motion_sensor_2.last_changed) > 21600 }}"
         # 21600 = 6h ago
   action:
   - service: homeassistant.turn_on
@@ -39,12 +39,33 @@
       message: "It's mid day and no presence for, away mode turned ON"
 
 
-# Detect presence
-- alias: Turn Off Away On Presence Detected
+# Detect motion
+- alias: Turn Off Away On Motion Detected
   trigger:
     - platform: state
-      entity_id: binary_sensor.tradfri_motion_sensor_3
+      entity_id: binary_sensor.tradfri_motion_sensor_2
       to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.away
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: 
+        - input_boolean.away
+  - service: persistent_notification.create
+    data: 
+      title: "Presence"
+      message: "Motion detected, away mode turned OFF"
+  - service: notify.pushbullet
+    data:
+      title: "Steninge ALERT: Presence"
+      message: "Motion detected, away mode turned OFF"
+
+# Detected device (wifi)
+- alias: Turn Off Away On Wifi Device Detected
+  trigger:
     - platform: state
       entity_id: group.all_devices
       to: 'home'
@@ -59,8 +80,12 @@
         - input_boolean.away
   - service: persistent_notification.create
     data: 
-      title: "Motion"
-      message: "Presence (motion or wifi) detected, away mode turned OFF"
+      title: "Presence"
+      message: "Wifi device detected, away mode turned OFF"
+  - service: notify.pushbullet
+    data:
+      title: "Steninge ALERT: Presence"
+      message: "Wifi device detected, away mode turned OFF"
 
 
 # Home again

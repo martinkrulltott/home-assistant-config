@@ -53,7 +53,7 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.light_3",
+                                            "entity": "light.bulb_3",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -64,11 +64,11 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.light_1",
+                                            "entity": "light.bulb_1",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.light_2",
+                                            "entity": "light.bulb_2",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -176,7 +176,7 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "binary_sensor.tradfri_motion_sensor_3",
+                                            "entity": "binary_sensor.tradfri_motion_sensor_2",
                                             "secondary_info": "last-changed"
                                         },
                                         {

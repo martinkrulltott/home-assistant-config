@@ -2,7 +2,7 @@
 - alias: Turn Night Lights On by Motion Detected
   trigger:
     - platform: state
-      entity_id: binary_sensor.tradfri_motion_sensor_3
+      entity_id: binary_sensor.tradfri_motion_sensor_2
       to: 'on'
   condition:
     condition: state
@@ -18,7 +18,7 @@
 - alias: Turn Night Lights Off Automatically
   trigger:
     - platform: state
-      entity_id: binary_sensor.tradfri_motion_sensor_3
+      entity_id: binary_sensor.tradfri_motion_sensor_2
       to: 'off'
       for: "00:05:00"
   condition:

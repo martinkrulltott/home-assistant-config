@@ -1,0 +1,22 @@
+switch.plug_1:
+  friendly_name: "Altanen"
+switch.plug_2:
+  friendly_name: "Biblioteket"
+switch.plug_3:
+  friendly_name: "Vardagsrummet"
+switch.plug_4:
+  friendly_name: "Hallen"
+switch.plug_5:
+  friendly_name: "Helenas rum"
+switch.plug_6:
+  friendly_name: "Blå rummet"
+switch.plug_7:
+  friendly_name: "Sovrummet"
+light.bulb_1: 
+  friendly_name: "Altangaveln"
+light.bulb_2: 
+  friendly_name: "Altanväggen"
+light.bulb_3:
+  friendly_name: "Badrummet"
+binary_sensor.tradfri_motion_sensor_2:
+  friendly_name: "Rörelsesensor"

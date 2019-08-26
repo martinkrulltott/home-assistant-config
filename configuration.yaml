@@ -1,4 +1,13 @@
 
+homeassistant:
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: !secret time_zone
+  name: !secret name
+  customize: !include customize.yaml
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -33,7 +42,8 @@ logbook:
 
 # Notify
 notify:
-  - platform: smtp
+  - name: email
+    platform: smtp
     server: smtp.gmail.com
     port: 587
     timeout: 15
@@ -43,6 +53,9 @@ notify:
     password: !secret email_password
     recipient: !secret email_recipient
     sender_name: My Home Assistant
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet_api_key
     
     
 # notify:

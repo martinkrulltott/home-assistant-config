@@ -95,6 +95,12 @@ climate:
   - platform: sensibo
     api_key: !secret sensibo_api_key
 
+# Weather
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    mode: daily
+
 # Google Assistant
 google_assistant:
   project_id: !secret google_project_id

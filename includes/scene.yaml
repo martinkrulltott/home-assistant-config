@@ -6,12 +6,12 @@
   entities:
     group.all_lights:
       state: true
-      brightness: 255
+      brightness: 120
 - name: Evening Away
   entities:
     group.all_lights:
       state: true
-      brightness: 255
+      brightness: 120
 - name: Sleeping
   entities:
     script.sleeping_scene:

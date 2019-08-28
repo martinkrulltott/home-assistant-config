@@ -15,7 +15,7 @@
           - light.bulb_2
         brightness: >
           {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
-          {{ [bri+70, 255] | min }}
+          {{ [bri+30, 255] | min }}
 
 - alias: 'Dimmer down'
   initial_state: 'on'
@@ -33,4 +33,4 @@
           - light.bulb_2
         brightness: >
           {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
-          {{ [bri-70, 0] | max }}
+          {{ [bri-30, 0] | max }}

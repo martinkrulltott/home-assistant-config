@@ -25,7 +25,7 @@
  - Darksky weather
  - Google Assistant
  
- # Features
+ ## Features
   - Presence detection (motion and IP)
   - Automated daylight-based scene changing
   - Sleep mode with night light

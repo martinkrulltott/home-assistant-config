@@ -10,6 +10,7 @@
             "title": "Steninge",
             "views": [
                 {
+                    "badges": [],
                     "cards": [
                         {
                             "cards": [
@@ -31,43 +32,43 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "switch.plug_4",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_5",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_6",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_7",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_3",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_8",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_2",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "switch.plug_1",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "light.bulb_3",
+                                            "entity": "light.altanen",
                                             "secondary_info": "last-changed"
                                         },
                                         {
                                             "entity": "light.bulb_4",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.hallen",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.helenas_rum",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.bla_rummet",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.sovrummet",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.vardagsrum_bordslampa",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.vardagsrum_golvlampa",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.biblioteket",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.bulb_3",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -98,43 +99,6 @@
                                     ],
                                     "title": "Media",
                                     "type": "entities"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entity": "weather.steninge",
-                                    "name": "V\u00e4derleksrapport",
-                                    "type": "weather-forecast"
-                                },
-                                {
-                                    "entity": "climate.steninge",
-                                    "name": "V\u00e4rmepump",
-                                    "type": "thermostat"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_number.min_temp_threshold",
-                                            "icon": "mdi:thermometer-chevron-down",
-                                            "name": "Varning",
-                                            "type": "custom:slider-entity-row"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "climate.steninge"
-                                        }
-                                    ],
-                                    "hours_to_show": 72,
-                                    "title": "Temperatur",
-                                    "type": "history-graph"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -226,7 +190,7 @@
                         }
                     ],
                     "path": "default_view",
-                    "title": "Home"
+                    "title": "Belysning"
                 },
                 {
                     "badges": [],
@@ -238,10 +202,43 @@
                         {
                             "entity": "weather.dark_sky",
                             "type": "weather-forecast"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "climate.steninge",
+                                    "name": "V\u00e4rmepump",
+                                    "type": "thermostat"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_number.min_temp_threshold",
+                                            "icon": "mdi:thermometer-chevron-down",
+                                            "name": "Varning",
+                                            "type": "custom:slider-entity-row"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "climate.steninge"
+                                        }
+                                    ],
+                                    "hours_to_show": 72,
+                                    "title": "Temperatur",
+                                    "type": "history-graph"
+                                }
+                            ],
+                            "type": "vertical-stack"
                         }
                     ],
+                    "icon": "",
                     "path": "weather",
-                    "title": "Weather"
+                    "title": "Temperatur"
                 }
             ]
         }

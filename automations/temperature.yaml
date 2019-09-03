@@ -7,8 +7,8 @@
   - service: persistent_notification.create
     data: 
       title: "Low temperature"
-      message: "Indoor temperature is below the alart threshold"
+      message: "Indoor temperature is below the alarm threshold"
   - service: notify.pushbullet
     data:
       title: "Steninge ALERT: Temperature"
-      message: "Indoor temperature is below the alart threshold"
+      message: "Indoor temperature is below the alarm threshold"

@@ -5,7 +5,7 @@
   name: Biblioteket
   entity_id: switch.plug_2
 - platform: switch
-  name: Vardagsrummet
+  name: Vardagsrum bordslampa
   entity_id: switch.plug_3
 - platform: switch
   name: Hallen
@@ -19,3 +19,6 @@
 - platform: switch
   name: Sovrummet
   entity_id: switch.plug_7
+- platform: switch
+  name: Vardagsrum golvlampa
+  entity_id: switch.plug_8

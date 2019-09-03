@@ -116,6 +116,8 @@ google_assistant:
       expose: true
     input_datetime.sleep_time:
       expose: true
+    switch.plug_9:
+      expose: true
 
 # Includes
 group: !include groups.yaml

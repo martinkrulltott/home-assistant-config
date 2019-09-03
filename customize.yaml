@@ -3,7 +3,7 @@ switch.plug_1:
 switch.plug_2:
   friendly_name: "Biblioteket"
 switch.plug_3:
-  friendly_name: "Vardagsrummet"
+  friendly_name: "Vardagsrum bordslampa"
 switch.plug_4:
   friendly_name: "Hallen"
 switch.plug_5:
@@ -12,12 +12,18 @@ switch.plug_6:
   friendly_name: "Blå rummet"
 switch.plug_7:
   friendly_name: "Sovrummet"
+switch.plug_8:
+  friendly_name: "Vardagsrum golvlampa"
+switch.plug_9:
+  friendly_name: "TVn"
 light.bulb_1: 
   friendly_name: "Altangaveln"
 light.bulb_2: 
   friendly_name: "Altanväggen"
 light.bulb_3:
   friendly_name: "Badrummet"
+light.bulb_4:
+  friendly_name: "Köket"
 binary_sensor.tradfri_motion_sensor_2:
   friendly_name: "Rörelsesensor"
 sensor.altandimmer_battery_level:

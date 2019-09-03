@@ -13,6 +13,7 @@
         entity_id: 
           - light.bulb_1
           - light.bulb_2
+          - light.bulb_4
         brightness: >
           {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
           {{ [bri+30, 255] | min }}
@@ -31,6 +32,7 @@
         entity_id: 
           - light.bulb_1
           - light.bulb_2
+          - light.bulb_4
         brightness: >
           {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
           {{ [bri-30, 0] | max }}

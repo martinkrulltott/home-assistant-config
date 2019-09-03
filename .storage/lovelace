@@ -51,6 +51,10 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
+                                            "entity": "switch.plug_8",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
                                             "entity": "switch.plug_2",
                                             "secondary_info": "last-changed"
                                         },
@@ -60,6 +64,10 @@
                                         },
                                         {
                                             "entity": "light.bulb_3",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.bulb_4",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -79,6 +87,16 @@
                                         }
                                     ],
                                     "title": "Utomhus",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.plug_9",
+                                            "secondary_info": "last-changed"
+                                        }
+                                    ],
+                                    "title": "Media",
                                     "type": "entities"
                                 }
                             ],
@@ -152,12 +170,22 @@
                                         },
                                         {
                                             "entity": "device_tracker.ms10",
-                                            "name": "Martin",
                                             "secondary_info": "last-changed"
                                         },
                                         {
                                             "entity": "device_tracker.hi6s",
-                                            "name": "Helena",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "device_tracker.jipa",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "device_tracker.aiph",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "device_tracker.eiph",
                                             "secondary_info": "last-changed"
                                         }
                                     ],

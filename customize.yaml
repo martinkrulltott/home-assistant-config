@@ -11,4 +11,4 @@ light.bulb_4:
 binary_sensor.tradfri_motion_sensor_2:
   friendly_name: "Rörelsesensor"
 sensor.altandimmer_battery_level:
-  friendly_name: "Altadimmer batteri"
+  friendly_name: "Altandimmer batteri"

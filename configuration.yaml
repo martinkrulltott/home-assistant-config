@@ -68,14 +68,48 @@ notify:
 tts:
   - platform: google_translate
 
-# Time and uptime
 sensor:
+  # Time and uptime
   - platform: time_date
     display_options:
       - 'time'
   - platform: uptime
     name: Uptime
     unit_of_measurement: days
+  
+  # Temperature
+  - platform: template
+    sensors: 
+      indoor_temperature:
+        value_template: '{{ states.climate.steninge.attributes.current_temperature|float }}'  
+        friendly_name: 'Inomhustemp' 
+        unit_of_measurement: '°C'
+  - platform: template
+    sensors: 
+      outdoor_temperature:
+        value_template: '{{ states.weather.steninge.attributes.temperature|float }}'  
+        friendly_name: 'Utomhustemp' 
+        unit_of_measurement: '°C'
+  - platform: template
+    sensors: 
+      set_temperature:
+        value_template: '{{ states.climate.steninge.attributes.temperature|float }}'  
+        friendly_name: 'Inställd temp' 
+        unit_of_measurement: '°C'
+
+# Humidity
+  - platform: template
+    sensors: 
+      indoor_humidity:
+        value_template: '{{ states.climate.steninge.attributes.current_humidity|float }}'  
+        friendly_name: 'Fuktighet inne' 
+        unit_of_measurement: '%'
+  - platform: template
+    sensors: 
+      outdoor_humidity:
+        value_template: '{{ states.weather.steninge.attributes.humidity|float }}'  
+        friendly_name: 'Fuktighet ute' 
+        unit_of_measurement: '%'
 
 # Ping
 device_tracker:

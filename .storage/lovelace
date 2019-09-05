@@ -13,6 +13,159 @@
                     "badges": [],
                     "cards": [
                         {
+                            "entities": [
+                                {
+                                    "entity": "light.altanen",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.bulb_4",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.hallen",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.helenas_rum",
+                                    "name": "Helenas",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.bla_rummet",
+                                    "name": "Bl\u00e5 rum",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.sovrummet",
+                                    "name": "Sovrum",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.vardagsrum_bordslampa",
+                                    "name": "V Bord",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.vardagsrum_golvlampa",
+                                    "name": "V Golv",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.biblioteket",
+                                    "name": "Bibliotek",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.bulb_3",
+                                    "name": "Bad",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                }
+                            ],
+                            "show_state": false,
+                            "title": "Inne",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.bulb_1",
+                                    "name": "Gavel",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.bulb_2",
+                                    "name": "V\u00e4gg",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                }
+                            ],
+                            "show_state": false,
+                            "title": "Ute",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.plug_9",
+                                    "name": "Media",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "input_boolean.sleeping",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "input_boolean.away",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "sensor.indoor_temperature",
+                                    "name": "Inomhus"
+                                },
+                                {
+                                    "entity": "sensor.outdoor_temperature",
+                                    "name": "Utomhus"
+                                }
+                            ],
+                            "title": "\u00d6vrigt",
+                            "type": "glance"
+                        },
+                        {
+                            "card": {
+                                "show_state": false,
+                                "title": "Hemma",
+                                "type": "glance"
+                            },
+                            "entities": [
+                                "device_tracker.ms10",
+                                "device_tracker.hi6s",
+                                "device_tracker.jipa",
+                                "device_tracker.aiph",
+                                "device_tracker.eiph"
+                            ],
+                            "state_filter": [
+                                "home"
+                            ],
+                            "type": "entity-filter"
+                        }
+                    ],
+                    "path": "start",
+                    "title": "Start"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
                             "cards": [
                                 {
                                     "entity": "group.all_lights",
@@ -97,92 +250,8 @@
                                             "secondary_info": "last-changed"
                                         }
                                     ],
+                                    "show_header_toggle": false,
                                     "title": "Media",
-                                    "type": "entities"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_boolean.bed_1"
-                                        },
-                                        {
-                                            "entity": "input_boolean.bed_2"
-                                        },
-                                        {
-                                            "entity": "input_boolean.bed_3"
-                                        },
-                                        {
-                                            "entity": "input_boolean.bed_4"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "G\u00e4ster",
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "group.all_devices",
-                                            "icon": "mdi:account-group",
-                                            "name": "Familjen",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "device_tracker.ms10",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "device_tracker.hi6s",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "device_tracker.jipa",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "device_tracker.aiph",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "device_tracker.eiph",
-                                            "secondary_info": "last-changed"
-                                        }
-                                    ],
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_datetime.sleep_time"
-                                        },
-                                        {
-                                            "entity": "input_boolean.sleeping",
-                                            "secondary_info": "last-changed"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_boolean.away",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "binary_sensor.tradfri_motion_sensor_2",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "sensor.uptime",
-                                            "name": "Senaste omstart"
-                                        }
-                                    ],
                                     "type": "entities"
                                 }
                             ],
@@ -193,7 +262,14 @@
                     "title": "Belysning"
                 },
                 {
-                    "badges": [],
+                    "badges": [
+                        "sensor.indoor_temperature",
+                        "sensor.set_temperature",
+                        "sensor.outdoor_temperature",
+                        "input_number.min_temp_threshold",
+                        "sensor.indoor_humidity",
+                        "sensor.outdoor_humidity"
+                    ],
                     "cards": [
                         {
                             "entity": "weather.steninge",
@@ -225,11 +301,35 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "climate.steninge"
+                                            "entity": "sensor.indoor_temperature",
+                                            "name": "Inne"
+                                        },
+                                        {
+                                            "entity": "sensor.set_temperature",
+                                            "name": "Inst\u00e4llning"
+                                        },
+                                        {
+                                            "entity": "sensor.outdoor_temperature",
+                                            "name": "Ute"
                                         }
                                     ],
                                     "hours_to_show": 72,
                                     "title": "Temperatur",
+                                    "type": "history-graph"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.indoor_humidity",
+                                            "name": "Inne"
+                                        },
+                                        {
+                                            "entity": "sensor.outdoor_humidity",
+                                            "name": "Ute"
+                                        }
+                                    ],
+                                    "hours_to_show": 72,
+                                    "title": "Luftfuktighet",
                                     "type": "history-graph"
                                 }
                             ],
@@ -239,6 +339,114 @@
                     "icon": "",
                     "path": "weather",
                     "title": "Temperatur"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "group.all_devices",
+                                    "icon": "mdi:account-group",
+                                    "name": "Familjen",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "device_tracker.ms10",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "device_tracker.hi6s",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "device_tracker.jipa",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "device_tracker.aiph",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "device_tracker.eiph",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.bed_1"
+                                },
+                                {
+                                    "entity": "input_boolean.bed_2"
+                                },
+                                {
+                                    "entity": "input_boolean.bed_3"
+                                },
+                                {
+                                    "entity": "input_boolean.bed_4"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "G\u00e4ster",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_datetime.sleep_time"
+                                },
+                                {
+                                    "entity": "input_boolean.sleeping",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.away",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "binary_sensor.tradfri_motion_sensor_2",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.turn_night_lights_on_by_motion_detected",
+                                    "name": "Nattlampa"
+                                },
+                                {
+                                    "entity": "automation.turn_everything_on_when_home_again",
+                                    "name": "T\u00e4nd vid hemkomst"
+                                },
+                                {
+                                    "entity": "automation.low_temperature_alert",
+                                    "name": "Varning: L\u00e5g temperatur"
+                                },
+                                {
+                                    "entity": "automation.restart_message",
+                                    "name": "Varning: Omstart"
+                                },
+                                {
+                                    "entity": "sensor.uptime",
+                                    "name": "Senaste omstart"
+                                }
+                            ],
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "installningar",
+                    "title": "Inst\u00e4llningar",
+                    "type": "vertical-stack"
                 }
             ]
         }

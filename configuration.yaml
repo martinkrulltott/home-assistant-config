@@ -164,13 +164,19 @@ media_player:
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
 
+# Spotcast
+spotcast:
+  username: !secret spotify_username
+  password: !secret spotify_password
+
 # Includes
 group: !include groups.yaml
 automation: !include_dir_merge_list automations/
 script: !include_dir_merge_named scripts/
-#input_select: !include includes/input_select.yaml
+input_select: !include includes/input_select.yaml
 input_boolean: !include includes/input_boolean.yaml
 input_datetime: !include includes/input_datetime.yaml
 input_number: !include includes/input_number.yaml
+input_text: !include includes/input_text.yaml
 light: !include includes/light.yaml
 scene: !include includes/scene.yaml

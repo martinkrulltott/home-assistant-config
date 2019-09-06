@@ -25,12 +25,14 @@
  - Ping device tracker
  - Darksky weather
  - Google Assistant
+ - Spotify
  
 ## Custom components
  - [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
  - [Mini Media Player](https://github.com/kalkih/mini-media-player)
  - [Slider Entity Row](https://github.com/thomasloven/lovelace-slider-entity-row)
  - [Compact Custom Header](https://maykar.github.io/compact-custom-header/)
+ - [Spotcast](https://github.com/fondberg/spotcast)
  
  ## Features
   - Presence detection (motion and IP)
@@ -38,3 +40,4 @@
   - Sleep mode with night light
   - Adjustable low temperature warning
   - Notifications and warnings
+  - Play Spotify songs/playlists on Chromecast without going through a device

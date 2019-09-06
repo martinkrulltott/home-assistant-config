@@ -1,0 +1,13 @@
+- alias: Save selected playlist
+  trigger:
+    platform: state
+    entity_id: input_select.playlist_select
+  action:
+    service: input_text.set_value
+    data_template:
+      entity_id: input_text.selected_playlist
+      value: >
+        {% if is_state('input_select.playlist_select' , 'Chill') %} 3XmdiVNE8ZSR3pfqNeApcE
+        {% elif is_state('input_select.playlist_select' , 'Motivation') %} 37i9dQZF1DXdxcBWuJkbcy
+        {% elif is_state('input_select.playlist_select' , 'Reggae') %} 37i9dQZF1DXbSbnqxMTGx9
+        {% else %} 3XmdiVNE8ZSR3pfqNeApcE {% endif %} 

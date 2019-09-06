@@ -428,6 +428,62 @@
                     "badges": [],
                     "cards": [
                         {
+                            "entity": "media_player.huset_tv",
+                            "hide": {
+                                "power": true
+                            },
+                            "name": "Chromecast",
+                            "type": "custom:mini-media-player"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.plug_9",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "script.play_playlist",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "icon": "mdi:music-circle",
+                            "icon_height": "80px",
+                            "name": "Spela musik",
+                            "show_icon": true,
+                            "show_name": false,
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "script.play_playlist",
+                                "service_data": {
+                                    "playlist_id": "7DEZq9x1qhrCxdH0sGz8NZ"
+                                }
+                            },
+                            "type": "entity-button"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_select.playlist_select"
+                                },
+                                {
+                                    "entity": "input_text.selected_playlist"
+                                }
+                            ],
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:music-note",
+                    "path": "musik",
+                    "title": "Musik"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
                             "entities": [
                                 {
                                     "entity": "group.all_devices",

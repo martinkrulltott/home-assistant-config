@@ -1,0 +1,34 @@
+# Play selected playlist
+play_playlist:
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_9
+    - wait_template: "{{ not is_state('media_player.huset_tv', 'unavailable') }}"
+      timeout: '00:01:00'
+      continue_on_timeout: 'false'
+    - service: spotcast.start
+      data_template:
+        entity_id: media_player.huset_tv
+        uri: "spotify:playlist:{{ playlist_id }}"
+        random_song: true
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.huset_tv
+        volume_level: 0.1
+
+# Transfer current playlist
+transfer_spotify:
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_9
+    - wait_template: "{{ not is_state('media_player.huset_tv', 'unavailable') }}"
+      timeout: '00:01:00'
+      continue_on_timeout: 'false'
+    - service: spotcast.start
+      data:
+        entity_id: media_player.huset_tv
+        transfer_playback: true
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.huset_tv
+        volume_level: 0.1

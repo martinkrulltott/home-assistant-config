@@ -1,3 +1,4 @@
+
 # Home Assistant Smart Home
 ## Core
 
@@ -24,6 +25,11 @@
  - Ping device tracker
  - Darksky weather
  - Google Assistant
+ 
+## Custom components
+ - [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
+ - [Mini Media Player](https://github.com/kalkih/mini-media-player)
+ - [Slider Entity Row](https://github.com/thomasloven/lovelace-slider-entity-row)
  
  ## Features
   - Presence detection (motion and IP)

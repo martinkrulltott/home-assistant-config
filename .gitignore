@@ -5,6 +5,7 @@
 deps
 tts
 www
+custom_components
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
@@ -14,6 +15,8 @@ home-assistant.log
 *.pem
 *.db
 *.conf
+.spotify-token-cache
+home-assistant_v2.db*
 
 # Include lovelace
 !*/lovelace*

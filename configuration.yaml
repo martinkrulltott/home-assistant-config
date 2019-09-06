@@ -16,6 +16,7 @@ http:
   server_port: 8123
   ssl_certificate: /ssl/fullchain1.pem
   ssl_key: /ssl/privkey1.pem
+  base_url: !secret base_url
 
 # System log
 system_log:
@@ -39,6 +40,10 @@ logbook:
       - sensor.time
     domains:
       - switch
+
+# HACS
+hacs:
+  token: !secret hacs_token
 
 # Notify
 notify:
@@ -153,10 +158,16 @@ google_assistant:
     switch.plug_9:
       expose: true
 
+# Spotify
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
+
 # Includes
 group: !include groups.yaml
 automation: !include_dir_merge_list automations/
-script: !include scripts.yaml
+script: !include_dir_merge_named scripts/
 #input_select: !include includes/input_select.yaml
 input_boolean: !include includes/input_boolean.yaml
 input_datetime: !include includes/input_datetime.yaml

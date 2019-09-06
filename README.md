@@ -30,6 +30,7 @@
  - [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
  - [Mini Media Player](https://github.com/kalkih/mini-media-player)
  - [Slider Entity Row](https://github.com/thomasloven/lovelace-slider-entity-row)
+ - [Compact Custom Header](https://maykar.github.io/compact-custom-header/)
  
  ## Features
   - Presence detection (motion and IP)

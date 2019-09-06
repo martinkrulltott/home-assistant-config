@@ -1,6 +1,26 @@
 {
     "data": {
         "config": {
+            "cch": {
+                "disable_sidebar": true,
+                "exceptions": [
+                    {
+                        "conditions": {
+                            "user": "Martin, Jan"
+                        },
+                        "config": {
+                            "disable_sidebar": false,
+                            "menu": "show",
+                            "notifications": "show",
+                            "options": "show",
+                            "voice": "show"
+                        }
+                    }
+                ],
+                "menu": "hide",
+                "options": "hide",
+                "voice": "hide"
+            },
             "resources": [
                 {
                     "type": "js",
@@ -13,6 +33,10 @@
                 {
                     "type": "js",
                     "url": "/local/mini-graph-card-bundle.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/compact-custom-header.js"
                 }
             ],
             "title": "Steninge",

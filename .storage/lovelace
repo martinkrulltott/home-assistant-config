@@ -5,6 +5,14 @@
                 {
                     "type": "js",
                     "url": "/local/lovelace-slider-entity-row/slider-entity-row.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/mini-media-player-bundle.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/mini-graph-card-bundle.js"
                 }
             ],
             "title": "Steninge",
@@ -87,6 +95,23 @@
                             "type": "glance"
                         },
                         {
+                            "card": {
+                                "entity": "media_player.huset_tv",
+                                "hide": {
+                                    "power": true
+                                },
+                                "name": "Chromecast",
+                                "type": "custom:mini-media-player"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "switch.plug_9",
+                                    "state": "on"
+                                }
+                            ],
+                            "type": "conditional"
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "light.bulb_1",
@@ -157,8 +182,42 @@
                                 "home"
                             ],
                             "type": "entity-filter"
+                        },
+                        {
+                            "color_thresholds": [
+                                {
+                                    "color": "#4e9ad8",
+                                    "value": 19
+                                },
+                                {
+                                    "color": "#D08D00",
+                                    "value": 22
+                                },
+                                {
+                                    "color": "#B61600",
+                                    "value": 25
+                                }
+                            ],
+                            "entities": [
+                                {
+                                    "entity": "sensor.indoor_temperature",
+                                    "name": "Inne"
+                                }
+                            ],
+                            "font_size": 75,
+                            "height": 75,
+                            "hour24": true,
+                            "hours_to_show": 72,
+                            "points_per_hour": 2,
+                            "show": {
+                                "icon": false,
+                                "labels": true,
+                                "name": false
+                            },
+                            "type": "custom:mini-graph-card"
                         }
                     ],
+                    "icon": "mdi:home",
                     "path": "start",
                     "title": "Start"
                 },
@@ -258,6 +317,7 @@
                             "type": "vertical-stack"
                         }
                     ],
+                    "icon": "mdi:lightbulb-outline",
                     "path": "default_view",
                     "title": "Belysning"
                 },
@@ -336,11 +396,12 @@
                             "type": "vertical-stack"
                         }
                     ],
-                    "icon": "",
+                    "icon": "mdi:thermometer",
                     "path": "weather",
                     "title": "Temperatur"
                 },
                 {
+                    "badges": [],
                     "cards": [
                         {
                             "entities": [
@@ -444,6 +505,7 @@
                             "type": "entities"
                         }
                     ],
+                    "icon": "mdi:settings",
                     "path": "installningar",
                     "title": "Inst\u00e4llningar",
                     "type": "vertical-stack"

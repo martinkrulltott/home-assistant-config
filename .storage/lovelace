@@ -428,52 +428,52 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entity": "media_player.huset_tv",
-                            "hide": {
-                                "power": true
-                            },
-                            "name": "Chromecast",
-                            "type": "custom:mini-media-player"
-                        },
-                        {
-                            "entities": [
+                            "cards": [
                                 {
-                                    "entity": "switch.plug_9",
-                                    "secondary_info": "last-changed"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "script.play_playlist",
-                            "hold_action": {
-                                "action": "more-info"
-                            },
-                            "icon": "mdi:music-circle",
-                            "icon_height": "80px",
-                            "name": "Spela musik",
-                            "show_icon": true,
-                            "show_name": false,
-                            "tap_action": {
-                                "action": "call-service",
-                                "service": "script.play_playlist",
-                                "service_data": {
-                                    "playlist_id": "7DEZq9x1qhrCxdH0sGz8NZ"
-                                }
-                            },
-                            "type": "entity-button"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_select.playlist_select"
+                                    "entity": "media_player.huset_tv",
+                                    "hide": {
+                                        "power": true
+                                    },
+                                    "name": "Chromecast",
+                                    "type": "custom:mini-media-player"
                                 },
                                 {
-                                    "entity": "input_text.selected_playlist"
+                                    "entities": [
+                                        {
+                                            "entity": "switch.plug_9",
+                                            "name": "Media center",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "input_select.playlist_select",
+                                            "name": "V\u00e4lj spellista"
+                                        },
+                                        {
+                                            "entity": "input_text.selected_playlist",
+                                            "icon": "mdi:playlist-music-outline",
+                                            "name": "Vald spellista"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                },
+                                {
+                                    "entity": "script.play_playlist",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:play-circle",
+                                    "icon_height": "50px",
+                                    "name": "Spela musik",
+                                    "show_icon": true,
+                                    "show_name": false,
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "entity-button"
                                 }
                             ],
-                            "type": "entities"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:music-note",

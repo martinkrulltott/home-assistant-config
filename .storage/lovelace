@@ -576,10 +576,6 @@
                                 {
                                     "entity": "automation.restart_message",
                                     "name": "Varning: Omstart"
-                                },
-                                {
-                                    "entity": "sensor.uptime",
-                                    "name": "Senaste omstart"
                                 }
                             ],
                             "type": "entities"
@@ -589,6 +585,108 @@
                     "path": "installningar",
                     "title": "Inst\u00e4llningar",
                     "type": "vertical-stack"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.uptime"
+                                },
+                                {
+                                    "entity": "sensor.last_boot"
+                                },
+                                {
+                                    "entity": "sensor.processor_use"
+                                },
+                                {
+                                    "entity": "sensor.cpu_temp"
+                                },
+                                {
+                                    "entity": "sensor.disk_use_percent"
+                                },
+                                {
+                                    "entity": "sensor.disk_free"
+                                },
+                                {
+                                    "entity": "sensor.memory_use_percent"
+                                },
+                                {
+                                    "entity": "sensor.memory_free"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "System",
+                            "type": "entities"
+                        },
+                        {
+                            "color_thresholds": [
+                                {
+                                    "color": "#0048ff",
+                                    "value": 55
+                                },
+                                {
+                                    "color": "#ffe100",
+                                    "value": 65
+                                },
+                                {
+                                    "color": "#B61600",
+                                    "value": 75
+                                }
+                            ],
+                            "entities": [
+                                {
+                                    "entity": "sensor.cpu_temp",
+                                    "name": "CPU Temp"
+                                }
+                            ],
+                            "font_size": 75,
+                            "height": 75,
+                            "hour24": true,
+                            "hours_to_show": 72,
+                            "points_per_hour": 2,
+                            "show": {
+                                "icon": true,
+                                "labels": true,
+                                "name": true
+                            },
+                            "type": "custom:mini-graph-card"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "color": "#002aff",
+                                    "entity": "sensor.memory_use_percent",
+                                    "name": "Memory",
+                                    "show_fill": false,
+                                    "show_state": true
+                                },
+                                {
+                                    "color": "#ffcc00",
+                                    "entity": "sensor.processor_use",
+                                    "name": "CPU",
+                                    "show_fill": false,
+                                    "show_state": true
+                                }
+                            ],
+                            "font_size": 75,
+                            "height": 75,
+                            "hour24": true,
+                            "hours_to_show": 72,
+                            "lower_bound": 0,
+                            "points_per_hour": 2,
+                            "show": {
+                                "icon": true,
+                                "labels": true,
+                                "name": true
+                            },
+                            "type": "custom:mini-graph-card",
+                            "upper_bond": 100
+                        }
+                    ],
+                    "icon": "mdi:mixcloud",
+                    "title": "System"
                 }
             ]
         }

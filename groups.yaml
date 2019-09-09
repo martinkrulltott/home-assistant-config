@@ -1,0 +1,17 @@
+dev_pi:
+  name: Pi
+  entities:
+    - sensor.processor_use
+    - sensor.cpu_temp
+    - sensor.memory_free
+    - sensor.memory_use_percent
+    - sensor.last_boot
+    - sensor.network_in
+    - sensor.network_out
+    - sensor.throughput_network_in
+    - sensor.throughput_network_out
+    - sensor.disk_use_percent
+    - sensor.disk_free
+    - sensor.load_1m
+    - sensor.load_5m
+    - sensor.load_15m

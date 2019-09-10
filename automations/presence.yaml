@@ -4,7 +4,11 @@
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_2
       to: 'off'
-      for: "08:00:00"
+      for: "04:00:00"
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'away'
   action:
   - service: homeassistant.turn_on
     data:

@@ -623,15 +623,15 @@
                         {
                             "color_thresholds": [
                                 {
-                                    "color": "#0048ff",
+                                    "color": "#fff000",
+                                    "value": 40
+                                },
+                                {
+                                    "color": "#ff7f00",
                                     "value": 55
                                 },
                                 {
-                                    "color": "#ffe100",
-                                    "value": 65
-                                },
-                                {
-                                    "color": "#B61600",
+                                    "color": "#ff0000",
                                     "value": 75
                                 }
                             ],
@@ -659,30 +659,28 @@
                                     "color": "#002aff",
                                     "entity": "sensor.memory_use_percent",
                                     "name": "Memory",
-                                    "show_fill": false,
                                     "show_state": true
                                 },
                                 {
                                     "color": "#ffcc00",
                                     "entity": "sensor.processor_use",
                                     "name": "CPU",
-                                    "show_fill": false,
                                     "show_state": true
                                 }
                             ],
                             "font_size": 75,
                             "height": 75,
                             "hour24": true,
-                            "hours_to_show": 72,
+                            "hours_to_show": 1,
                             "lower_bound": 0,
-                            "points_per_hour": 2,
+                            "points_per_hour": 600,
                             "show": {
                                 "icon": true,
                                 "labels": true,
                                 "name": true
                             },
                             "type": "custom:mini-graph-card",
-                            "upper_bond": 100
+                            "upper_bound": 100
                         }
                     ],
                     "icon": "mdi:mixcloud",

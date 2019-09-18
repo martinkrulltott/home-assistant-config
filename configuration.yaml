@@ -38,8 +38,10 @@ logbook:
       - device_tracker.ms10
       - sensor.date
       - sensor.time
+      - binary_sensor.tradfri_motion_sensor_2
     domains:
       - switch
+      - media_player
 
 # HACS
 hacs:

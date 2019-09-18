@@ -350,7 +350,8 @@
                         "sensor.indoor_temperature",
                         "sensor.set_temperature",
                         "sensor.outdoor_temperature",
-                        "input_number.min_temp_threshold",
+                        "input_number.indoor_low_temp_warning",
+                        "input_number.outdoor_low_temp_threshold",
                         "sensor.indoor_humidity",
                         "sensor.outdoor_humidity"
                     ],
@@ -373,9 +374,15 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "input_number.min_temp_threshold",
+                                            "entity": "input_number.indoor_low_temp_warning",
+                                            "icon": "mdi:thermometer-alert",
+                                            "name": "L\u00e4gsta inomhus",
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "input_number.outdoor_low_temp_threshold",
                                             "icon": "mdi:thermometer-chevron-down",
-                                            "name": "Varning",
+                                            "name": "L\u00e4gsta utomhus",
                                             "type": "custom:slider-entity-row"
                                         }
                                     ],

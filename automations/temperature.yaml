@@ -1,14 +1,51 @@
 # Low indoor temperature
-- alias: Low Temperature Alert
+- alias: Low Indoor Temperature - Alert and Turn On Heater
   trigger:
     platform: template
-    value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float < states('input_number.min_temp_threshold') | float }}"
+    value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float < states('input_number.indoor_low_temp_warning') | float }}"
   action:
   - service: persistent_notification.create
-    data: 
+    data:
       title: "Low temperature"
       message: "Indoor temperature is below the alarm threshold"
   - service: notify.pushbullet
     data:
       title: "Steninge ALERT: Temperature"
       message: "Indoor temperature is below the alarm threshold"
+  - condition: state
+    entity_id: climate.steninge
+    state: 'off'
+  - service: scene.turn_on
+    entity_id: climate.steninge
+
+# Low outdoor temperature
+- alias: Low Outdoor Temperature (1h) - Start Heater
+  trigger:
+    platform: template
+    value_template: "{{ states('sensor.outdoor_temperature') | float < states('input_number.outdoor_low_temp_threshold') | float }}"
+    for: "01:00:00"
+  condition:
+    condition: state
+    entity_id: climate.steninge
+    state: 'off'
+  action:
+  - service: climate.turn_on
+    entity_id: climate.steninge
+
+# Acceptable outdoor temperature
+- alias: Acceptable Outdoor and Indoor Temperature (2h) - Stop Heater
+  trigger:
+    platform: template
+    value_template: "{{ states('sensor.outdoor_temperature') | float > states('input_number.outdoor_low_temp_threshold') | float }}"
+    for: "02:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: climate.steninge
+        state: 'on'
+      - condition: template
+        value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float > states('input_number.indoor_low_temp_warning') | float }}"
+  action:
+  - service: climate.turn_off
+    entity_id: climate.steninge

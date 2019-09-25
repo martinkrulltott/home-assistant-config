@@ -1,29 +1,47 @@
+# Sensibo unavailable
+- alias: Sensibo unavailable alert
+  trigger:
+    platform: template
+    value_template: "{{ is_state('climate.steninge', 'unavailable') }}"
+  action:
+  - service: persistent_notification.create
+    data_template:
+      title: "Sensibo unavailable"
+      message: "Sensibo is currently unavailable"
+  - service: notify.pushbullet
+    data_template:
+      title: "Steninge ALERT: Sensibo"
+      message: "Sensibo is currently unavailable"
+
 # Low indoor temperature
 - alias: Low Indoor Temperature - Alert and Turn On Heater
   trigger:
     platform: template
     value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float < states('input_number.indoor_low_temp_warning') | float }}"
+  condition:
+    condition: template
+    value_template: "{{ not is_state('climate.steninge', 'unavailable') }}"
   action:
   - service: persistent_notification.create
-    data:
+    data_template:
       title: "Low temperature"
-      message: "Indoor temperature is below the alarm threshold"
+      message: "Indoor temperature {{ state_attr('climate.steninge', 'current_temperature')}} is below the alarm threshold {{ states('input_number.indoor_low_temp_warning') }}"
   - service: notify.pushbullet
-    data:
+    data_template:
       title: "Steninge ALERT: Temperature"
-      message: "Indoor temperature is below the alarm threshold"
+      message: "Indoor temperature {{ state_attr('climate.steninge', 'current_temperature')}} is below the alarm threshold {{ states('input_number.indoor_low_temp_warning') }}"
   - condition: state
     entity_id: climate.steninge
     state: 'off'
-  - service: scene.turn_on
+  - service: climate.turn_on
     entity_id: climate.steninge
 
 # Low outdoor temperature
-- alias: Low Outdoor Temperature (1h) - Start Heater
+- alias: Low Outdoor Temperature (2h) - Start Heater
   trigger:
     platform: template
     value_template: "{{ states('sensor.outdoor_temperature') | float < states('input_number.outdoor_low_temp_threshold') | float }}"
-    for: "01:00:00"
+    for: "02:00:00"
   condition:
     condition: state
     entity_id: climate.steninge
@@ -33,19 +51,29 @@
     entity_id: climate.steninge
 
 # Acceptable outdoor temperature
-- alias: Acceptable Outdoor and Indoor Temperature (2h) - Stop Heater
+- alias: Acceptable Outdoor Temperature (2h) - Stop Heater
   trigger:
     platform: template
     value_template: "{{ states('sensor.outdoor_temperature') | float > states('input_number.outdoor_low_temp_threshold') | float }}"
     for: "02:00:00"
   condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: climate.steninge
-        state: 'on'
-      - condition: template
-        value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float > states('input_number.indoor_low_temp_warning') | float }}"
+    condition: state
+    entity_id: climate.steninge
+    state: 'on'
+  action:
+  - service: climate.turn_off
+    entity_id: climate.steninge
+
+  # Acceptable indoor temperature
+- alias: Acceptable Indoor Temperature (2h) - Stop Heater
+  trigger:
+    platform: template
+    value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float > states('input_number.indoor_low_temp_warning') | float }}"
+    for: "02:00:00"
+  condition:
+    condition: state
+    entity_id: climate.steninge
+    state: 'on'
   action:
   - service: climate.turn_off
     entity_id: climate.steninge

@@ -577,10 +577,6 @@
                                     "name": "T\u00e4nd vid hemkomst"
                                 },
                                 {
-                                    "entity": "automation.low_temperature_alert",
-                                    "name": "Varning: L\u00e5g temperatur"
-                                },
-                                {
                                     "entity": "automation.restart_message",
                                     "name": "Varning: Omstart"
                                 }

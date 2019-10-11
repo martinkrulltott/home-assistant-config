@@ -405,7 +405,26 @@
                                         }
                                     ],
                                     "hours_to_show": 72,
-                                    "title": "Temperatur",
+                                    "title": "Temperatur 72h",
+                                    "type": "history-graph"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.indoor_temperature",
+                                            "name": "Inne"
+                                        },
+                                        {
+                                            "entity": "sensor.set_temperature",
+                                            "name": "Inst\u00e4llning"
+                                        },
+                                        {
+                                            "entity": "sensor.outdoor_temperature",
+                                            "name": "Ute"
+                                        }
+                                    ],
+                                    "hours_to_show": 6,
+                                    "title": "Temperatur 6h",
                                     "type": "history-graph"
                                 },
                                 {
@@ -422,6 +441,24 @@
                                     "hours_to_show": 72,
                                     "title": "Luftfuktighet",
                                     "type": "history-graph"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "automation.low_indoor_temperature_alert_and_turn_on_heater"
+                                        },
+                                        {
+                                            "entity": "automation.low_outdoor_temperature_2h_start_heater"
+                                        },
+                                        {
+                                            "entity": "automation.acceptable_indoor_temperature_2h_stop_heater"
+                                        },
+                                        {
+                                            "entity": "automation.acceptable_outdoor_temperature_2h_stop_heater"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -465,19 +502,70 @@
                                     "type": "entities"
                                 },
                                 {
-                                    "entity": "script.play_playlist",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "icon": "mdi:play-circle",
-                                    "icon_height": "50px",
-                                    "name": "Spela musik",
-                                    "show_icon": true,
-                                    "show_name": false,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
+                                    "entities": [
+                                        {
+                                            "entity": "script.play_playlist",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:play-circle",
+                                            "icon_height": "50px",
+                                            "name": "Spellista",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "script.play_svt1_on_chromecast",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:airplay",
+                                            "icon_height": "50px",
+                                            "name": "SVT1",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "script.play_svt2_on_chromecast",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:airplay",
+                                            "icon_height": "50px",
+                                            "name": "SVT2",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "script.play_svtk_on_chromecast",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:airplay",
+                                            "icon_height": "50px",
+                                            "name": "Kunskap",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "show_state": false,
+                                    "type": "glance"
                                 }
                             ],
                             "type": "vertical-stack"

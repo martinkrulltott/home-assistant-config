@@ -48,7 +48,6 @@
           scene.sleeping
         {% endif %}
 
-
 # Sunrise, Turn All Off at Sunrise
 - alias: Change to Day Scene at Sunrise
   trigger:

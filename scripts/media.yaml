@@ -32,3 +32,48 @@ transfer_spotify:
       data:
         entity_id: media_player.huset_tv
         volume_level: 0.1
+
+
+# Play SVT
+play_svt1_on_chromecast:
+  alias: Play SVT1 on Chromecast
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_9
+    - wait_template: "{{ not is_state('media_player.huset_tv', 'unavailable') }}"
+      timeout: '00:01:00'
+      continue_on_timeout: 'false'
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.huset_tv
+        media_content_id: https://svt1-b.akamaized.net/se/svt1/master.m3u8
+        media_content_type: 'audio/mp4'
+    
+play_svt2_on_chromecast:
+  alias: Play SVT2 on Chromecast
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_9
+    - wait_template: "{{ not is_state('media_player.huset_tv', 'unavailable') }}"
+      timeout: '00:01:00'
+      continue_on_timeout: 'false'
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.huset_tv
+        media_content_id: https://svt1-b.akamaized.net/se/svt2/master.m3u8
+        media_content_type: 'audio/mp4'
+    
+play_svtk_on_chromecast:
+  alias: Play SVT Kunskap on Chromecast
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_9
+    - wait_template: "{{ not is_state('media_player.huset_tv', 'unavailable') }}"
+      timeout: '00:01:00'
+      continue_on_timeout: 'false'
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.huset_tv
+        media_content_id: https://svtk-b.akamaized.net/se/svtk/master.m3u8
+        media_content_type: 'audio/mp4'
+    

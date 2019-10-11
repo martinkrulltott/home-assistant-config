@@ -22,3 +22,7 @@ away:
   name: Bortaläge
   initial: on
   icon: mdi:car-side
+wake_up_light:
+  name: Väckningslampa
+  initial: on
+  icon: mdi:alarm

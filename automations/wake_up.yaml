@@ -1,0 +1,17 @@
+# Wake up
+- alias: Turn on light at Wake up Time
+  trigger:
+  - platform: template
+    value_template: "{{ states('sensor.time') == (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+  condition:
+    condition: state
+    entity_id: input_boolean.wake_up_light
+    state: 'on'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.plug_6
+  - delay: '00:30'
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.plug_6

@@ -11,6 +11,11 @@ homeassistant:
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+# Discovery
+discovery:
+  ignore:
+    - deconz
+
 # Https settings
 http:
   server_port: 8123

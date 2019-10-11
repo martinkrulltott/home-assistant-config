@@ -4,9 +4,18 @@
   - platform: template
     value_template: "{{ states('sensor.time') == (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   condition:
-    condition: state
-    entity_id: input_boolean.wake_up_light
-    state: 'on'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.wake_up_light
+        state: 'on'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
   action:
   - service: homeassistant.turn_on
     data:

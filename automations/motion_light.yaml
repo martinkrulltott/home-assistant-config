@@ -54,10 +54,13 @@
   condition:
     condition: and
     conditions:
-      - condition: template
-        value_template: "{{ states('sensor.time') > (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: time
+        after: '05:00:00'
       - condition: time
         before: '12:00:00'
+      - condition: state
+        entity_id: input_boolean.sleeping
+        state: 'off'
       - condition: template
         value_template: "{{ not is_state('weather.steninge' , 'sunny') }}"
   action:
@@ -81,10 +84,13 @@
   condition:
     condition: and
     conditions:
-      - condition: template
-        value_template: "{{ states('sensor.time') > (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: time
+        after: '05:00:00'
       - condition: time
         before: '12:00:00'
+      - condition: state
+        entity_id: input_boolean.sleeping
+        state: 'off'
   action:
   - data:
       entity_id: 

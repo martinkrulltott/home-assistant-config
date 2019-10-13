@@ -1,0 +1,98 @@
+# Night light
+- alias: Turn Night Lights On by Motion Detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+      to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.sleeping
+    state: 'on'
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_8
+        - switch.plug_4
+        - light.bulb_4
+    service: homeassistant.turn_on
+  - service: logbook.log
+    data_template:
+      name: Motion
+      message: was detected, night light turned ON
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+
+- alias: Turn Night Lights Off Automatically
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+      to: 'off'
+      for: "00:05:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.sleeping
+    state: 'on'
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_8
+        - switch.plug_4
+        - light.bulb_4
+    service: homeassistant.turn_off
+  - service: logbook.log
+    data_template:
+      name: No motion
+      message: was detected, night light turned OFF
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+
+
+# Morning light
+- alias: Turn Morning Lights On by Motion Detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ states('sensor.time') > (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: time
+        before: '12:00:00'
+      - condition: template
+        value_template: "{{ not is_state('weather.steninge' , 'sunny') }}"
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_4
+        - light.bulb_4
+    service: homeassistant.turn_on
+  - service: logbook.log
+    data_template:
+      name: Motion
+      message: was detected, not sunny, day light turned ON
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+
+- alias: Turn Night Lights Off Automatically
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.tradfri_motion_sensor_2
+      to: 'off'
+      for: "00:15:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ states('sensor.time') > (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+      - condition: time
+        before: '12:00:00'
+  action:
+  - data:
+      entity_id: 
+        - switch.plug_4
+        - light.bulb_4
+    service: homeassistant.turn_off
+  - service: logbook.log
+    data_template:
+      name: No motion
+      message: was detected, day light turned OFF
+      entity_id: binary_sensor.tradfri_motion_sensor_2

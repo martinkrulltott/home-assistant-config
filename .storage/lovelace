@@ -631,19 +631,6 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "input_datetime.sleep_time"
-                                },
-                                {
-                                    "entity": "input_boolean.sleeping",
-                                    "secondary_info": "last-changed"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
                                     "entity": "input_boolean.away",
                                     "secondary_info": "last-changed"
                                 },
@@ -652,6 +639,33 @@
                                     "secondary_info": "last-changed"
                                 }
                             ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.wake_up_light",
+                                    "name": "V\u00e4ckning"
+                                },
+                                {
+                                    "entity": "input_datetime.wake_up_time",
+                                    "name": "Tid"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_datetime.sleep_time"
+                                },
+                                {
+                                    "entity": "input_boolean.sleeping",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "show_header_toggle": false,
                             "type": "entities"
                         },
                         {

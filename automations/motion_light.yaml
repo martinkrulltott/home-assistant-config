@@ -80,7 +80,7 @@
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_2
       to: 'off'
-      for: "00:15:00"
+      for: "00:10:00"
   condition:
     condition: and
     conditions:

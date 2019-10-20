@@ -12,15 +12,16 @@
   - service: homeassistant.turn_on
     data:
       entity_id: 
-        - switch.plug_8
+        - switch.plug_3
         - switch.plug_4
-        - light.bulb_4
+        - switch.plug_8
   - service: light.turn_on
     data:
       entity_id: 
         - light.bulb_1
         - light.bulb_2
         - light.bulb_3
+        - light.bulb_4
       brightness: 255
   - service: logbook.log
     data_template:
@@ -42,22 +43,22 @@
   - service: homeassistant.turn_off
     data:
       entity_id: 
-        - switch.plug_8
+        - switch.plug_3
         - switch.plug_4
-        - light.bulb_4
+        - switch.plug_8
   - service: light.turn_on
     data:
       entity_id: 
         - light.bulb_1
         - light.bulb_2
         - light.bulb_3
+        - light.bulb_4
       brightness: 1
   - service: logbook.log
     data_template:
       name: No motion
       message: was detected, night light turned OFF
       entity_id: group.motion_sensors
-
 
 # Morning light
 - alias: Turn Morning Lights On by Motion Detected

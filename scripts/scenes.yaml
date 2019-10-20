@@ -5,7 +5,7 @@ sleeping_scene:
         entity_id:
           - switch.plug_4
           - switch.plug_8
-          - light.bulb_4
+          - switch.plug_3
           - light.bulb_5
     - service: light.turn_on
       data:
@@ -13,6 +13,7 @@ sleeping_scene:
           - light.bulb_1
           - light.bulb_2
           - light.bulb_3
+          - light.bulb_4
         brightness: 1
     - service: homeassistant.turn_off
       data_template:
@@ -51,8 +52,8 @@ sleeping_away_scene:
     - service: homeassistant.turn_off
       data:
         entity_id:
+          - switch.plug_3
           - switch.plug_4
-          - light.bulb_4
           - light.bulb_5
     - service: light.turn_on
       data:
@@ -60,6 +61,7 @@ sleeping_away_scene:
           - light.bulb_1
           - light.bulb_2
           - light.bulb_3
+          - light.bulb_4
         brightness: 1
     - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off

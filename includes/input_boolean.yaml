@@ -12,7 +12,7 @@ bed_3:
   icon: mdi:bed-empty
 bed_4:
   name: Biblioteket
-  initial: off
+  initial: on
   icon: mdi:bed-empty
 sleeping:
   name: Sovläge

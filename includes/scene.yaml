@@ -4,12 +4,13 @@
       state: false
 - name: Evening
   entities:
-    group.all_lights:
+    group.evening_lights:
       state: true
       brightness: 120
+      rgb_color: [255,129,1]
 - name: Evening Away
   entities:
-    group.all_lights:
+    group.evening_lights:
       state: true
       brightness: 120
 - name: Sleeping

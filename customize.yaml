@@ -8,7 +8,11 @@ light.bulb_3:
   friendly_name: "Badrummet"
 light.bulb_4:
   friendly_name: "Köket"
+light.bulb_5:
+  friendly_name: "Kontoret"
 binary_sensor.tradfri_motion_sensor_2:
-  friendly_name: "Rörelsesensor"
+  friendly_name: "Rörelse Gamla"
+binary_sensor.tradfri_motion_sensor:
+  friendly_name: "Rörelse Nya"
 sensor.altandimmer_battery_level:
   friendly_name: "Altandimmer batteri"

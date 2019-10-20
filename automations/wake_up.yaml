@@ -19,11 +19,15 @@
   action:
   - service: homeassistant.turn_on
     data:
-      entity_id: switch.plug_6
+      entity_id: 
+        - switch.plug_2
+        - light.bulb_5
   - service: homeassistant.turn_off
     data:
       entity_id: input_boolean.sleeping
   - delay: '00:30'
   - service: homeassistant.turn_off
     data:
-      entity_id: switch.plug_6
+      entity_id: 
+        - switch.plug_2
+        - light.bulb_5

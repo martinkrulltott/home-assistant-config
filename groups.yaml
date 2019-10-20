@@ -15,3 +15,24 @@ dev_pi:
     - sensor.load_1m
     - sensor.load_5m
     - sensor.load_15m
+evening_lights:
+  name: Kvällslampor
+  entities:
+    - light.altanen
+    - light.biblioteket
+    - light.bla_rummet
+    - light.bulb_1
+    - light.bulb_2
+    - light.bulb_3
+    - light.bulb_4
+    - light.hallen
+    - light.helenas_rum
+    - light.sovrummet
+    - light.vardagsrum_bordslampa
+    - light.vardagsrum_golvlampa
+
+motion_sensors:
+  name: Motion
+  entities:
+    - binary_sensor.tradfri_motion_sensor
+    - binary_sensor.tradfri_motion_sensor_2

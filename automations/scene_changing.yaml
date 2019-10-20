@@ -2,7 +2,7 @@
 - alias: Change to Evening Scene at Sunset
   trigger:
   - event: sunset
-    offset: -01:00:00
+    offset: -00:45:00
     platform: sun
   action:
   - service: scene.turn_on

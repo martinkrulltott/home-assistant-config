@@ -37,6 +37,10 @@
                 {
                     "type": "js",
                     "url": "/local/compact-custom-header.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/community_plugin/light-entity-card/light-entity-card.js"
                 }
             ],
             "title": "Steninge",
@@ -102,6 +106,13 @@
                                 {
                                     "entity": "light.biblioteket",
                                     "name": "Bibliotek",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.bulb_5",
+                                    "name": "Kontoret",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -311,6 +322,12 @@
                                     "theme": "default",
                                     "title": "Inomhus",
                                     "type": "entities"
+                                },
+                                {
+                                    "effects_list": false,
+                                    "entity": "light.bulb_5",
+                                    "group": true,
+                                    "type": "custom:light-entity-card"
                                 },
                                 {
                                     "entities": [
@@ -591,6 +608,10 @@
                                     "secondary_info": "last-changed"
                                 },
                                 {
+                                    "entity": "device_tracker.mmbp",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
                                     "entity": "device_tracker.hi6s",
                                     "secondary_info": "last-changed"
                                 },
@@ -636,6 +657,10 @@
                                 },
                                 {
                                     "entity": "binary_sensor.tradfri_motion_sensor_2",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "binary_sensor.tradfri_motion_sensor",
                                     "secondary_info": "last-changed"
                                 }
                             ],

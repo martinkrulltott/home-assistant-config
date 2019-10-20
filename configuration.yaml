@@ -157,11 +157,15 @@ device_tracker:
     hosts:
       hi6s: !secret hi6s_ip
       hixs: !secret hixs_ip
-      mmbp: !secret mmbp_ip
       ms10: !secret ms10_ip
       jipa: !secret jipa_ip
       eiph: !secret eiph_ip
       aiph: !secret aiph_ip
+  - platform: ping
+    consider_home: 5
+    scan_interval: 30
+    hosts:
+      mmbp: !secret mmbp_ip
 
 # Sensibo
 climate:

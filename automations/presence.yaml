@@ -1,5 +1,5 @@
 # Away
-- alias: Turn On Away After No Motion
+- alias: Away On After No Motion
   trigger:
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_2
@@ -19,7 +19,7 @@
       title: "No motion"
       message: "No presence for 4h, away mode turned ON"
 
-- alias: Turn On Away Automatically (Backup)
+- alias: Away On Automatically (Backup)
   trigger:
     - platform: time
       at: "12:00:00"
@@ -48,7 +48,7 @@
 
 
 # Detect motion
-- alias: Turn Off Away On Motion Detected
+- alias: Away Off On Motion Detected
   trigger:
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_2
@@ -77,7 +77,7 @@
       entity_id: binary_sensor.tradfri_motion_sensor_2
 
 # Detected device (wifi)
-- alias: Turn Off Away On Wifi Device Detected
+- alias: Away Off On Wifi Device Detected
   trigger:
     - platform: state
       entity_id: group.all_devices
@@ -106,7 +106,7 @@
       entity_id: binary_sensor.tradfri_motion_sensor_2
 
 # Home again
-- alias: Turn Everything On When Home Again
+- alias: Everything On When Home Again
   trigger:
     - platform: state
       entity_id: input_boolean.away

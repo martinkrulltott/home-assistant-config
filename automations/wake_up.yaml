@@ -1,5 +1,5 @@
 # Wake up
-- alias: Turn on light at Wake up Time
+- alias: Wake up at Wake up Time
   trigger:
   - platform: template
     value_template: "{{ states('sensor.time') == (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"

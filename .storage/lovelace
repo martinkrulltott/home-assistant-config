@@ -696,11 +696,11 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "automation.turn_night_lights_on_by_motion_detected",
+                                    "entity": "automation.night_lights_on_by_motion_detected",
                                     "name": "Nattlampa"
                                 },
                                 {
-                                    "entity": "automation.turn_everything_on_when_home_again",
+                                    "entity": "automation.everything_on_when_home_again",
                                     "name": "T\u00e4nd vid hemkomst"
                                 },
                                 {

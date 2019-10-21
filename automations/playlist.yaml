@@ -1,4 +1,4 @@
-- alias: Save selected playlist
+- alias: Playlist save selected
   trigger:
     platform: state
     entity_id: input_select.playlist_select

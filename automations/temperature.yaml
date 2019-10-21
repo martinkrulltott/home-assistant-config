@@ -14,7 +14,7 @@
       message: "Sensibo is currently unavailable"
 
 # Low indoor temperature
-- alias: Low Indoor Temperature - Alert and Turn On Heater
+- alias: Indoor Low Temperature - Alert and Turn On Heater
   trigger:
     platform: template
     value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float < states('input_number.indoor_low_temp_warning') | float }}"
@@ -37,7 +37,7 @@
     entity_id: climate.steninge
 
 # Low outdoor temperature
-- alias: Low Outdoor Temperature (2h) - Start Heater
+- alias: Outdoor Low Temperature (2h) - Start Heater
   trigger:
     platform: template
     value_template: "{{ states('sensor.outdoor_temperature') | float < states('input_number.outdoor_low_temp_threshold') | float }}"
@@ -65,7 +65,7 @@
     entity_id: climate.steninge
 
   # Acceptable indoor temperature
-- alias: Acceptable Indoor Temperature (2h) - Stop Heater
+- alias: Indoor Acceptable Temperature (2h) - Stop Heater
   trigger:
     platform: template
     value_template: "{{ state_attr('climate.steninge', 'current_temperature') | float > states('input_number.indoor_low_temp_warning') | float }}"

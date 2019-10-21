@@ -1,4 +1,4 @@
-- alias: Turn Off Away On Start If Home
+- alias: Away Off On Start If Home
   trigger:
     platform: homeassistant
     event: start

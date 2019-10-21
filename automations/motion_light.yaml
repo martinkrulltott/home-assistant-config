@@ -1,5 +1,5 @@
 # Night light
-- alias: Turn Night Lights On by Motion Detected
+- alias: Night Lights On by Motion Detected
   trigger:
     - platform: state
       entity_id: group.motion_sensors
@@ -29,7 +29,7 @@
       message: was detected, night light turned ON
       entity_id: group.motion_sensors
 
-- alias: Turn Night Lights Off Automatically
+- alias: Night Lights Off Automatically
   trigger:
     - platform: state
       entity_id: group.motion_sensors
@@ -61,7 +61,7 @@
       entity_id: group.motion_sensors
 
 # Morning light
-- alias: Turn Morning Lights On by Motion Detected
+- alias: Morning Lights On by Motion Detected
   trigger:
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_2
@@ -90,7 +90,7 @@
       message: was detected, not sunny, day light turned ON
       entity_id: binary_sensor.tradfri_motion_sensor_2
 
-- alias: Turn Morning Lights Off Automatically
+- alias: Morning Lights Off Automatically
   trigger:
     - platform: state
       entity_id: binary_sensor.tradfri_motion_sensor_2

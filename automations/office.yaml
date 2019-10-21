@@ -1,7 +1,7 @@
 # Office light, conditioned by device tracker MMBP
 
 # Turn Office Light On at Sunset If Working
-- alias: Turn Office Light On at Sunset If Working
+- alias: Office Light On at Sunset If Working
   trigger:
   - event: sunset
     offset: -00:45:00
@@ -18,7 +18,7 @@
       rgb_color: [255,129,1]
 
 # Turn Office Light On when MMBP is On (when sun below horizon)
-- alias: Turn Office Light On when MMBP is On 
+- alias: Office Light On when MMBP is On 
   trigger:
     - platform: state
       entity_id: device_tracker.mmbp
@@ -35,7 +35,7 @@
       rgb_color: [255,129,1]
     
 # Turn Office Light On when MMBP is Off (when sun below horizon)
-- alias: Turn Office Light On when MMBP is Off
+- alias: Office Light On when MMBP is Off
   trigger:
     - platform: state
       entity_id: device_tracker.mmbp

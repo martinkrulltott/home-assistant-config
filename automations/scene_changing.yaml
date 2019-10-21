@@ -1,5 +1,5 @@
 # Sunset, Lights On
-- alias: Change to Evening Scene at Sunset
+- alias: Scene Evening at Sunset
   trigger:
   - event: sunset
     offset: -00:45:00
@@ -23,7 +23,7 @@
 
 
 # Sleeping
-- alias: Activate Sleeping at Sleep Time
+- alias: Sleeping at Sleep Time
   trigger:
   - platform: template
     value_template: "{{ states('sensor.time') == (state_attr('input_datetime.sleep_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
@@ -33,7 +33,7 @@
       entity_id: 
         - input_boolean.sleeping
 
-- alias: Change to Sleeping Scene at Sleeping Boolean
+- alias: Scene Sleeping at Sleeping Boolean
   trigger:
   - platform: state
     entity_id: input_boolean.sleeping
@@ -49,7 +49,7 @@
         {% endif %}
 
 # Sunrise, Turn All Off at Sunrise
-- alias: Change to Day Scene at Sunrise
+- alias: Scene Day at Sunrise
   trigger:
   - event: sunrise
     offset: +00:30:00

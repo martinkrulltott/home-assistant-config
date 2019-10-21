@@ -1,5 +1,5 @@
 # Dimmer
-- alias: 'Dimmer up'
+- alias: Dimmer up
   initial_state: 'on'
   trigger:
     platform: event
@@ -18,7 +18,7 @@
           {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
           {{ [bri+30, 255] | min }}
 
-- alias: 'Dimmer down'
+- alias: Dimmer down
   initial_state: 'on'
   trigger:
     platform: event

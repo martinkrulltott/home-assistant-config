@@ -2,7 +2,7 @@
 - alias: Away On After No Motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.tradfri_motion_sensor_2
+      entity_id: group.motion_sensors
       to: 'off'
       for: "04:00:00"
   condition:
@@ -51,7 +51,7 @@
 - alias: Away Off On Motion Detected
   trigger:
     - platform: state
-      entity_id: binary_sensor.tradfri_motion_sensor_2
+      entity_id: group.motion_sensors
       to: 'on'
   condition:
     condition: state
@@ -74,7 +74,7 @@
     data_template:
       name: Motion
       message: was detected
-      entity_id: binary_sensor.tradfri_motion_sensor_2
+      entity_id: group.motion_sensors
 
 # Detected device (wifi)
 - alias: Away Off On Wifi Device Detected

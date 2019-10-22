@@ -57,6 +57,27 @@
   action:
   - service: scene.turn_on
     entity_id: scene.day
-  - data:
+  - service: input_boolean.turn_off
+    data:
       entity_id: input_boolean.sleeping
-    service: input_boolean.turn_off
+  - condition: state
+    entity_id: device_tracker.mmbp
+    state: 'home'
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  - condition: state
+    entity_id: input_boolean.wake_up_light
+    state: 'on'
+  - condition: template
+    value_template: "{{ states('sensor.time') > (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
+  - service: light.turn_on
+    data:
+      entity_id: light.bulb_5
+      brightness: 255
+      rgb_color: [255,182,109]
+      transition: 0

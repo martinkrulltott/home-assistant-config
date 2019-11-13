@@ -51,7 +51,7 @@
     entity_id: climate.steninge
 
 # Acceptable outdoor temperature
-- alias: Acceptable Outdoor Temperature (2h) - Stop Heater
+- alias: Outdoor Acceptable Temperature (2h) - Stop Heater
   trigger:
     platform: template
     value_template: "{{ states('sensor.outdoor_temperature') | float > states('input_number.outdoor_low_temp_threshold') | float }}"

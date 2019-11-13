@@ -70,7 +70,6 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet_api_key
     
-    
 # notify:
 #   - platform: html5
 #     vapid_pub_key: !secret vapid_pub_key
@@ -196,6 +195,18 @@ google_assistant:
       expose: true
     switch.plug_9:
       expose: true
+
+# Sonoff
+switch:
+  - platform: mqtt
+    name: "Sonoff1"
+    state_topic: "stat/sonoff/POWER"
+    command_topic: "cmnd/sonoff/power"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+    retain: true
 
 # Spotify
 media_player:

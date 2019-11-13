@@ -391,6 +391,16 @@
                                 {
                                     "entities": [
                                         {
+                                            "entity": "switch.sonoff1",
+                                            "name": "Ventilation vinden"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
                                             "entity": "input_number.indoor_low_temp_warning",
                                             "icon": "mdi:thermometer-alert",
                                             "name": "L\u00e4gsta inomhus",
@@ -462,16 +472,16 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "automation.low_indoor_temperature_alert_and_turn_on_heater"
+                                            "entity": "automation.indoor_low_temperature_alert_and_turn_on_heater"
                                         },
                                         {
-                                            "entity": "automation.low_outdoor_temperature_2h_start_heater"
+                                            "entity": "automation.outdoor_low_temperature_2h_start_heater"
                                         },
                                         {
-                                            "entity": "automation.acceptable_indoor_temperature_2h_stop_heater"
+                                            "entity": "automation.indoor_acceptable_temperature_2h_stop_heater"
                                         },
                                         {
-                                            "entity": "automation.acceptable_outdoor_temperature_2h_stop_heater"
+                                            "entity": "automation.outdoor_acceptable_temperature_2h_stop_heater"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -815,6 +825,30 @@
                     ],
                     "icon": "mdi:mixcloud",
                     "title": "System"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.day"
+                                },
+                                {
+                                    "entity": "scene.evening"
+                                },
+                                {
+                                    "entity": "scene.sleeping"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:rocket",
+                    "path": "scene",
+                    "title": "Scene"
                 }
             ]
         }

@@ -7,6 +7,7 @@
  - deCONZ
  - Docker
  - Home Assistant
+ - Mosquitto MQTT
 
 ## Devices
 
@@ -16,6 +17,7 @@
  - IKEA Trådfri dimmer
  - Sensibo Sky
  - Google Chromecast
+ - Sonoff Basic R3
 
 ## Integrations
  - Let's Encrypt SSL certificate
@@ -41,3 +43,4 @@
   - Adjustable low temperature warning
   - Notifications and warnings
   - Play Spotify songs/playlists on Chromecast without going through a device
+  - MQTT integration for communication with non-Zigbee devices

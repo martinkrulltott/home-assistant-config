@@ -392,7 +392,13 @@
                                     "entities": [
                                         {
                                             "entity": "switch.sonoff1",
+                                            "icon": "mdi:fan",
                                             "name": "Ventilation vinden"
+                                        },
+                                        {
+                                            "entity": "script.temporary_turn_off_ventilation",
+                                            "icon": "mdi:fan-off",
+                                            "name": "St\u00e4ng av tempor\u00e4rt"
                                         }
                                     ],
                                     "show_header_toggle": false,

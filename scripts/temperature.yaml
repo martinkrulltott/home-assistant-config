@@ -1,0 +1,8 @@
+temporary_turn_off_ventilation:
+  alias: Ventilation Temporary Turn Off
+  sequence:
+    - service: homeassistant.turn_off
+      entity_id: switch.sonoff1
+    - delay: '02:00'
+    - service: homeassistant.turn_on
+      entity_id: switch.sonoff1

@@ -716,6 +716,9 @@
                                     "name": "Nattlampa"
                                 },
                                 {
+                                    "entity": "input_boolean.bright_night_light"
+                                },
+                                {
                                     "entity": "automation.everything_on_when_home_again",
                                     "name": "T\u00e4nd vid hemkomst"
                                 },

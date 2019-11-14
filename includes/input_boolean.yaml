@@ -26,3 +26,7 @@ wake_up_light:
   name: Väckningslampa
   initial: on
   icon: mdi:alarm
+bright_night_light:
+  name: Stark nattbelysning
+  initial: on
+  icon: mdi:alarm-light-outline

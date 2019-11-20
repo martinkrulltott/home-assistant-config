@@ -19,8 +19,8 @@ discovery:
 # Https settings
 http:
   server_port: 8123
-  ssl_certificate: /ssl/fullchain1.pem
-  ssl_key: /ssl/privkey1.pem
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   base_url: !secret base_url
 
 # System log
@@ -153,7 +153,7 @@ sensor:
 # Ping
 device_tracker:
   - platform: ping
-    consider_home: 300
+    consider_home: 600
     hosts:
       hi6s: !secret hi6s_ip
       hixs: !secret hixs_ip

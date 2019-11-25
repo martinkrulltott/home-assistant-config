@@ -13,23 +13,12 @@
     data:
       entity_id: 
         - switch.plug_4
-  - condition: state
-    entity_id: input_boolean.bright_night_light
-    state: 'on'
   - service: homeassistant.turn_on
-    data:
-      entity_id: 
-        - switch.plug_3
-        - switch.plug_8
-  - service: light.turn_on
-    data:
-      entity_id: 
-        - light.bulb_1
-        - light.bulb_2
-        - light.bulb_3
-        - light.bulb_4
-        - light.bulb_6
-      brightness: 255
+    data_template:
+      entity_id: >
+        {% if is_state('input_boolean.bright_night_light', 'on') %}
+          script.all_full_brightness
+        {% endif %}
   - service: logbook.log
     data_template:
       name: Motion

@@ -72,6 +72,7 @@
           {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
           {{ [bri-30, 0] | max }}
 
+# Button press up
 - alias: Dimmer on On/off
   initial_state: 'on'
   trigger:
@@ -81,13 +82,20 @@
       id: tradfri_on_off_switch
       event: 1002
   action:
-    - service: scene.turn_on
-      entity_id: scene.evening
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state('input_boolean.evening', 'on') %}
+            script.all_full_brightness
+          {% else %}
+            scene.evening
+          {% endif %}
     - service: homeassistant.turn_off
       data:
         entity_id: 
           - input_boolean.sleeping
 
+# Button press down
 - alias: Dimmer off On/off
   initial_state: 'on'
   trigger:

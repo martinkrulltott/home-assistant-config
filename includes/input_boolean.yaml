@@ -18,6 +18,10 @@ sleeping:
   name: Sovläge
   initial: off
   icon: mdi:sleep
+evening:
+  name: Kvällsläge
+  initial: off
+  icon: mdi:weather-sunset-down
 away:
   name: Bortaläge
   initial: on

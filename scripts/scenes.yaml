@@ -66,13 +66,6 @@ sleeping_away_scene:
       data_template:
         entity_id: >
           {{ ['switch.plug_6','switch.plug_7','switch.plug_8'] | random }}
-day_scene:
-  sequence:
-    - service: homeassistant.turn_off
-      data:
-        entity_id:
-          - group.all_lights
-          - input_boolean.sleeping
 bed4_sleep: 
   sequence:
     - service: homeassistant.turn_off
@@ -87,6 +80,20 @@ bed4_sleep:
       data:
         entity_id: 
           - script.temporary_turn_off_ventilation
-
-
+all_full_brightness:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: 
+          - switch.plug_3
+          - switch.plug_8
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.bulb_1
+          - light.bulb_2
+          - light.bulb_3
+          - light.bulb_4
+          - light.bulb_6
+        brightness: 255
                     

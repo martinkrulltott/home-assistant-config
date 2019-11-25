@@ -19,40 +19,36 @@ sleeping_scene:
         entity_id: >
           {% if is_state('input_boolean.bed_1', 'on') %}
             switch.plug_7
-          {% else %}
-            input_boolean.bed_1
           {% endif %}
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
           {% if is_state('input_boolean.bed_2', 'on') %}
             switch.plug_6
-          {% else %}
-            input_boolean.bed_2
           {% endif %}
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
           {% if is_state('input_boolean.bed_3', 'on') %}
             switch.plug_5
-          {% else %}
-            input_boolean.bed_3
           {% endif %}
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
           {% if is_state('input_boolean.bed_4', 'on') %}
             switch.plug_2
-          {% else %}
-            input_boolean.bed_4
           {% endif %}
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
           {% if is_state('input_boolean.bed_4', 'on') %}
             light.bulb_6
-          {% else %}
-            input_boolean.bed_4
+          {% endif %}
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state('input_boolean.bed_4', 'on') %}
+            script.temporary_turn_off_ventilation
           {% endif %}
 sleeping_away_scene:
   sequence:

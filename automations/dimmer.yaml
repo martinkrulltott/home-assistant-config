@@ -98,6 +98,10 @@
       event: 2002
   action:
     - service: homeassistant.turn_on
-      data:
-        entity_id: 
-          - input_boolean.sleeping
+      data_template:
+        entity_id: >
+          {% if is_state('input_boolean.sleeping', 'on') %}
+            scene.day
+          {% else %}
+            input_boolean.sleeping
+          {% endif %}

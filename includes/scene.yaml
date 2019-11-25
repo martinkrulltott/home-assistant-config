@@ -1,7 +1,7 @@
 - name: Day
   entities:
-    group.all_lights:
-      state: false
+    script.day_scene:
+      state: true
 - name: Evening
   entities:
     group.evening_lights:

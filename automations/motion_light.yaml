@@ -28,6 +28,7 @@
         - light.bulb_2
         - light.bulb_3
         - light.bulb_4
+        - light.bulb_6
       brightness: 255
   - service: logbook.log
     data_template:
@@ -59,6 +60,7 @@
         - light.bulb_2
         - light.bulb_3
         - light.bulb_4
+        - light.bulb_6
       brightness: 1
   - service: logbook.log
     data_template:

@@ -10,8 +10,7 @@ sleeping_scene:
     - service: light.turn_on
       data:
         entity_id: 
-          - light.bulb_1
-          - light.bulb_2
+          - group.outside_lights
           - light.bulb_3
           - light.bulb_4
         brightness: 1
@@ -47,6 +46,14 @@ sleeping_scene:
           {% else %}
             input_boolean.bed_4
           {% endif %}
+    - service: homeassistant.turn_off
+      data_template:
+        entity_id: >
+          {% if is_state('input_boolean.bed_4', 'on') %}
+            light.bulb_6
+          {% else %}
+            input_boolean.bed_4
+          {% endif %}
 sleeping_away_scene:
   sequence:
     - service: homeassistant.turn_off
@@ -58,8 +65,7 @@ sleeping_away_scene:
     - service: light.turn_on
       data:
         entity_id:
-          - light.bulb_1
-          - light.bulb_2
+          - group.outside_lights
           - light.bulb_3
           - light.bulb_4
         brightness: 1

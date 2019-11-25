@@ -10,6 +10,8 @@ light.bulb_4:
   friendly_name: "Köket"
 light.bulb_5:
   friendly_name: "Kontoret"
+light.bulb_6: 
+  friendly_name: "Biblioteksgaveln"
 binary_sensor.tradfri_motion_sensor_2:
   friendly_name: "Rörelse Gamla"
 binary_sensor.tradfri_motion_sensor:

@@ -161,6 +161,13 @@
                                     "tap_action": {
                                         "action": "toggle"
                                     }
+                                },
+                                {
+                                    "entity": "light.bulb_6",
+                                    "name": "Biblioteksgavel",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_state": false,
@@ -337,6 +344,10 @@
                                         },
                                         {
                                             "entity": "light.bulb_2",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.bulb_6",
                                             "secondary_info": "last-changed"
                                         }
                                     ],

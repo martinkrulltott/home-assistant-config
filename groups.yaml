@@ -31,6 +31,7 @@ evening_lights:
     - light.sovrummet
     - light.vardagsrum_bordslampa
     - light.vardagsrum_golvlampa
+    - light.vardagsrum_horn
 outside_lights:
   name: Kvällslampor
   entities:

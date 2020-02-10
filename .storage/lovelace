@@ -104,6 +104,13 @@
                                     }
                                 },
                                 {
+                                    "entity": "light.vardagsrum_horn",
+                                    "name": "V H\u00f6rn",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
                                     "entity": "light.biblioteket",
                                     "name": "Bibliotek",
                                     "tap_action": {
@@ -318,6 +325,10 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
+                                            "entity": "light.vardagsrum_horn",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
                                             "entity": "light.biblioteket",
                                             "secondary_info": "last-changed"
                                         },
@@ -523,6 +534,14 @@
                                         "power": true
                                     },
                                     "name": "Chromecast",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entity": "media_player.living_room",
+                                    "hide": {
+                                        "power": true
+                                    },
+                                    "name": "Sonos",
                                     "type": "custom:mini-media-player"
                                 },
                                 {
@@ -781,66 +800,100 @@
                             "type": "entities"
                         },
                         {
-                            "color_thresholds": [
+                            "cards": [
                                 {
-                                    "color": "#fff000",
-                                    "value": 40
+                                    "color_thresholds": [
+                                        {
+                                            "color": "#fff000",
+                                            "value": 40
+                                        },
+                                        {
+                                            "color": "#ff7f00",
+                                            "value": 55
+                                        },
+                                        {
+                                            "color": "#ff0000",
+                                            "value": 75
+                                        }
+                                    ],
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.cpu_temp",
+                                            "name": "CPU Temp"
+                                        }
+                                    ],
+                                    "font_size": 75,
+                                    "height": 75,
+                                    "hour24": true,
+                                    "hours_to_show": 72,
+                                    "points_per_hour": 2,
+                                    "show": {
+                                        "icon": true,
+                                        "labels": true,
+                                        "name": true
+                                    },
+                                    "type": "custom:mini-graph-card"
                                 },
                                 {
-                                    "color": "#ff7f00",
-                                    "value": 55
+                                    "entities": [
+                                        {
+                                            "color": "#002aff",
+                                            "entity": "sensor.memory_use_percent",
+                                            "name": "Memory 1h",
+                                            "show_state": true
+                                        },
+                                        {
+                                            "color": "#ffcc00",
+                                            "entity": "sensor.processor_use",
+                                            "name": "CPU 1h",
+                                            "show_state": true
+                                        }
+                                    ],
+                                    "font_size": 75,
+                                    "height": 75,
+                                    "hour24": true,
+                                    "hours_to_show": 1,
+                                    "lower_bound": 0,
+                                    "points_per_hour": 600,
+                                    "show": {
+                                        "icon": true,
+                                        "labels": true,
+                                        "name": true
+                                    },
+                                    "type": "custom:mini-graph-card",
+                                    "upper_bound": 100
                                 },
                                 {
-                                    "color": "#ff0000",
-                                    "value": 75
+                                    "entities": [
+                                        {
+                                            "color": "#002aff",
+                                            "entity": "sensor.memory_use_percent",
+                                            "name": "Memory 24h",
+                                            "show_state": true
+                                        },
+                                        {
+                                            "color": "#ffcc00",
+                                            "entity": "sensor.processor_use",
+                                            "name": "CPU 24h",
+                                            "show_state": true
+                                        }
+                                    ],
+                                    "font_size": 75,
+                                    "height": 75,
+                                    "hour24": true,
+                                    "hours_to_show": 24,
+                                    "lower_bound": 0,
+                                    "points_per_hour": 25,
+                                    "show": {
+                                        "icon": true,
+                                        "labels": true,
+                                        "name": true
+                                    },
+                                    "type": "custom:mini-graph-card",
+                                    "upper_bound": 100
                                 }
                             ],
-                            "entities": [
-                                {
-                                    "entity": "sensor.cpu_temp",
-                                    "name": "CPU Temp"
-                                }
-                            ],
-                            "font_size": 75,
-                            "height": 75,
-                            "hour24": true,
-                            "hours_to_show": 72,
-                            "points_per_hour": 2,
-                            "show": {
-                                "icon": true,
-                                "labels": true,
-                                "name": true
-                            },
-                            "type": "custom:mini-graph-card"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "color": "#002aff",
-                                    "entity": "sensor.memory_use_percent",
-                                    "name": "Memory",
-                                    "show_state": true
-                                },
-                                {
-                                    "color": "#ffcc00",
-                                    "entity": "sensor.processor_use",
-                                    "name": "CPU",
-                                    "show_state": true
-                                }
-                            ],
-                            "font_size": 75,
-                            "height": 75,
-                            "hour24": true,
-                            "hours_to_show": 1,
-                            "lower_bound": 0,
-                            "points_per_hour": 600,
-                            "show": {
-                                "icon": true,
-                                "labels": true,
-                                "name": true
-                            },
-                            "type": "custom:mini-graph-card",
-                            "upper_bound": 100
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:mixcloud",

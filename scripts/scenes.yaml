@@ -76,6 +76,7 @@ bed4_sleep:
           - switch.plug_2
           - switch.plug_3
           - switch.plug_8
+          - switch.plug_10
     - service: homeassistant.turn_on
       data:
         entity_id: 
@@ -87,6 +88,7 @@ all_full_brightness:
         entity_id: 
           - switch.plug_3
           - switch.plug_8
+          - switch.plug_10
     - service: light.turn_on
       data:
         entity_id: 

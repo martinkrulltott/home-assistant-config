@@ -13,8 +13,9 @@
 
  - IKEA Trådfri control outlets
  - IKEA Trådfri LED bulbs
- - IKEA Trådfri motion sensor
- - IKEA Trådfri dimmer
+ - IKEA Trådfri motion sensors
+ - IKEA Trådfri dimmers
+ - IKEA Symfonisk Sonos speakers
  - Sensibo Sky
  - Google Chromecast
  - Sonoff Basic R3
@@ -28,6 +29,7 @@
  - Darksky weather
  - Google Assistant
  - Spotify
+ - Sonos
  
 ## Custom components
  - [Mini Graph Card](https://github.com/kalkih/mini-graph-card)

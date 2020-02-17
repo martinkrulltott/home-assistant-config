@@ -105,13 +105,16 @@
       message: was detected
       entity_id: binary_sensor.tradfri_motion_sensor_2
 
-# Home again
-- alias: Everything On When Home Again
+# Away mode turned off
+- alias: Home again
   trigger:
     - platform: state
       entity_id: input_boolean.away
       to: 'off'
   action:
+  - service: ifttt.trigger
+    data:
+      event: "enable_mute"
   - service: input_datetime.set_datetime
     data_template:
       entity_id: input_datetime.sleep_time
@@ -125,6 +128,17 @@
     data: 
       title: "Home"
       message: "Welcome home again, turning everything ON!"
+
+# Away mode turned on
+- alias: Leaving home
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away
+      to: 'on'
+  action:
+  - service: ifttt.trigger
+    data:
+      event: "disable_mute"
 
   # Device specific
 - alias: Occupy M bed on detected presence

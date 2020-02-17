@@ -219,6 +219,10 @@ spotcast:
   username: !secret spotify_username
   password: !secret spotify_password
 
+# IFTTT
+ifttt:
+  key: !secret ifttt_api_key
+
 # Includes
 group: !include groups.yaml
 automation: !include_dir_merge_list automations/

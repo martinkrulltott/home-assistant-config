@@ -30,6 +30,7 @@
  - Google Assistant
  - Spotify
  - Sonos
+ - IFTTT
  
 ## Custom components
  - [Mini Graph Card](https://github.com/kalkih/mini-graph-card)

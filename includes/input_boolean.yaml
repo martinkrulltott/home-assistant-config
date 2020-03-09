@@ -12,7 +12,7 @@ bed_3:
   icon: mdi:bed-empty
 bed_4:
   name: Biblioteket
-  initial: on
+  initial: off
   icon: mdi:bed-empty
 sleeping:
   name: Sovläge
@@ -32,5 +32,5 @@ wake_up_light:
   icon: mdi:alarm
 bright_night_light:
   name: Stark nattbelysning
-  initial: on
+  initial: off
   icon: mdi:alarm-light-outline

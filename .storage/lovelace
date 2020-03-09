@@ -51,6 +51,115 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "switch.plug_9",
+                                    "name": "TVn",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "input_boolean.sleeping",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "input_boolean.away",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "sensor.indoor_temperature",
+                                    "name": "Inomhus"
+                                },
+                                {
+                                    "entity": "sensor.outdoor_temperature",
+                                    "name": "Utomhus"
+                                }
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.living_room",
+                                    "hide": {
+                                        "icon": true,
+                                        "mute": true,
+                                        "name": true,
+                                        "power": true
+                                    },
+                                    "info": "short",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "media_player.living_room",
+                                            "group": true,
+                                            "hide": {
+                                                "controls": true,
+                                                "icon": true,
+                                                "info": true,
+                                                "power": true,
+                                                "progress": true
+                                            },
+                                            "type": "custom:mini-media-player"
+                                        },
+                                        {
+                                            "entity": "media_player.office",
+                                            "group": true,
+                                            "hide": {
+                                                "controls": true,
+                                                "icon": true,
+                                                "info": true,
+                                                "power": true,
+                                                "progress": true
+                                            },
+                                            "type": "custom:mini-media-player"
+                                        },
+                                        {
+                                            "entity": "media_player.kitchen",
+                                            "group": true,
+                                            "hide": {
+                                                "controls": true,
+                                                "icon": true,
+                                                "info": true,
+                                                "power": true,
+                                                "progress": true
+                                            },
+                                            "type": "custom:mini-media-player"
+                                        }
+                                    ],
+                                    "type": "vertical-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "card": {
+                                "artwork": "cover",
+                                "entity": "media_player.huset_tv",
+                                "hide": {
+                                    "icon": true,
+                                    "power": true
+                                },
+                                "name": "Chromecast",
+                                "type": "custom:mini-media-player"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "switch.plug_9",
+                                    "state": "on"
+                                }
+                            ],
+                            "type": "conditional"
+                        },
+                        {
+                            "entities": [
+                                {
                                     "entity": "light.altanen",
                                     "tap_action": {
                                         "action": "toggle"
@@ -133,25 +242,7 @@
                                 }
                             ],
                             "show_state": false,
-                            "title": "Inne",
                             "type": "glance"
-                        },
-                        {
-                            "card": {
-                                "entity": "media_player.huset_tv",
-                                "hide": {
-                                    "power": true
-                                },
-                                "name": "Chromecast",
-                                "type": "custom:mini-media-player"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "switch.plug_9",
-                                    "state": "on"
-                                }
-                            ],
-                            "type": "conditional"
                         },
                         {
                             "entities": [
@@ -178,40 +269,6 @@
                                 }
                             ],
                             "show_state": false,
-                            "title": "Ute",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.plug_9",
-                                    "name": "Media",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "input_boolean.sleeping",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "input_boolean.away",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "sensor.indoor_temperature",
-                                    "name": "Inomhus"
-                                },
-                                {
-                                    "entity": "sensor.outdoor_temperature",
-                                    "name": "Utomhus"
-                                }
-                            ],
-                            "title": "\u00d6vrigt",
                             "type": "glance"
                         },
                         {
@@ -267,6 +324,7 @@
                         }
                     ],
                     "icon": "mdi:home",
+                    "panel": false,
                     "path": "start",
                     "title": "Start"
                 },
@@ -289,6 +347,29 @@
                                         "action": "toggle"
                                     },
                                     "type": "entity-button"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "scene.day",
+                                            "icon": "mdi:lightbulb-outline",
+                                            "name": "Dag"
+                                        },
+                                        {
+                                            "entity": "scene.evening",
+                                            "icon": "mdi:lightbulb-on-outline",
+                                            "name": "Kv\u00e4ll"
+                                        },
+                                        {
+                                            "entity": "scene.sleeping",
+                                            "icon": "mdi:power-sleep",
+                                            "name": "Natt"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "show_state": false,
+                                    "title": "Scener",
+                                    "type": "glance"
                                 },
                                 {
                                     "entities": [
@@ -364,23 +445,13 @@
                                     ],
                                     "title": "Utomhus",
                                     "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "switch.plug_9",
-                                            "secondary_info": "last-changed"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Media",
-                                    "type": "entities"
                                 }
                             ],
                             "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:lightbulb-outline",
+                    "panel": false,
                     "path": "default_view",
                     "title": "Belysning"
                 },
@@ -520,6 +591,7 @@
                         }
                     ],
                     "icon": "mdi:thermometer",
+                    "panel": false,
                     "path": "weather",
                     "title": "Temperatur"
                 },
@@ -529,36 +601,79 @@
                         {
                             "cards": [
                                 {
+                                    "artwork": "cover",
                                     "entity": "media_player.huset_tv",
                                     "hide": {
+                                        "icon": true,
                                         "power": true
                                     },
                                     "name": "Chromecast",
                                     "type": "custom:mini-media-player"
                                 },
                                 {
-                                    "entity": "media_player.living_room",
-                                    "hide": {
-                                        "power": true
-                                    },
-                                    "name": "Sonos",
-                                    "type": "custom:mini-media-player"
+                                    "cards": [
+                                        {
+                                            "artwork": "cover",
+                                            "entity": "media_player.living_room",
+                                            "hide": {
+                                                "icon": true,
+                                                "mute": true,
+                                                "name": true,
+                                                "power": true
+                                            },
+                                            "info": "short",
+                                            "type": "custom:mini-media-player"
+                                        },
+                                        {
+                                            "cards": [
+                                                {
+                                                    "entity": "media_player.living_room",
+                                                    "group": true,
+                                                    "hide": {
+                                                        "controls": true,
+                                                        "icon": true,
+                                                        "info": true,
+                                                        "power": true,
+                                                        "progress": true
+                                                    },
+                                                    "type": "custom:mini-media-player"
+                                                },
+                                                {
+                                                    "entity": "media_player.office",
+                                                    "group": true,
+                                                    "hide": {
+                                                        "controls": true,
+                                                        "icon": true,
+                                                        "info": true,
+                                                        "power": true,
+                                                        "progress": true
+                                                    },
+                                                    "type": "custom:mini-media-player"
+                                                },
+                                                {
+                                                    "entity": "media_player.kitchen",
+                                                    "group": true,
+                                                    "hide": {
+                                                        "controls": true,
+                                                        "icon": true,
+                                                        "info": true,
+                                                        "power": true,
+                                                        "progress": true
+                                                    },
+                                                    "type": "custom:mini-media-player"
+                                                }
+                                            ],
+                                            "type": "vertical-stack"
+                                        }
+                                    ],
+                                    "type": "vertical-stack"
                                 },
                                 {
                                     "entities": [
                                         {
                                             "entity": "switch.plug_9",
-                                            "name": "Media center",
+                                            "name": "TVn",
                                             "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "input_select.playlist_select",
-                                            "name": "V\u00e4lj spellista"
-                                        },
-                                        {
-                                            "entity": "input_text.selected_playlist",
-                                            "icon": "mdi:playlist-music-outline",
-                                            "name": "Vald spellista"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -566,21 +681,6 @@
                                 },
                                 {
                                     "entities": [
-                                        {
-                                            "entity": "script.play_playlist",
-                                            "hold_action": {
-                                                "action": "more-info"
-                                            },
-                                            "icon": "mdi:play-circle",
-                                            "icon_height": "50px",
-                                            "name": "Spellista",
-                                            "show_icon": true,
-                                            "show_name": true,
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "type": "entity-button"
-                                        },
                                         {
                                             "entity": "script.play_svt1_on_chromecast",
                                             "hold_action": {
@@ -898,30 +998,6 @@
                     ],
                     "icon": "mdi:mixcloud",
                     "title": "System"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "scene.day"
-                                },
-                                {
-                                    "entity": "scene.evening"
-                                },
-                                {
-                                    "entity": "scene.sleeping"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:rocket",
-                    "path": "scene",
-                    "title": "Scene"
                 }
             ]
         }

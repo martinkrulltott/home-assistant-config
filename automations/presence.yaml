@@ -18,6 +18,10 @@
     data: 
       title: "No motion"
       message: "No presence for 4h, away mode turned ON"
+  - service: notify.pushbullet
+    data:
+      title: "Steninge ALERT: No presence 4h"
+      message: "No presence for 4h, away mode turned ON"
 
 - alias: Away On Automatically (Backup)
   trigger:
@@ -43,7 +47,7 @@
       message: "It's midday and no presence for 6h, away mode turned ON"
   - service: notify.pushbullet
     data:
-      title: "Steninge NOTIFICATION: No presence"
+      title: "Steninge ALERT: No presence midday"
       message: "It's midday and no presence for 6h, away mode turned ON"
 
 
@@ -97,7 +101,7 @@
       message: "Wifi device detected, away mode turned OFF"
   - service: notify.pushbullet
     data:
-      title: "Steninge ALERT: Presence"
+      title: "Steninge ALERT: Wifi presence"
       message: "Wifi device detected, away mode turned OFF"
   - service: logbook.log
     data_template:

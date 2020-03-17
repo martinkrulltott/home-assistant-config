@@ -4,7 +4,8 @@
 .google.token
 deps
 tts
-www
+#www
+ssl
 custom_components
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.

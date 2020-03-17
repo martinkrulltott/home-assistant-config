@@ -33,6 +33,25 @@ logger:
   logs:
     homeassistant.components.switch: critical
 
+# Recorder
+recorder:
+  exclude:
+    domains:
+      - media_player
+    entities:
+      - sensor.archer_c60_bytes_received
+      - sensor.archer_c60_bytes_sent
+      - sensor.archer_c60_kbyte_sec_received
+      - sensor.archer_c60_kbyte_sec_sent
+      - sensor.archer_c60_packets_received
+      - sensor.archer_c60_packets_sec_received
+      - sensor.archer_c60_packets_sec_sent
+      - sensor.archer_c60_packets_sent
+      - sensor.network_throughput_in_wlan0
+      - sensor.network_throughput_out_wlan0
+      - sensor.memory_free
+      - sensor.time
+
 # Logbook
 logbook:
   exclude:

@@ -414,8 +414,19 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
+                                            "entity": "light.bulb_7",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.bulb_8",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
                                             "entity": "light.bulb_3",
                                             "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "group.all_library"
                                         }
                                     ],
                                     "theme": "default",

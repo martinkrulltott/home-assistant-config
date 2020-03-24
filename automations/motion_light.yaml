@@ -13,6 +13,7 @@
     data:
       entity_id: 
         - switch.plug_4
+        - light.bulb_8
   - service: homeassistant.turn_on
     data_template:
       entity_id: >
@@ -36,21 +37,10 @@
     entity_id: input_boolean.sleeping
     state: 'on'
   action:
-  - service: homeassistant.turn_off
+  - service: homeassistant.turn_on
     data:
       entity_id: 
-        - switch.plug_3
-        - switch.plug_4
-        - switch.plug_8
-  - service: light.turn_on
-    data:
-      entity_id: 
-        - light.bulb_1
-        - light.bulb_2
-        - light.bulb_3
-        - light.bulb_4
-        - light.bulb_6
-      brightness: 1
+        - script.sleeping_scene
   - service: logbook.log
     data_template:
       name: No motion

@@ -47,6 +47,8 @@ recorder:
       - sensor.archer_c60_packets_sec_received
       - sensor.archer_c60_packets_sec_sent
       - sensor.archer_c60_packets_sent
+      - sensor.network_in_wlan0
+      - sensor.network_out_wlan0
       - sensor.network_throughput_in_wlan0
       - sensor.network_throughput_out_wlan0
       - sensor.memory_free

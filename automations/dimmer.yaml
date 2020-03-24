@@ -1,49 +1,54 @@
 # Altandimmer
-- alias: Dimmer up Altan
-  initial_state: 'on'
-  trigger:
-    platform: event
-    event_type: deconz_event
-    event_data:
-      id: tradfri_wireless_dimmer
-      event: 2002
-  action:
-    - service: light.turn_on
-      data_template:
-        entity_id: 
-          - group.outside_lights
-          - light.bulb_4
-        brightness: >
-          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
-          {{ [bri+30, 255] | min }}
+#- alias: Dimmer up Altan
+#  initial_state: 'on'
+#  trigger:
+#    platform: event
+#    event_type: deconz_event
+#    event_data:
+#      id: tradfri_wireless_dimmer
+#      event: 2002
+#  action:
+#    - service: light.turn_on
+#      data_template:
+#        entity_id: 
+#          - group.outside_lights
+#          - light.bulb_4
+#        brightness: >
+#          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+#          {{ [bri+30, 255] | min }}
 
-- alias: Dimmer down Altan
-  initial_state: 'on'
-  trigger:
-    platform: event
-    event_type: deconz_event
-    event_data:
-      id: tradfri_wireless_dimmer
-      event: 3002
-  action:
-    - service: light.turn_on
-      data_template:
-        entity_id: 
-          - group.outside_lights
-          - light.bulb_4
-        brightness: >
-          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
-          {{ [bri-30, 0] | max }}
+#- alias: Dimmer down Altan
+#  initial_state: 'on'
+#  trigger:
+#    platform: event
+#    event_type: deconz_event
+#    event_data:
+#      id: tradfri_wireless_dimmer
+#      event: 3002
+#  action:
+#    - service: light.turn_on
+#      data_template:
+#        entity_id: 
+#          - group.outside_lights
+#          - light.bulb_4
+#        brightness: >
+#          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+#          {{ [bri-30, 0] | max }}
 
 # On/off dimmer
 - alias: Dimmer up On/off
   initial_state: 'on'
   trigger:
-    platform: event
-    event_type: deconz_event
-    event_data:
-      id: tradfri_on_off_switch
-      event: 1001
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_1
+        event: 1001
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_2
+        event: 1001
   action:
     - service: light.turn_on
       data_template:
@@ -57,11 +62,16 @@
 - alias: Dimmer down On/off
   initial_state: 'on'
   trigger:
-    platform: event
-    event_type: deconz_event
-    event_data:
-      id: tradfri_on_off_switch
-      event: 2001
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_1
+        event: 2001
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_2
+        event: 2001
   action:
     - service: light.turn_on
       data_template:
@@ -76,11 +86,16 @@
 - alias: Dimmer on On/off
   initial_state: 'on'
   trigger:
-    platform: event
-    event_type: deconz_event
-    event_data:
-      id: tradfri_on_off_switch
-      event: 1002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_1
+        event: 1002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_2
+        event: 1002
   action:
     - service: homeassistant.turn_on
       data_template:
@@ -99,11 +114,16 @@
 - alias: Dimmer off On/off
   initial_state: 'on'
   trigger:
-    platform: event
-    event_type: deconz_event
-    event_data:
-      id: tradfri_on_off_switch
-      event: 2002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_1
+        event: 2002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: switch_2
+        event: 2002
   action:
     - service: homeassistant.turn_on
       data_template:

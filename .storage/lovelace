@@ -227,6 +227,13 @@
                                     }
                                 },
                                 {
+                                    "entity": "light.bulb_7",
+                                    "name": "Bib tak",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
                                     "entity": "light.bulb_5",
                                     "name": "Kontoret",
                                     "tap_action": {
@@ -236,6 +243,13 @@
                                 {
                                     "entity": "light.bulb_3",
                                     "name": "Bad",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.bulb_8",
+                                    "name": "Nya hallen",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -353,17 +367,38 @@
                                         {
                                             "entity": "scene.day",
                                             "icon": "mdi:lightbulb-outline",
-                                            "name": "Dag"
+                                            "name": "Dag",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "scene.turn_on",
+                                                "service_data": {
+                                                    "entity_id": "scene.day"
+                                                }
+                                            }
                                         },
                                         {
                                             "entity": "scene.evening",
                                             "icon": "mdi:lightbulb-on-outline",
-                                            "name": "Kv\u00e4ll"
+                                            "name": "Kv\u00e4ll",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "scene.turn_on",
+                                                "service_data": {
+                                                    "entity_id": "scene.evening"
+                                                }
+                                            }
                                         },
                                         {
                                             "entity": "scene.sleeping",
                                             "icon": "mdi:power-sleep",
-                                            "name": "Natt"
+                                            "name": "Natt",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "scene.turn_on",
+                                                "service_data": {
+                                                    "entity_id": "scene.sleeping"
+                                                }
+                                            }
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -384,7 +419,15 @@
                                         {
                                             "entity": "light.hallen",
                                             "secondary_info": "last-changed"
-                                        },
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "theme": "default",
+                                    "title": "K\u00f6k",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
                                         {
                                             "entity": "light.helenas_rum",
                                             "secondary_info": "last-changed"
@@ -396,29 +439,46 @@
                                         {
                                             "entity": "light.sovrummet",
                                             "secondary_info": "last-changed"
-                                        },
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "theme": "default",
+                                    "title": "Sovrum",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
                                         {
                                             "entity": "light.vardagsrum_bordslampa",
+                                            "name": "Lilla bordet",
                                             "secondary_info": "last-changed"
                                         },
                                         {
                                             "entity": "light.vardagsrum_golvlampa",
+                                            "name": "Vid TVn",
                                             "secondary_info": "last-changed"
                                         },
                                         {
                                             "entity": "light.vardagsrum_horn",
+                                            "name": "H\u00f6rnet",
                                             "secondary_info": "last-changed"
-                                        },
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "theme": "default",
+                                    "title": "Vardagsrummet",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
                                         {
                                             "entity": "light.biblioteket",
+                                            "name": "Biblioteket - F\u00f6nstret",
                                             "secondary_info": "last-changed"
                                         },
                                         {
                                             "entity": "light.bulb_7",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "light.bulb_8",
+                                            "name": "Biblioteket - Taket",
                                             "secondary_info": "last-changed"
                                         },
                                         {
@@ -426,11 +486,17 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
+                                            "entity": "light.bulb_8",
+                                            "name": "Hallen",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
                                             "entity": "group.all_library"
                                         }
                                     ],
+                                    "show_header_toggle": false,
                                     "theme": "default",
-                                    "title": "Inomhus",
+                                    "title": "Nya delen",
                                     "type": "entities"
                                 },
                                 {

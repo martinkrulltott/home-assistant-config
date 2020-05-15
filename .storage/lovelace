@@ -253,6 +253,13 @@
                                     "tap_action": {
                                         "action": "toggle"
                                     }
+                                },
+                                {
+                                    "entity": "input_boolean.outside_lights",
+                                    "name": "Tr\u00e4dg\u00e5rd",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_state": false,
@@ -518,6 +525,10 @@
                                         {
                                             "entity": "light.bulb_6",
                                             "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "input_boolean.outside_lights",
+                                            "secondary_info": "last-changed"
                                         }
                                     ],
                                     "title": "Utomhus",
@@ -543,14 +554,6 @@
                         "sensor.outdoor_humidity"
                     ],
                     "cards": [
-                        {
-                            "entity": "weather.steninge",
-                            "type": "weather-forecast"
-                        },
-                        {
-                            "entity": "weather.dark_sky",
-                            "type": "weather-forecast"
-                        },
                         {
                             "cards": [
                                 {
@@ -591,7 +594,20 @@
                                     ],
                                     "show_header_toggle": false,
                                     "type": "entities"
-                                },
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entity": "weather.steninge",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entity": "weather.dark_sky",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "cards": [
                                 {
                                     "entities": [
                                         {

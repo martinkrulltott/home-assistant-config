@@ -35,6 +35,6 @@ bright_night_light:
   initial: off
   icon: mdi:alarm-light-outline
 outside_lights:
-  name: Utebelysning
+  name: Trädgårdsbelysning
   initial: off
   icon: mdi:pine-tree

@@ -1,21 +1,21 @@
 # Outside lights turned on
 - alias: Outside lights On
   trigger:
-    - platform: state
-      entity_id: input_boolean.outside_lights
-      to: 'on'
+  - platform: state
+    entity_id: input_boolean.outside_lights
+    to: 'on'
   action:
   - service: ifttt.trigger
     data:
-      event: “outside_on"
+      event: "outside_on"
 
 # Outside lights turned off
 - alias: Outside lights Off
   trigger:
-    - platform: state
-      entity_id: input_boolean.outside_lights
-      to: 'off'
+  - platform: state
+    entity_id: input_boolean.outside_lights
+    to: 'off'
   action:
   - service: ifttt.trigger
     data:
-      event: “outside_off"
+      event: "outside_off"

@@ -100,4 +100,6 @@ all_full_brightness:
           - light.bulb_4
           - light.bulb_6
         brightness: 255
-                    
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.outside_lights                

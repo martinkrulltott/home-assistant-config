@@ -3,6 +3,7 @@
     group.all_lights: false
     input_boolean.evening: false
     input_boolean.sleeping: false
+    input_boolean.outside_lights: false
 - name: Evening
   entities:
     group.evening_lights:
@@ -10,17 +11,21 @@
       brightness: 120
       rgb_color: [255,129,1]
     input_boolean.evening: true
+    input_boolean.outside_lights: true
 - name: Evening Away
   entities:
     group.evening_lights:
       state: true
       brightness: 120
     input_boolean.evening: true
+    input_boolean.outside_lights: true
 - name: Sleeping
   entities:
     script.sleeping_scene: true
     input_boolean.evening: false
+    input_boolean.outside_lights: false
 - name: Sleeping Away
   entities:
     script.sleeping_away_scene: true
     input_boolean.evening: false
+    input_boolean.outside_lights: false

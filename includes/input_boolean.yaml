@@ -34,3 +34,7 @@ bright_night_light:
   name: Stark nattbelysning
   initial: off
   icon: mdi:alarm-light-outline
+outside_lights:
+  name: Utebelysning
+  initial: off
+  icon: mdi:pine-tree

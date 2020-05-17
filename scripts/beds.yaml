@@ -1,0 +1,36 @@
+bed_1:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.bed_1
+      state: 'on'
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - switch.plug_7
+bed_2:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.bed_2
+      state: 'on'
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - switch.plug_6
+bed_3:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.bed_3
+      state: 'on'
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - switch.plug_5
+bed_4:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.bed_4
+      state: 'on'
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+          - script.bed4_sleep

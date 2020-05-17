@@ -1,7 +1,6 @@
 {
     "data": {
         "config": {
-            "title": "Steninge",
             "custom_header": {
                 "compact_mode": true,
                 "disable_sidebar": true,
@@ -11,11 +10,11 @@
                             "user": "Martin, Jan"
                         },
                         "config": {
+                            "compact_mode": true,
                             "disable_sidebar": false,
                             "menu_hide": false,
                             "notifications": "show",
-                            "options_hide": false,
-                            "compact_mode": true
+                            "options_hide": false
                         }
                     }
                 ],
@@ -23,6 +22,7 @@
                 "options_hide": true,
                 "voice_hide": true
             },
+            "title": "Steninge",
             "views": [
                 {
                     "badges": [],
@@ -507,7 +507,8 @@
                                         },
                                         {
                                             "entity": "input_boolean.outside_lights",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "state_color": true
                                         }
                                     ],
                                     "title": "Utomhus",

@@ -13,12 +13,13 @@
     data:
       entity_id: 
         - switch.plug_4
-        - light.bulb_8
   - service: homeassistant.turn_on
     data_template:
       entity_id: >
         {% if is_state('input_boolean.bright_night_light', 'on') %}
           script.all_full_brightness
+        {% else %}
+          light.bulb_8
         {% endif %}
   - service: logbook.log
     data_template:

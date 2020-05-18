@@ -1,0 +1,21 @@
+# Water pump turned on
+- alias: Water pump On
+  trigger:
+  - platform: state
+    entity_id: input_boolean.water_pump
+    to: 'on'
+  action:
+  - service: ifttt.trigger
+    data:
+      event: "pump_on"
+
+# Water pump turned off
+- alias: Water pump Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.water_pump
+    to: 'off'
+  action:
+  - service: ifttt.trigger
+    data:
+      event: "pump_off"

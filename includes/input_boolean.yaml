@@ -38,3 +38,7 @@ outside_lights:
   name: Trädgårdsbelysning
   initial: off
   icon: mdi:pine-tree
+water_pump:
+  name: Bevattning
+  initial: off
+  icon: mdi:water-pump

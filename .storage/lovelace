@@ -351,38 +351,38 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "scene.day",
+                                            "entity": "script.scene_day",
                                             "icon": "mdi:lightbulb-outline",
                                             "name": "Dag",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "scene.turn_on",
+                                                "service": "homeassistant.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "scene.day"
+                                                    "entity_id": "script.scene_day"
                                                 }
                                             }
                                         },
                                         {
-                                            "entity": "scene.evening",
+                                            "entity": "input_boolean.evening",
                                             "icon": "mdi:lightbulb-on-outline",
                                             "name": "Kv\u00e4ll",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "scene.turn_on",
+                                                "service": "homeassistant.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "scene.evening"
+                                                    "entity_id": "script.scene_evening"
                                                 }
                                             }
                                         },
                                         {
-                                            "entity": "scene.sleeping",
+                                            "entity": "input_boolean.sleeping",
                                             "icon": "mdi:power-sleep",
                                             "name": "Natt",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "scene.turn_on",
+                                                "service": "homeassistant.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "scene.sleeping"
+                                                    "entity_id": "input_boolean.sleeping"
                                                 }
                                             }
                                         }

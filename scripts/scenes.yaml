@@ -1,4 +1,35 @@
-sleeping_scene:
+# Day
+scene_day:
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - group.all_lights
+          - input_boolean.evening
+          - input_boolean.sleeping
+          - input_boolean.outside_lights
+
+# Evening
+scene_evening:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - group.evening_lights
+        brightness: 120
+        rgb_color: [255,129,1]
+    - service: homeassistant.turn_on
+      data:
+        entity_id: 
+          - input_boolean.evening
+          - input_boolean.outside_lights
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - input_boolean.sleeping
+
+# Sleeping
+scene_sleeping:
   sequence:
     - service: homeassistant.turn_off
       data:
@@ -8,6 +39,7 @@ sleeping_scene:
           - light.bulb_7
           - light.bulb_8
           - group.outside_lights
+          - input_boolean.evening
     - service: homeassistant.turn_on
       data:
         entity_id: 
@@ -21,7 +53,7 @@ sleeping_scene:
           - script.bed_2
           - script.bed_3
           - script.bed_4
-sleeping_away_scene:
+scene_sleeping_away:
   sequence:
     - service: homeassistant.turn_off
       data:
@@ -29,6 +61,7 @@ sleeping_away_scene:
           - switch.plug_3
           - switch.plug_4
           - light.bulb_5
+          - input_boolean.evening
     - service: light.turn_on
       data:
         entity_id:
@@ -51,22 +84,9 @@ sleeping_away_scene:
       data_template:
         entity_id: >
           {{ ['switch.plug_6','switch.plug_7','switch.plug_8'] | random }}
-bed4_sleep: 
-  sequence:
-    - service: homeassistant.turn_off
-      data:
-        entity_id:
-          - light.bulb_1
-          - light.bulb_6
-          - switch.plug_2
-          - switch.plug_3
-          - switch.plug_8
-          - switch.plug_10
-    - service: homeassistant.turn_on
-      data:
-        entity_id: 
-          - script.temporary_turn_off_ventilation
-all_full_brightness:
+
+# All on
+scene_all_on:
   sequence:
     - service: homeassistant.turn_on
       data:
@@ -81,7 +101,10 @@ all_full_brightness:
           - light.bulb_2
           - light.bulb_3
           - light.bulb_4
+          - light.bulb_5
           - light.bulb_6
+          - light.bulb_7
+          - light.bulb_8
         brightness: 255
     - service: input_boolean.turn_on
       data:

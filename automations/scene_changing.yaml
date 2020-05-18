@@ -5,14 +5,17 @@
     offset: -00:45:00
     platform: sun
   action:
-  - service: scene.turn_on
-    data_template:
-      entity_id: >
-        {% if is_state('input_boolean.away', 'on') %}
-          scene.evening_away
-        {% else %}
-          scene.evening
-        {% endif %}
+  - service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - script.scene_evening
+    # data_template:
+    #   entity_id: >
+    #     {% if is_state('input_boolean.away', 'on') %}
+    #       scene.evening_away
+    #     {% else %}
+    #       scene.evening
+    #     {% endif %}
   - condition: state
     entity_id: input_boolean.away
     state: 'on'
@@ -43,14 +46,14 @@
     data_template:
       entity_id: >
         {% if is_state('input_boolean.away', 'on') %}
-          script.sleeping_away_scene
+          script.scene_sleeping_away
         {% else %}
-          script.sleeping_scene
+          script.scene_sleeping
         {% endif %}
-  - service: scene.turn_on
+  - service: homeassistant.turn_on
     data:
       entity_id: 
-        - scene.sleeping
+        - script.scene_sleeping
 
 # Sunrise, Turn All Off at Sunrise
 - alias: Scene Day at Sunrise
@@ -59,8 +62,8 @@
     offset: +00:30:00
     platform: sun
   action:
-  - service: scene.turn_on
-    entity_id: scene.day
+  - service: homeassistant.turn_on
+    entity_id: script.scene_day
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.sleeping

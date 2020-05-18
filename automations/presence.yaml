@@ -126,8 +126,8 @@
   - condition: state  # from sunset until sunrise
     entity_id: sun.sun
     state: 'below_horizon'
-  - service: scene.turn_on
-    entity_id: scene.evening
+  - service: homeassistant.turn_on
+    entity_id: script.scene_evening
   - service: persistent_notification.create
     data: 
       title: "Home"

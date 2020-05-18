@@ -17,7 +17,7 @@
     data_template:
       entity_id: >
         {% if is_state('input_boolean.bright_night_light', 'on') %}
-          script.all_full_brightness
+          script.scene_all_on
         {% else %}
           light.bulb_8
         {% endif %}
@@ -41,7 +41,7 @@
   - service: homeassistant.turn_on
     data:
       entity_id: 
-        - script.sleeping_scene
+        - script.scene_sleeping
   - service: logbook.log
     data_template:
       name: No motion
@@ -90,7 +90,7 @@
       - condition: time
         after: '05:00:00'
       - condition: time
-        before: '12:00:00'
+        before: '13:00:00'
       - condition: state
         entity_id: input_boolean.sleeping
         state: 'off'

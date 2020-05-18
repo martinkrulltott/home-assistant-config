@@ -101,9 +101,9 @@
       data_template:
         entity_id: >
           {% if is_state('input_boolean.evening', 'on') %}
-            script.all_full_brightness
+            script.scene_all_on
           {% else %}
-            scene.evening
+            script.scene_evening
           {% endif %}
     - service: homeassistant.turn_off
       data:
@@ -125,11 +125,15 @@
         id: switch_2
         event: 2002
   action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: 
+          - input_boolean.sleeping
     - service: homeassistant.turn_on
       data_template:
         entity_id: >
           {% if is_state('input_boolean.sleeping', 'on') %}
-            scene.day
+            script.scene_day
           {% else %}
             input_boolean.sleeping
           {% endif %}

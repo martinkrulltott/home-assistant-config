@@ -30,7 +30,16 @@ bed_4:
     - condition: state
       entity_id: input_boolean.bed_4
       state: 'on'
-    - service: homeassistant.turn_on
+    - service: homeassistant.turn_off
       data:
         entity_id:
-          - script.bed4_sleep
+          - light.bulb_1
+          - light.bulb_6
+          - switch.plug_2
+          - switch.plug_3
+          - switch.plug_8
+          - switch.plug_10
+    - service: homeassistant.turn_on
+      data:
+        entity_id: 
+          - script.temporary_turn_off_ventilation

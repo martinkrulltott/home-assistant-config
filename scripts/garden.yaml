@@ -1,0 +1,8 @@
+temporary_turn_on_water_pump:
+  alias: Water Pump Temporary Turn On
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.water_pump
+    - delay: '00:10'
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.water_pump

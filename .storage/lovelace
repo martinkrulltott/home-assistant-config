@@ -325,8 +325,9 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "input_boolean.water_pump",
-                                    "state_color": true
+                                    "entity": "script.temporary_turn_on_water_pump",
+                                    "icon": "mdi:water-outline",
+                                    "name": "Vattna i 10 min"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -580,6 +581,16 @@
                                             "icon": "mdi:thermometer-chevron-down",
                                             "name": "L\u00e4gsta utomhus",
                                             "type": "custom:slider-entity-row"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_boolean.water_pump",
+                                            "state_color": true
                                         }
                                     ],
                                     "show_header_toggle": false,

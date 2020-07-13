@@ -39,6 +39,7 @@ bed_4:
           - switch.plug_3
           - switch.plug_8
           - switch.plug_10
+          - group.outside_lights
     - service: homeassistant.turn_on
       data:
         entity_id: 

@@ -38,7 +38,8 @@ scene_sleeping:
           - light.bulb_5
           - light.bulb_7
           - light.bulb_8
-          - group.outside_lights
+          - switch.plug_8
+          - switch.plug_10
           - input_boolean.evening
     - service: homeassistant.turn_on
       data:

@@ -328,6 +328,11 @@
                                     "entity": "script.temporary_turn_on_water_pump",
                                     "icon": "mdi:water-outline",
                                     "name": "Vattna i 10 min"
+                                },
+                                {
+                                    "entity": "script.temporary_turn_off_ventilation",
+                                    "icon": "mdi:fan-off",
+                                    "name": "Pausa fl\u00e4kten"
                                 }
                             ],
                             "show_header_toggle": false,

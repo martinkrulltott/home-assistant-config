@@ -469,7 +469,7 @@
                                             "entity": "light.bulb_7",
                                             "name": "Taket",
                                             "secondary_info": "last-changed"
-                                        },
+                                        }
                                     ],
                                     "show_header_toggle": false,
                                     "theme": "default",
@@ -491,7 +491,7 @@
                                             "entity": "light.bulb_8",
                                             "name": "Hallen",
                                             "secondary_info": "last-changed"
-                                        },
+                                        }
                                     ],
                                     "show_header_toggle": false,
                                     "theme": "default",

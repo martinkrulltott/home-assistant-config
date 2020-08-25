@@ -65,7 +65,7 @@
         entity_id: input_boolean.sleeping
         state: 'off'
       - condition: template
-        value_template: "{{ not is_state('weather.steninge' , 'sunny') }}"
+        value_template: "{{ not is_state('weather.dark_sky' , 'sunny') }}"
   action:
   - data:
       entity_id: 

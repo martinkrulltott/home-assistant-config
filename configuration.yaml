@@ -119,7 +119,7 @@ sensor:
   - platform: template
     sensors: 
       outdoor_temperature:
-        value_template: '{{ states.weather.steninge.attributes.temperature|float }}'  
+        value_template: '{{ states.weather.dark_sky.attributes.temperature|float }}'  
         friendly_name: 'Utomhustemp' 
         unit_of_measurement: '°C'
   - platform: template
@@ -139,7 +139,7 @@ sensor:
   - platform: template
     sensors: 
       outdoor_humidity:
-        value_template: '{{ states.weather.steninge.attributes.humidity|float }}'  
+        value_template: '{{ states.weather.dark_sky.attributes.humidity|float }}'  
         friendly_name: 'Fuktighet ute' 
         unit_of_measurement: '%'
 

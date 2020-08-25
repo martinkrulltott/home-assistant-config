@@ -179,21 +179,21 @@
                                 },
                                 {
                                     "entity": "light.vardagsrum_bordslampa",
-                                    "name": "V Bord",
+                                    "name": "V bord",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
                                     "entity": "light.vardagsrum_golvlampa",
-                                    "name": "V Golv",
+                                    "name": "V golv",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
                                     "entity": "light.vardagsrum_horn",
-                                    "name": "V H\u00f6rn",
+                                    "name": "V h\u00f6rn",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -228,7 +228,7 @@
                                 },
                                 {
                                     "entity": "light.bulb_8",
-                                    "name": "Nya hallen",
+                                    "name": "Ny hall",
                                     "tap_action": {
                                         "action": "toggle"
                                     }

@@ -83,7 +83,6 @@ all_library:
   name: Alla i biblioteket
   entities:
     - light.bulb_5
-    - light.bulb_7
     - light.biblioteket
 motion_sensors:
   name: Motion

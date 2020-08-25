@@ -13,7 +13,7 @@ light.bulb_5:
 light.bulb_6: 
   friendly_name: "Biblioteksgaveln"
 light.bulb_7:
-  friendly_name: "Bibliotekstaket"
+  friendly_name: "Vardagsrumstaket"
 light.bulb_8:
   friendly_name: "Nya hallen"
 binary_sensor.tradfri_motion_sensor_2:

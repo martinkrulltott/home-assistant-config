@@ -199,15 +199,15 @@
                                     }
                                 },
                                 {
-                                    "entity": "light.biblioteket",
-                                    "name": "Bibliotek",
+                                    "entity": "light.bulb_7",
+                                    "name": "V tak",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_7",
-                                    "name": "Bib tak",
+                                    "entity": "light.biblioteket",
+                                    "name": "Bibliotek",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -464,7 +464,12 @@
                                             "entity": "light.vardagsrum_horn",
                                             "name": "H\u00f6rnet",
                                             "secondary_info": "last-changed"
-                                        }
+                                        },
+                                        {
+                                            "entity": "light.bulb_7",
+                                            "name": "Taket",
+                                            "secondary_info": "last-changed"
+                                        },
                                     ],
                                     "show_header_toggle": false,
                                     "theme": "default",
@@ -479,11 +484,6 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_7",
-                                            "name": "Biblioteket - Taket",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
                                             "entity": "light.bulb_3",
                                             "secondary_info": "last-changed"
                                         },
@@ -492,9 +492,6 @@
                                             "name": "Hallen",
                                             "secondary_info": "last-changed"
                                         },
-                                        {
-                                            "entity": "group.all_library"
-                                        }
                                     ],
                                     "show_header_toggle": false,
                                     "theme": "default",

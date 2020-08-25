@@ -28,7 +28,7 @@ away:
   icon: mdi:car-side
 wake_up_light:
   name: Väckningslampa
-  initial: on
+  initial: off
   icon: mdi:alarm
 bright_night_light:
   name: Stark nattbelysning

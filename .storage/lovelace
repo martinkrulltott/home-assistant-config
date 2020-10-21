@@ -43,18 +43,26 @@
                                     }
                                 },
                                 {
-                                    "entity": "input_boolean.away",
+                                    "entity": "script.scene_movie",
+                                    "icon": "mdi:video-vintage",
+                                    "name": "Film",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "sensor.indoor_temperature",
-                                    "name": "Inomhus"
+                                    "entity": "script.scene_morning",
+                                    "icon": "mdi:weather-sunset-up",
+                                    "name": "Morgon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 },
                                 {
-                                    "entity": "sensor.outdoor_temperature",
-                                    "name": "Utomhus"
+                                    "entity": "input_boolean.away",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "type": "glance"
@@ -935,7 +943,11 @@
                             "entities": [
                                 {
                                     "entity": "automation.night_lights_on_by_motion_detected",
-                                    "name": "Nattlampa"
+                                    "name": "Nattlampa (auto p\u00e5)"
+                                },
+                                {
+                                    "entity": "automation.night_lights_off_automatically",
+                                    "name": "Nattlampa (auto av)"
                                 },
                                 {
                                     "entity": "input_boolean.bright_night_light"

@@ -20,23 +20,13 @@
   - service: homeassistant.turn_on
     data:
       entity_id: 
-        - switch.plug_2
-  - service: light.turn_on
-    data:
-      entity_id: light.bulb_5
-      brightness: 255
-      rgb_color: [255,182,109]
-      transition: 30
-  - service: homeassistant.turn_off
-    data:
-      entity_id: input_boolean.sleeping
-  - delay: '00:30'
+        - script.scene_morning
+  - delay: '01:15'
   - service: homeassistant.turn_off
     data:
       entity_id: 
-        - switch.plug_2
-  - service: light.turn_on
-    data:
-      entity_id: light.bulb_5
-      brightness: 255
-      transition: 0
+        - switch.plug_3
+        - switch.plug_8
+        - switch.plug_10
+        - light.bulb_4
+        - light.bulb_7

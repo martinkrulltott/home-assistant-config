@@ -77,3 +77,16 @@ play_svtk_on_chromecast:
         media_content_id: https://svtk-b.akamaized.net/se/svtk/master.m3u8
         media_content_type: 'audio/mp4'
     
+
+play_rapport_on_chromecast:
+  alias: Play SVT Rapport on Chromecast
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_9
+    - wait_template: "{{ not is_state('media_player.huset_tv', 'unavailable') }}"
+      timeout: '00:01:00'
+      continue_on_timeout: 'false'
+    - service: svt_play.play_latest
+      entity_id: media_player.huset_tv
+      data:
+        program_name: rapport

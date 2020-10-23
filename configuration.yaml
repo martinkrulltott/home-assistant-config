@@ -243,6 +243,9 @@ media_player:
 ifttt:
   key: !secret ifttt_api_key
 
+# SVT Play - https://github.com/lindell/home-assistant-svt-play
+svt_play:
+
 # Includes
 group: !include groups.yaml
 automation: !include_dir_merge_list automations/

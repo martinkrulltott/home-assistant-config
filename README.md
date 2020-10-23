@@ -40,6 +40,7 @@
  - [Slider Entity Row](https://github.com/thomasloven/lovelace-slider-entity-row)
  - [Custom Header](https://github.com/maykar/custom-header)
  - [Spotcast](https://github.com/fondberg/spotcast)
+ - [SVT Play](https://github.com/lindell/home-assistant-svt-play)
  
  ## Features
   - Automatated and manual control of lights, entertainment and heating

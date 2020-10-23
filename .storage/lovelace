@@ -786,7 +786,7 @@
                                             "hold_action": {
                                                 "action": "more-info"
                                             },
-                                            "icon": "mdi:airplay",
+                                            "icon": "mdi:numeric-1-circle-outline",
                                             "icon_height": "50px",
                                             "name": "SVT1",
                                             "show_icon": true,
@@ -801,7 +801,7 @@
                                             "hold_action": {
                                                 "action": "more-info"
                                             },
-                                            "icon": "mdi:airplay",
+                                            "icon": "mdi:numeric-2-circle-outline",
                                             "icon_height": "50px",
                                             "name": "SVT2",
                                             "show_icon": true,
@@ -816,9 +816,24 @@
                                             "hold_action": {
                                                 "action": "more-info"
                                             },
-                                            "icon": "mdi:airplay",
+                                            "icon": "mdi:temperature-kelvin",
                                             "icon_height": "50px",
                                             "name": "Kunskap",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "script.play_rapport_on_chromecast",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:television-classic",
+                                            "icon_height": "50px",
+                                            "name": "Rapport",
                                             "show_icon": true,
                                             "show_name": true,
                                             "tap_action": {

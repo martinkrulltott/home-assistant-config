@@ -1,15 +1,15 @@
 - platform: switch
-  name: Altanen
+  name: Uterum
   entity_id: switch.plug_1
 - platform: switch
-  name: Biblioteket
+  name: Kontor fönster
   entity_id: switch.plug_2
 - platform: switch
-  name: Vardagsrum bordslampa
+  name: Vardagsrum tavla
   entity_id: switch.plug_3
 - platform: switch
-  name: Hallen
-  entity_id: switch.plug_4
+  name: Gamla hallen
+  entity_id: light.gamla_hallen
 - platform: switch
   name: Helenas rum
   entity_id: switch.plug_5
@@ -20,8 +20,8 @@
   name: Sovrummet
   entity_id: switch.plug_7
 - platform: switch
-  name: Vardagsrum golvlampa
+  name: Oanvänd ett
   entity_id: switch.plug_8
 - platform: switch
-  name: Vardagsrum hörn
-  entity_id: switch.plug_10
+  name: Oanvänd två
+  entity_id: light.uterum0

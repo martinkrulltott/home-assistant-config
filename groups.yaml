@@ -109,8 +109,8 @@ inside_lights:
     - light.koket
     - light.nya_hallen
     - light.gamla_hallen
-    - group.office
-    - group.living_room
+    - group.office_lights
+    - group.living_room_lights
 motion_sensors:
   name: Motion
   entities:

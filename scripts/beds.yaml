@@ -33,9 +33,9 @@ bed_4:
     - service: homeassistant.turn_off
       data:
         entity_id:
+          - group.office_lights
+          - group.living_room_lights
           - light.altan_gavel
-          - group.office
-          - group.living_room
           - light.badrum_bord
           - group.outside_lights
     - service: homeassistant.turn_on

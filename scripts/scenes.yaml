@@ -118,17 +118,21 @@ scene_movie:
       data:
         entity_id: 
           - switch.plug_9
-    - service: homeassistant.turn_off
-      data:
-        entity_id: 
-          - light.vardagsrum_golv
     - service: light.turn_on
       data:
         entity_id: 
           - light.altan_gavel
           - light.kontor_gavel
-          - light.vardagsrum_tak
+          - group.office_lights
+          - group.living_room_lights
         brightness: 1
+    - service: homeassistant.turn_off
+      data:
+        entity_id: 
+          - light.vardagsrum_golv
+          - light.vardagsrum_tavla
+          - light.kontor_golv
+          - light.kontor_tak
 
 # Morning
 scene_morning:

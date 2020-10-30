@@ -147,19 +147,14 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.altanen",
+                                    "entity": "light.gamla_hallen",
+                                    "name": "Ga hall",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_4",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "light.hallen",
+                                    "entity": "light.koket",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -186,15 +181,8 @@
                                     }
                                 },
                                 {
-                                    "entity": "light.vardagsrum_bordslampa",
+                                    "entity": "light.vardagsrum_bord",
                                     "name": "V bord",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "light.vardagsrum_golvlampa",
-                                    "name": "V golv",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -207,36 +195,63 @@
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_7",
+                                    "entity": "light.vardagsrum_tak",
                                     "name": "V tak",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.biblioteket",
-                                    "name": "Bibliotek",
+                                    "entity": "light.vardagsrum_golv",
+                                    "name": "V golv",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_5",
-                                    "name": "Kontoret",
+                                    "entity": "light.vardagsrum_tavla",
+                                    "name": "V tavla",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_3",
+                                    "entity": "light.kontor_tak",
+                                    "name": "K tak",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.kontor_bord",
+                                    "name": "K bord",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.badrum_fonster",
                                     "name": "Bad",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_8",
+                                    "entity": "light.badrum_bord",
+                                    "name": "Bastu",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.nya_hallen",
                                     "name": "Ny hall",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.uterum",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -255,21 +270,21 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.bulb_1",
+                                    "entity": "light.altan_gavel",
                                     "name": "Gavel",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_2",
+                                    "entity": "light.altan_vagg",
                                     "name": "V\u00e4gg",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
                                 },
                                 {
-                                    "entity": "light.bulb_6",
+                                    "entity": "light.kontor_gavel",
                                     "name": "Biblioteksgavel",
                                     "tap_action": {
                                         "action": "toggle"
@@ -419,15 +434,15 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.altanen",
+                                            "entity": "light.koket",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_4",
+                                            "entity": "light.uterum",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.hallen",
+                                            "entity": "light.gamla_hallen",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -459,13 +474,8 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.vardagsrum_bordslampa",
+                                            "entity": "light.vardagsrum_bord",
                                             "name": "Lilla bordet",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "light.vardagsrum_golvlampa",
-                                            "name": "Vid TVn",
                                             "secondary_info": "last-changed"
                                         },
                                         {
@@ -474,8 +484,18 @@
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_7",
+                                            "entity": "light.vardagsrum_golv",
+                                            "name": "Vid TVn",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.vardagsrum_tak",
                                             "name": "Taket",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.vardagsrum_tavla",
+                                            "name": "Tavlan",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -487,17 +507,64 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.biblioteket",
-                                            "name": "Biblioteket - F\u00f6nstret",
+                                            "entity": "light.kontor_tak",
+                                            "name": "Taket",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_3",
+                                            "entity": "light.kontor_bord",
+                                            "name": "Skrivbord",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_8",
+                                            "entity": "light.kontor_golv",
+                                            "name": "Golvet",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.kontor_fonster",
+                                            "name": "F\u00f6nstret",
+                                            "secondary_info": "last-changed"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "theme": "default",
+                                    "title": "Biblioteket",
+                                    "type": "entities"
+                                },
+                                {
+                                    "brightness": true,
+                                    "brightness_icon": "weather-sunny",
+                                    "color_picker": true,
+                                    "color_temp": true,
+                                    "color_wheel": true,
+                                    "effects_list": false,
+                                    "entity": "light.kontor_tak",
+                                    "full_width_sliders": false,
+                                    "group": true,
+                                    "header": "Kontor tak",
+                                    "persist_features": false,
+                                    "show_slider_percent": false,
+                                    "temperature_icon": "thermometer",
+                                    "type": "custom:light-entity-card",
+                                    "white_icon": "file-word-box",
+                                    "white_value": true
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "light.nya_hallen",
                                             "name": "Hallen",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.badrum_fonster",
+                                            "name": "Badrumsf\u00f6nstret",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "light.badrum_bord",
+                                            "name": "Vid bastun",
                                             "secondary_info": "last-changed"
                                         }
                                     ],
@@ -507,23 +574,17 @@
                                     "type": "entities"
                                 },
                                 {
-                                    "effects_list": false,
-                                    "entity": "light.bulb_5",
-                                    "group": true,
-                                    "type": "custom:light-entity-card"
-                                },
-                                {
                                     "entities": [
                                         {
-                                            "entity": "light.bulb_1",
+                                            "entity": "light.altan_gavel",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_2",
+                                            "entity": "light.altan_vagg",
                                             "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "light.bulb_6",
+                                            "entity": "light.kontor_gavel",
                                             "secondary_info": "last-changed"
                                         },
                                         {

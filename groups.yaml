@@ -26,40 +26,51 @@ all_devices:
 all_lights:
   name: Alla lampor
   entities:
-    - light.altanen
-    - light.kontor_fonster
+    - light.uterum
     - light.bla_rummet
-    - light.bulb_1
-    - light.bulb_2
-    - light.bulb_3
-    - light.bulb_4
-    - light.bulb_5
-    - light.bulb_6
-    - light.bulb_7
-    - light.bulb_8
-    - light.gamla_hallen
     - light.helenas_rum
     - light.sovrummet
+    - light.altan_gavel
+    - light.altan_vagg
+    - light.badrum_fonster
+    - light.badrum_bord
+    - light.koket
+    - light.nya_hallen
+    - light.gamla_hallen
+    - light.kontor_gavel
+    - light.kontor_tak
+    - light.kontor_golv
+    - light.kontor_bord
+    - light.kontor_fonster
+    - light.vardagsrum_tak
     - light.vardagsrum_bord
     - light.vardagsrum_golvlampa
     - light.vardagsrum_horn
+    - light.vardagsrum_tavla
     - input_boolean.outside_lights
+    # - light.oanvand_ett
+    # - light.oanvand_tva
 evening_lights:
   name: Kvällslampor
   entities:
-    - light.altanen
+    - light.uterum
     - light.kontor_fonster
     - light.bla_rummet
-    - light.bulb_1
-    - light.bulb_2
-    - light.bulb_3
-    - light.bulb_4
-    - light.bulb_6
-    - light.bulb_7
-    - light.bulb_8
+    - light.altan_gavel
+    - light.altan_vagg
+    - light.badrum_fonster
+    - light.badrum_bord
+    - light.koket
+    - light.nya_hallen
     - light.gamla_hallen
     - light.helenas_rum
     - light.sovrummet
+    - light.kontor_gavel
+    - light.kontor_tak
+    - light.kontor_golv
+    - light.kontor_bord
+    - light.kontor_fonster
+    - light.vardagsrum_tak
     - light.vardagsrum_bord
     - light.vardagsrum_golvlampa
     - light.vardagsrum_horn
@@ -67,38 +78,39 @@ evening_lights:
 living_room_lights:
   name: Vardagsrum
   entities:
-    - light.bulb_7
-    - light.bulb_9
-    - light.bulb_10
-    - light.bulb_11
+    - light.vardagsrum_tak
+    - light.vardagsrum_golv
+    - light.vardagsrum_horn
+    - light.vardagsrum_bord
     - light.vardagsrum_tavla
 office_lights:
   name: Kontor
   entities:
-    - light.bulb_5
-    - light.bulb_12
-    - light.bulb_13
+    - light.kontor_tak
+    - light.kontor_golv
+    - light.kontor_bord
     - light.kontor_fonster
 outside_lights:
   name: Utomhuslampor
   entities:
-    - light.bulb_1
-    - light.bulb_2
-    - light.bulb_6
+    - light.altan_gavel
+    - light.altan_vagg
+    - light.kontor_gavel
     - input_boolean.outside_lights
 inside_lights:
   name: Inomhuslampor
   entities:
-    - light.bulb_3
-    - light.bulb_4
-    - light.bulb_5
-    - light.bulb_7
-    - light.bulb_8
-all_library:
-  name: Alla i biblioteket
-  entities:
-    - light.bulb_5
-    - light.kontor_fonster
+    - light.uterum
+    - light.bla_rummet
+    - light.helenas_rum
+    - light.sovrummet
+    - light.badrum_fonster
+    - light.badrum_bord
+    - light.koket
+    - light.nya_hallen
+    - light.gamla_hallen
+    - group.office
+    - group.living_room
 motion_sensors:
   name: Motion
   entities:

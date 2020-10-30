@@ -19,7 +19,7 @@
         {% if is_state('input_boolean.bright_night_light', 'on') %}
           script.scene_all_on
         {% else %}
-          light.bulb_8
+          light.nya_hallen
         {% endif %}
   - service: logbook.log
     data_template:
@@ -70,7 +70,7 @@
   - data:
       entity_id: 
         - light.gamla_hallen
-        - light.bulb_4
+        - light.koket
     service: homeassistant.turn_on
   - service: logbook.log
     data_template:
@@ -98,7 +98,7 @@
   - data:
       entity_id: 
         - light.gamla_hallen
-        - light.bulb_4
+        - light.koket
     service: homeassistant.turn_off
   - service: logbook.log
     data_template:

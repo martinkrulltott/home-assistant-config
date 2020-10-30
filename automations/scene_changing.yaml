@@ -84,7 +84,7 @@
     value_template: "{{ states('sensor.time') > (state_attr('input_datetime.wake_up_time', 'timestamp') | int | timestamp_custom('%H:%M', False)) }}"
   - service: light.turn_on
     data:
-      entity_id: light.bulb_5
+      entity_id: light.kontor_tak
       brightness: 255
       rgb_color: [255,182,109]
       transition: 0

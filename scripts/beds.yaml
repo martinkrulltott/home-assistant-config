@@ -6,7 +6,7 @@ bed_1:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.plug_7
+          - light.sovrummet
 bed_2:
   sequence:
     - condition: state
@@ -15,7 +15,7 @@ bed_2:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.plug_6
+          - light.bla_rummet
 bed_3:
   sequence:
     - condition: state
@@ -24,7 +24,7 @@ bed_3:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.plug_5
+          - light.helenas_rum
 bed_4:
   sequence:
     - condition: state
@@ -33,12 +33,10 @@ bed_4:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - light.bulb_1
-          - light.bulb_6
-          - light.kontor_fonster
-          - switch.plug_3
-          - switch.plug_8
-          - light.uterum0
+          - light.altan_gavel
+          - group.office
+          - group.living_room
+          - light.badrum_bord
           - group.outside_lights
     - service: homeassistant.turn_on
       data:

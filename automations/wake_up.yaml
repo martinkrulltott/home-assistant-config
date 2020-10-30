@@ -25,8 +25,8 @@
   - service: homeassistant.turn_off
     data:
       entity_id: 
-        - switch.plug_3
-        - switch.plug_8
-        - light.uterum0
-        - light.bulb_4
-        - light.bulb_7
+        - light.vardagsrum_bord
+        - light.vardagsrum_golv
+        - light.vardagsrum_horn
+        - light.koket
+        - light.vardagsrum_tak

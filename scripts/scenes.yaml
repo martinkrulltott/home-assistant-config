@@ -35,17 +35,17 @@ scene_sleeping:
       data:
         entity_id:
           - light.gamla_hallen
-          - light.bulb_5
-          - light.bulb_7
-          - light.bulb_8
-          - switch.plug_8
-          - light.uterum0
+          - light.kontor_tak
+          - light.vardagsrum_tak
+          - light.nya_hallen
+          - light.vardagsrum_golv
+          - light.vardagsrum_horn
           - input_boolean.evening
     - service: homeassistant.turn_on
       data:
         entity_id: 
-          - light.bulb_3
-          - light.bulb_4
+          - light.badrum_fonster
+          - light.koket
         brightness: 1
     - service: homeassistant.turn_on
       data:
@@ -59,32 +59,32 @@ scene_sleeping_away:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.plug_3
+          - light.vardagsrum_bord
           - light.gamla_hallen
-          - light.bulb_5
+          - light.kontor_tak
           - input_boolean.evening
     - service: light.turn_on
       data:
         entity_id:
           - group.outside_lights
-          - light.bulb_3
-          - light.bulb_4
+          - light.badrum_fonster
+          - light.koket
         brightness: 1
     - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
-          {{ ['light.kontor_fonster','switch.plug_5','switch.plug_6','switch.plug_7'] | random }}
+          {{ ['light.kontor_fonster','light.helenas_rum','light.bla_rummet','light.sovrummet'] | random }}
     - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
-          {{ ['switch.plug_5','switch.plug_6','switch.plug_7'] | random }}
+          {{ ['light.helenas_rum','light.bla_rummet','light.sovrummet'] | random }}
     - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
-          {{ ['switch.plug_6','switch.plug_7','switch.plug_8'] | random }}
+          {{ ['light.bla_rummet','light.sovrummet','light.vardagsrum_golv'] | random }}
 
 # All on
 scene_all_on:
@@ -92,20 +92,20 @@ scene_all_on:
     - service: homeassistant.turn_on
       data:
         entity_id: 
-          - switch.plug_3
-          - switch.plug_8
-          - light.uterum0
+          - light.vardagsrum_bord
+          - light.vardagsrum_golv
+          - light.vardagsrum_horn
     - service: light.turn_on
       data:
         entity_id: 
-          - light.bulb_1
-          - light.bulb_2
-          - light.bulb_3
-          - light.bulb_4
-          - light.bulb_5
-          - light.bulb_6
-          - light.bulb_7
-          - light.bulb_8
+          - light.altan_gavel
+          - light.altan_vagg
+          - light.badrum_fonster
+          - light.koket
+          - light.kontor_tak
+          - light.kontor_gavel
+          - light.vardagsrum_tak
+          - light.nya_hallen
         brightness: 255
     - service: input_boolean.turn_on
       data:
@@ -121,13 +121,13 @@ scene_movie:
     - service: homeassistant.turn_off
       data:
         entity_id: 
-          - switch.plug_8
+          - light.vardagsrum_golv
     - service: light.turn_on
       data:
         entity_id: 
-          - light.bulb_1
-          - light.bulb_6
-          - light.bulb_7
+          - light.altan_gavel
+          - light.kontor_gavel
+          - light.vardagsrum_tak
         brightness: 1
 
 # Morning
@@ -137,16 +137,18 @@ scene_morning:
       data:
         entity_id: 
           - input_boolean.sleeping
-    - service: homeassistant.turn_on
-      data:
-        entity_id: 
-          - switch.plug_3
-          - switch.plug_8
-          - light.uterum0
-          - light.bulb_5
     - service: light.turn_on
       data:
         entity_id: 
-          - light.bulb_4
-          - light.bulb_7
+          - light.kontor_tak
+          - light.kontor_bord
+        brightness: 255
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.koket
+          - light.vardagsrum_tak
+          - light.vardagsrum_bord
+          - light.vardagsrum_golv
+          - light.vardagsrum_horn
         brightness: 180

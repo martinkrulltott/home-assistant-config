@@ -12,9 +12,9 @@
 #      data_template:
 #        entity_id: 
 #          - group.outside_lights
-#          - light.bulb_4
+#          - light.koket
 #        brightness: >
-#          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+#          {% set bri = state_attr('light.altan_gavel', 'brightness') | int %}
 #          {{ [bri+30, 255] | min }}
 
 #- alias: Dimmer down Altan
@@ -30,9 +30,9 @@
 #      data_template:
 #        entity_id: 
 #          - group.outside_lights
-#          - light.bulb_4
+#          - light.koket
 #        brightness: >
-#          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+#          {% set bri = state_attr('light.altan_gavel', 'brightness') | int %}
 #          {{ [bri-30, 0] | max }}
 
 # On/off dimmer
@@ -54,9 +54,9 @@
       data_template:
         entity_id: 
           - group.outside_lights
-          - light.bulb_4
+          - light.koket
         brightness: >
-          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+          {% set bri = state_attr('light.altan_gavel', 'brightness') | int %}
           {{ [bri+30, 255] | min }}
 
 - alias: Dimmer down On/off
@@ -77,9 +77,9 @@
       data_template:
         entity_id: 
           - group.outside_lights
-          - light.bulb_4
+          - light.koket
         brightness: >
-          {% set bri = state_attr('light.bulb_1', 'brightness') | int %}
+          {% set bri = state_attr('light.altan_gavel', 'brightness') | int %}
           {{ [bri-30, 0] | max }}
 
 # Button press up

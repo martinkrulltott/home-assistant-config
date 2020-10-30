@@ -27,9 +27,9 @@ all_lights:
   name: Alla lampor
   entities:
     - light.uterum
+    - light.sovrummet
     - light.bla_rummet
     - light.helenas_rum
-    - light.sovrummet
     - light.altan_gavel
     - light.altan_vagg
     - light.badrum_fonster
@@ -44,7 +44,7 @@ all_lights:
     - light.kontor_fonster
     - light.vardagsrum_tak
     - light.vardagsrum_bord
-    - light.vardagsrum_golvlampa
+    - light.vardagsrum_golv
     - light.vardagsrum_horn
     - light.vardagsrum_tavla
     - input_boolean.outside_lights
@@ -54,8 +54,9 @@ evening_lights:
   name: Kvällslampor
   entities:
     - light.uterum
-    - light.kontor_fonster
+    - light.sovrummet
     - light.bla_rummet
+    - light.helenas_rum
     - light.altan_gavel
     - light.altan_vagg
     - light.badrum_fonster
@@ -63,8 +64,6 @@ evening_lights:
     - light.koket
     - light.nya_hallen
     - light.gamla_hallen
-    - light.helenas_rum
-    - light.sovrummet
     - light.kontor_gavel
     - light.kontor_tak
     - light.kontor_golv
@@ -72,8 +71,9 @@ evening_lights:
     - light.kontor_fonster
     - light.vardagsrum_tak
     - light.vardagsrum_bord
-    - light.vardagsrum_golvlampa
+    - light.vardagsrum_golv
     - light.vardagsrum_horn
+    - light.vardagsrum_tavla
     - input_boolean.outside_lights
 living_room_lights:
   name: Vardagsrum

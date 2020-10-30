@@ -12,7 +12,7 @@
   - service: homeassistant.turn_on
     data:
       entity_id: 
-        - switch.plug_4
+        - light.gamla_hallen
   - service: homeassistant.turn_on
     data_template:
       entity_id: >
@@ -69,7 +69,7 @@
   action:
   - data:
       entity_id: 
-        - switch.plug_4
+        - light.gamla_hallen
         - light.bulb_4
     service: homeassistant.turn_on
   - service: logbook.log
@@ -97,7 +97,7 @@
   action:
   - data:
       entity_id: 
-        - switch.plug_4
+        - light.gamla_hallen
         - light.bulb_4
     service: homeassistant.turn_off
   - service: logbook.log

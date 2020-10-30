@@ -90,3 +90,4 @@ play_rapport_on_chromecast:
       entity_id: media_player.huset_tv
       data:
         program_name: rapport
+        

@@ -9,7 +9,7 @@
   entity_id: switch.plug_3
 - platform: switch
   name: Gamla hallen
-  entity_id: light.gamla_hallen
+  entity_id: switch.plug_4
 - platform: switch
   name: Helenas rum
   entity_id: switch.plug_5
@@ -24,4 +24,4 @@
   entity_id: switch.plug_8
 - platform: switch
   name: Oanvänd två
-  entity_id: light.uterum0
+  entity_id: switch.plug_10

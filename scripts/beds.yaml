@@ -35,10 +35,10 @@ bed_4:
         entity_id:
           - light.bulb_1
           - light.bulb_6
-          - switch.plug_2
+          - light.kontor_fonster
           - switch.plug_3
           - switch.plug_8
-          - switch.plug_10
+          - light.uterum0
           - group.outside_lights
     - service: homeassistant.turn_on
       data:

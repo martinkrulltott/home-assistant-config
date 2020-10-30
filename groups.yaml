@@ -27,7 +27,7 @@ all_lights:
   name: Alla lampor
   entities:
     - light.altanen
-    - light.biblioteket
+    - light.kontor_fonster
     - light.bla_rummet
     - light.bulb_1
     - light.bulb_2
@@ -37,10 +37,10 @@ all_lights:
     - light.bulb_6
     - light.bulb_7
     - light.bulb_8
-    - light.hallen
+    - light.gamla_hallen
     - light.helenas_rum
     - light.sovrummet
-    - light.vardagsrum_bordslampa
+    - light.vardagsrum_bord
     - light.vardagsrum_golvlampa
     - light.vardagsrum_horn
     - input_boolean.outside_lights
@@ -48,7 +48,7 @@ evening_lights:
   name: Kvällslampor
   entities:
     - light.altanen
-    - light.biblioteket
+    - light.kontor_fonster
     - light.bla_rummet
     - light.bulb_1
     - light.bulb_2
@@ -57,13 +57,28 @@ evening_lights:
     - light.bulb_6
     - light.bulb_7
     - light.bulb_8
-    - light.hallen
+    - light.gamla_hallen
     - light.helenas_rum
     - light.sovrummet
-    - light.vardagsrum_bordslampa
+    - light.vardagsrum_bord
     - light.vardagsrum_golvlampa
     - light.vardagsrum_horn
     - input_boolean.outside_lights
+living_room_lights:
+  name: Vardagsrum
+  entities:
+    - light.bulb_7
+    - light.bulb_9
+    - light.bulb_10
+    - light.bulb_11
+    - light.vardagsrum_tavla
+office_lights:
+  name: Kontor
+  entities:
+    - light.bulb_5
+    - light.bulb_12
+    - light.bulb_13
+    - light.kontor_fonster
 outside_lights:
   name: Utomhuslampor
   entities:
@@ -83,7 +98,7 @@ all_library:
   name: Alla i biblioteket
   entities:
     - light.bulb_5
-    - light.biblioteket
+    - light.kontor_fonster
 motion_sensors:
   name: Motion
   entities:

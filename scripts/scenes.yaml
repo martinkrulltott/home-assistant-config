@@ -34,12 +34,12 @@ scene_sleeping:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.plug_4
+          - light.gamla_hallen
           - light.bulb_5
           - light.bulb_7
           - light.bulb_8
           - switch.plug_8
-          - switch.plug_10
+          - light.uterum0
           - input_boolean.evening
     - service: homeassistant.turn_on
       data:
@@ -60,7 +60,7 @@ scene_sleeping_away:
       data:
         entity_id:
           - switch.plug_3
-          - switch.plug_4
+          - light.gamla_hallen
           - light.bulb_5
           - input_boolean.evening
     - service: light.turn_on
@@ -74,7 +74,7 @@ scene_sleeping_away:
     - service: homeassistant.turn_off
       data_template:
         entity_id: >
-          {{ ['switch.plug_2','switch.plug_5','switch.plug_6','switch.plug_7'] | random }}
+          {{ ['light.kontor_fonster','switch.plug_5','switch.plug_6','switch.plug_7'] | random }}
     - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
@@ -94,7 +94,7 @@ scene_all_on:
         entity_id: 
           - switch.plug_3
           - switch.plug_8
-          - switch.plug_10
+          - light.uterum0
     - service: light.turn_on
       data:
         entity_id: 
@@ -142,7 +142,7 @@ scene_morning:
         entity_id: 
           - switch.plug_3
           - switch.plug_8
-          - switch.plug_10
+          - light.uterum0
           - light.bulb_5
     - service: light.turn_on
       data:

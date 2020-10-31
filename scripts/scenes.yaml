@@ -36,10 +36,14 @@ scene_sleeping:
         entity_id:
           - light.gamla_hallen
           - light.kontor_tak
+          - light.kontor_bord
+          - light.kontor_golv
+          - light.badrum_bord
           - light.vardagsrum_tak
           - light.nya_hallen
           - light.vardagsrum_golv
           - light.vardagsrum_horn
+          - light.vardagsrum_tavla
           - input_boolean.evening
     - service: homeassistant.turn_on
       data:
@@ -60,8 +64,13 @@ scene_sleeping_away:
       data:
         entity_id:
           - light.vardagsrum_bord
+          - light.vardagsrum_tak
+          - light.vardagsrum_horn
           - light.gamla_hallen
           - light.kontor_tak
+          - light.kontor_golv
+          - light.kontor_bord
+          - light.badrum_bord
           - input_boolean.evening
     - service: light.turn_on
       data:

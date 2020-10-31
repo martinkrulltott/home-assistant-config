@@ -33,11 +33,11 @@ bed_4:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - group.office_lights
-          - group.living_room_lights
+          - light.office_lights
+          - light.living_room_lights
           - light.altan_gavel
           - light.badrum_bord
-          - group.outside_lights
+          - light.outside_lights
     - service: homeassistant.turn_on
       data:
         entity_id: 

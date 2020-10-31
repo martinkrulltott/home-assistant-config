@@ -4,7 +4,7 @@ scene_day:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - group.all_lights
+          - light.all_lights
           - input_boolean.evening
           - input_boolean.sleeping
           - input_boolean.outside_lights
@@ -75,7 +75,7 @@ scene_sleeping_away:
     - service: light.turn_on
       data:
         entity_id:
-          - group.outside_lights
+          - light.outside_lights
           - light.badrum_fonster
           - light.koket
         brightness: 1
@@ -132,8 +132,8 @@ scene_movie:
         entity_id: 
           - light.altan_gavel
           - light.kontor_gavel
-          - group.office_lights
-          - group.living_room_lights
+          - light.office_lights
+          - light.living_room_lights
         brightness: 1
     - service: homeassistant.turn_off
       data:

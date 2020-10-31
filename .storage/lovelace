@@ -373,21 +373,6 @@
                         {
                             "cards": [
                                 {
-                                    "entity": "group.all_lights",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "icon": "mdi:lightbulb-on-outline",
-                                    "icon_height": "40px",
-                                    "name": "Alla Lampor",
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                {
                                     "entities": [
                                         {
                                             "entity": "script.scene_day",
@@ -434,8 +419,58 @@
                                 {
                                     "entities": [
                                         {
+                                            "entity": "light.all_lights",
+                                            "hide_when_off": true,
+                                            "name": "Alla lampor",
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "light.inside_lights",
+                                            "hide_when_off": true,
+                                            "name": "Inne",
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "light.outside_lights",
+                                            "hide_when_off": true,
+                                            "name": "Ute",
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "light.living_room_lights",
+                                            "hide_when_off": true,
+                                            "name": "Vardagsrummet",
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "light.office_lights",
+                                            "hide_when_off": true,
+                                            "name": "Biblioteket",
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "theme": "default",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
                                             "entity": "light.koket",
-                                            "secondary_info": "last-changed"
+                                            "hide_when_off": true,
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.uterum",
@@ -475,23 +510,35 @@
                                     "entities": [
                                         {
                                             "entity": "light.vardagsrum_bord",
+                                            "hide_when_off": true,
                                             "name": "Lilla bordet",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.vardagsrum_horn",
+                                            "hide_when_off": true,
                                             "name": "H\u00f6rnet",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.vardagsrum_golv",
+                                            "hide_when_off": true,
                                             "name": "Vid TVn",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.vardagsrum_tak",
+                                            "hide_when_off": true,
                                             "name": "Taket",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.vardagsrum_tavla",
@@ -508,18 +555,27 @@
                                     "entities": [
                                         {
                                             "entity": "light.kontor_tak",
+                                            "hide_when_off": true,
                                             "name": "Taket",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.kontor_bord",
+                                            "hide_when_off": true,
                                             "name": "Skrivbord",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.kontor_golv",
+                                            "hide_when_off": true,
                                             "name": "Golvet",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.kontor_fonster",
@@ -554,18 +610,27 @@
                                     "entities": [
                                         {
                                             "entity": "light.nya_hallen",
+                                            "hide_when_off": true,
                                             "name": "Hallen",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.badrum_fonster",
+                                            "hide_when_off": true,
                                             "name": "Badrumsf\u00f6nstret",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.badrum_bord",
+                                            "hide_when_off": true,
                                             "name": "Vid bastun",
-                                            "secondary_info": "last-changed"
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -577,15 +642,24 @@
                                     "entities": [
                                         {
                                             "entity": "light.altan_gavel",
-                                            "secondary_info": "last-changed"
+                                            "hide_when_off": true,
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.altan_vagg",
-                                            "secondary_info": "last-changed"
+                                            "hide_when_off": true,
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "light.kontor_gavel",
-                                            "secondary_info": "last-changed"
+                                            "hide_when_off": true,
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
                                         },
                                         {
                                             "entity": "input_boolean.outside_lights",

@@ -23,33 +23,6 @@ all_devices:
     - device_tracker.jipa
     - device_tracker.aiph
     - device_tracker.eiph
-all_lights:
-  name: Alla lampor
-  entities:
-    - light.uterum
-    - light.sovrummet
-    - light.bla_rummet
-    - light.helenas_rum
-    - light.altan_gavel
-    - light.altan_vagg
-    - light.badrum_fonster
-    - light.badrum_bord
-    - light.koket
-    - light.nya_hallen
-    - light.gamla_hallen
-    - light.kontor_gavel
-    - light.kontor_tak
-    - light.kontor_golv
-    - light.kontor_bord
-    - light.kontor_fonster
-    - light.vardagsrum_tak
-    - light.vardagsrum_bord
-    - light.vardagsrum_golv
-    - light.vardagsrum_horn
-    - light.vardagsrum_tavla
-    - input_boolean.outside_lights
-    # - light.oanvand_ett
-    # - light.oanvand_tva
 evening_lights:
   name: Kvällslampor
   entities:
@@ -75,42 +48,6 @@ evening_lights:
     - light.vardagsrum_horn
     - light.vardagsrum_tavla
     - input_boolean.outside_lights
-living_room_lights:
-  name: Vardagsrum
-  entities:
-    - light.vardagsrum_tak
-    - light.vardagsrum_golv
-    - light.vardagsrum_horn
-    - light.vardagsrum_bord
-    - light.vardagsrum_tavla
-office_lights:
-  name: Kontor
-  entities:
-    - light.kontor_tak
-    - light.kontor_golv
-    - light.kontor_bord
-    - light.kontor_fonster
-outside_lights:
-  name: Utomhuslampor
-  entities:
-    - light.altan_gavel
-    - light.altan_vagg
-    - light.kontor_gavel
-    - input_boolean.outside_lights
-inside_lights:
-  name: Inomhuslampor
-  entities:
-    - light.uterum
-    - light.bla_rummet
-    - light.helenas_rum
-    - light.sovrummet
-    - light.badrum_fonster
-    - light.badrum_bord
-    - light.koket
-    - light.nya_hallen
-    - light.gamla_hallen
-    - group.office_lights
-    - group.living_room_lights
 motion_sensors:
   name: Motion
   entities:

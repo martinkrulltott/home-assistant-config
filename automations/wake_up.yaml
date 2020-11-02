@@ -25,8 +25,11 @@
   - service: homeassistant.turn_off
     data:
       entity_id: 
-        - light.vardagsrum_bord
-        - light.vardagsrum_golv
-        - light.vardagsrum_horn
-        - light.koket
-        - light.vardagsrum_tak
+          - light.koket
+          - light.vardagsrum_tak
+          - light.vardagsrum_bord
+          - light.vardagsrum_golv
+          - light.vardagsrum_horn
+          - light.badrum_bord
+          - light.badrum_fonster
+          - light.nya_hallen

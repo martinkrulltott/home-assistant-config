@@ -15,9 +15,42 @@ scene_evening:
     - service: light.turn_on
       data:
         entity_id: 
-          - group.evening_lights
-        brightness: 120
-        rgb_color: [255,129,1]
+          - light.uterum
+          - light.sovrummet
+          - light.bla_rummet
+          - light.helenas_rum
+          - light.altan_vagg
+          - light.gamla_hallen
+          - light.kontor_golv
+          - light.kontor_fonster
+          - light.vardagsrum_bord
+          - light.vardagsrum_tavla
+        brightness_pct: 60
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.vardagsrum_horn
+        brightness_pct: 80
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.vardagsrum_tak
+          - light.kontor_gavel
+          - light.badrum_bord
+          - light.nya_hallen
+          - light.koket
+        color_temp: 500
+        brightness_pct: 45
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.vardagsrum_golv
+          - light.kontor_tak
+          - light.kontor_bord
+          - light.badrum_fonster
+          - light.altan_gavel
+        rgb_color: [255, 65, 1]
+        brightness_pct: 25
     - service: homeassistant.turn_on
       data:
         entity_id: 
@@ -50,7 +83,7 @@ scene_sleeping:
         entity_id: 
           - light.badrum_fonster
           - light.koket
-        brightness: 1
+        brightness_pct: 1
     - service: homeassistant.turn_on
       data:
         entity_id:
@@ -78,7 +111,7 @@ scene_sleeping_away:
           - light.outside_lights
           - light.badrum_fonster
           - light.koket
-        brightness: 1
+        brightness_pct: 1
     - delay: '{{ "00:%02d:00" % (range(10, 45) | random) }}'
     - service: homeassistant.turn_off
       data_template:
@@ -98,24 +131,11 @@ scene_sleeping_away:
 # All on
 scene_all_on:
   sequence:
-    - service: homeassistant.turn_on
-      data:
-        entity_id: 
-          - light.vardagsrum_bord
-          - light.vardagsrum_golv
-          - light.vardagsrum_horn
     - service: light.turn_on
       data:
         entity_id: 
-          - light.altan_gavel
-          - light.altan_vagg
-          - light.badrum_fonster
-          - light.koket
-          - light.kontor_tak
-          - light.kontor_gavel
-          - light.vardagsrum_tak
-          - light.nya_hallen
-        brightness: 255
+          - light.all_lights
+        brightness_pct: 100
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.outside_lights            
@@ -134,7 +154,7 @@ scene_movie:
           - light.kontor_gavel
           - light.office_lights
           - light.living_room_lights
-        brightness: 1
+        brightness_pct: 1
     - service: homeassistant.turn_off
       data:
         entity_id: 
@@ -155,7 +175,7 @@ scene_morning:
         entity_id: 
           - light.kontor_tak
           - light.kontor_bord
-        brightness: 255
+        brightness_pct: 90
     - service: light.turn_on
       data:
         entity_id: 
@@ -164,4 +184,7 @@ scene_morning:
           - light.vardagsrum_bord
           - light.vardagsrum_golv
           - light.vardagsrum_horn
-        brightness: 180
+          - light.badrum_bord
+          - light.badrum_fonster
+          - light.nya_hallen
+        brightness_pct: 60

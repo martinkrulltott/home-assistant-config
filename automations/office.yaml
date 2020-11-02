@@ -14,7 +14,7 @@
   - service: light.turn_on
     data:
       entity_id: light.kontor_tak
-      brightness: 255
+      brightness_pct: 100
       rgb_color: [255,129,1]
 
 # Turn Office Light On when MMBP is On (when sun below horizon)
@@ -31,7 +31,7 @@
   - service: light.turn_on
     data:
       entity_id: light.kontor_tak
-      brightness: 255
+      brightness_pct: 100
       rgb_color: [255,129,1]
     
 # Turn Office Light On when MMBP is Off (when sun below horizon)

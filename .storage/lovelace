@@ -230,8 +230,15 @@
                                     }
                                 },
                                 {
-                                    "entity": "light.badrum_fonster",
-                                    "name": "Bad",
+                                    "entity": "light.kontor_golv",
+                                    "name": "K golv",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.kontor_fonster",
+                                    "name": "K fonster",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -239,6 +246,13 @@
                                 {
                                     "entity": "light.badrum_bord",
                                     "name": "Bastu",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.badrum_fonster",
+                                    "name": "Bad",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -252,6 +266,14 @@
                                 },
                                 {
                                     "entity": "light.uterum",
+                                    "name": "Uterum",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.outside_lights",
+                                    "name": "Altan",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -407,6 +429,18 @@
                                                 "service": "homeassistant.turn_on",
                                                 "service_data": {
                                                     "entity_id": "input_boolean.sleeping"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "entity": "input_boolean.evening",
+                                            "icon": "mdi:home-lightbulb-outline",
+                                            "name": "Max ljus",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "homeassistant.turn_on",
+                                                "service_data": {
+                                                    "entity_id": "script.scene_all_on"
                                                 }
                                             }
                                         }

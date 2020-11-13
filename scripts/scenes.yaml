@@ -45,8 +45,6 @@ scene_evening:
       data:
         entity_id: 
           - light.vardagsrum_golv
-          - light.kontor_tak
-          - light.kontor_bord
           - light.badrum_fonster
           - light.altan_gavel
         rgb_color: [255, 65, 1]
@@ -60,6 +58,16 @@ scene_evening:
       data:
         entity_id:
           - input_boolean.sleeping
+    - condition: time
+      after: '16:30:00'
+      before: '12:00:00'
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.kontor_tak
+          - light.kontor_bord
+        rgb_color: [255, 65, 1]
+        brightness_pct: 25
 
 # Sleeping
 scene_sleeping:

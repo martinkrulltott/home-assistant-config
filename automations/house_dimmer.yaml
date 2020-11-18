@@ -35,8 +35,8 @@
 #          {% set bri = state_attr('light.altan_gavel', 'brightness') | int %}
 #          {{ [bri-30, 0] | max }}
 
-# On/off dimmer
-- alias: Dimmer up On/off
+# House on/off dimmer (1 and 2)
+- alias: House dimmer up
   initial_state: 'on'
   trigger:
     - platform: event
@@ -59,7 +59,7 @@
           {% set bri = state_attr('light.altan_gavel', 'brightness') | int %}
           {{ [bri+30, 255] | min }}
 
-- alias: Dimmer down On/off
+- alias: House dimmer down
   initial_state: 'on'
   trigger:
     - platform: event
@@ -83,7 +83,7 @@
           {{ [bri-30, 0] | max }}
 
 # Button press up
-- alias: Dimmer on On/off
+- alias: House dimmer on
   initial_state: 'on'
   trigger:
     - platform: event
@@ -111,7 +111,7 @@
           - input_boolean.sleeping
 
 # Button press down
-- alias: Dimmer off On/off
+- alias: House dimmer off
   initial_state: 'on'
   trigger:
     - platform: event

@@ -50,7 +50,12 @@
         entity_id: 
           - light.kontor_tak
           - light.kontor_bord
-        brightness_pct: 100 
+        brightness_pct: 100
+        rgb_color: [255, 200, 145]
+    - service: homeassistant.turn_off
+      data:
+        entity_id: 
+          - switch.sonoff1
 
 # Button press down
 - alias: Office dimmer off
@@ -67,3 +72,7 @@
         entity_id: 
           - light.kontor_tak
           - light.kontor_bord
+    - service: homeassistant.turn_on
+      data:
+        entity_id: 
+          - switch.sonoff1

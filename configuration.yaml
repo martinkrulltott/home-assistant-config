@@ -69,10 +69,6 @@ logbook:
       - switch
       - media_player
 
-# HACS
-hacs:
-  token: !secret hacs_token
-
 # Notify
 notify:
   - name: email

@@ -30,6 +30,7 @@ scene_evening:
       data:
         entity_id: 
           - light.vardagsrum_horn
+          - light.sovrum_gavel
         brightness_pct: 80
     - service: light.turn_on
       data:

@@ -1,10 +1,10 @@
 bed_1:
   name: Sovrummet
-  initial: off
+  initial: on
   icon: mdi:bed-empty
 bed_2:
   name: Blå rummet
-  initial: on
+  initial: off
   icon: mdi:bed-empty
 bed_3:
   name: Helenas rum

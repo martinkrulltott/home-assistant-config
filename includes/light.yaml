@@ -46,6 +46,7 @@
     - light.altan_gavel
     - light.altan_vagg
     - light.kontor_gavel
+    - light.sovrum_gavel
 - platform: group
   name: Inside lights
   entities:
@@ -84,5 +85,6 @@
     - light.vardagsrum_golv
     - light.vardagsrum_horn
     - light.vardagsrum_tavla
+    - light.sovrum_gavel
     # - light.oanvand_ett
     # - light.oanvand_tva

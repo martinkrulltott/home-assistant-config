@@ -1,27 +1,8 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
-            "custom_header": {
-                "compact_mode": true,
-                "disable_sidebar": true,
-                "exceptions": [
-                    {
-                        "conditions": {
-                            "user": "Martin, Jan"
-                        },
-                        "config": {
-                            "compact_mode": true,
-                            "disable_sidebar": false,
-                            "menu_hide": false,
-                            "notifications": "show",
-                            "options_hide": false
-                        }
-                    }
-                ],
-                "menu_hide": true,
-                "options_hide": true,
-                "voice_hide": true
-            },
             "title": "Steninge",
             "views": [
                 {
@@ -30,14 +11,9 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.plug_9",
-                                    "name": "TVn",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "input_boolean.sleeping",
+                                    "entity": "script.scene_evening",
+                                    "icon": "mdi:lightbulb-on-outline",
+                                    "name": "Kv\u00e4ll",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -46,6 +22,12 @@
                                     "entity": "script.scene_movie",
                                     "icon": "mdi:video-vintage",
                                     "name": "Film",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "input_boolean.sleeping",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -71,7 +53,6 @@
                             "cards": [
                                 {
                                     "artwork": "cover",
-                                    "entity": "media_player.living_room",
                                     "hide": {
                                         "icon": true,
                                         "mute": true,
@@ -79,7 +60,8 @@
                                         "power": true
                                     },
                                     "info": "short",
-                                    "type": "custom:mini-media-player"
+                                    "type": "custom:mini-media-player",
+                                    "entity": "media_player.office"
                                 },
                                 {
                                     "cards": [
@@ -311,6 +293,13 @@
                                     "tap_action": {
                                         "action": "toggle"
                                     }
+                                },
+                                {
+                                    "entity": "light.sovrum_gavel",
+                                    "name": "Framsidan",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_state": false,
@@ -433,7 +422,7 @@
                                             }
                                         },
                                         {
-                                            "entity": "input_boolean.evening",
+                                            "entity": "script.scene_all_on",
                                             "icon": "mdi:home-lightbulb-outline",
                                             "name": "Max ljus",
                                             "tap_action": {
@@ -696,6 +685,14 @@
                                             "type": "custom:slider-entity-row"
                                         },
                                         {
+                                            "entity": "light.sovrum_gavel",
+                                            "min": 1,
+                                            "name": "Framsidan",
+                                            "secondary_info": "last-changed",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
                                             "entity": "input_boolean.outside_lights",
                                             "secondary_info": "last-changed",
                                             "state_color": true
@@ -865,164 +862,9 @@
                     "title": "Temperatur"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "artwork": "cover",
-                                    "entity": "media_player.huset_tv",
-                                    "hide": {
-                                        "icon": true,
-                                        "power": true
-                                    },
-                                    "name": "Chromecast",
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "artwork": "cover",
-                                            "entity": "media_player.living_room",
-                                            "hide": {
-                                                "icon": true,
-                                                "mute": true,
-                                                "name": true,
-                                                "power": true
-                                            },
-                                            "info": "short",
-                                            "type": "custom:mini-media-player"
-                                        },
-                                        {
-                                            "cards": [
-                                                {
-                                                    "entity": "media_player.living_room",
-                                                    "group": true,
-                                                    "hide": {
-                                                        "controls": true,
-                                                        "icon": true,
-                                                        "info": true,
-                                                        "power": true,
-                                                        "progress": true
-                                                    },
-                                                    "type": "custom:mini-media-player"
-                                                },
-                                                {
-                                                    "entity": "media_player.office",
-                                                    "group": true,
-                                                    "hide": {
-                                                        "controls": true,
-                                                        "icon": true,
-                                                        "info": true,
-                                                        "power": true,
-                                                        "progress": true
-                                                    },
-                                                    "type": "custom:mini-media-player"
-                                                },
-                                                {
-                                                    "entity": "media_player.kitchen",
-                                                    "group": true,
-                                                    "hide": {
-                                                        "controls": true,
-                                                        "icon": true,
-                                                        "info": true,
-                                                        "power": true,
-                                                        "progress": true
-                                                    },
-                                                    "type": "custom:mini-media-player"
-                                                }
-                                            ],
-                                            "type": "vertical-stack"
-                                        }
-                                    ],
-                                    "type": "vertical-stack"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "switch.plug_9",
-                                            "name": "TVn",
-                                            "secondary_info": "last-changed"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "script.play_svt1_on_chromecast",
-                                            "hold_action": {
-                                                "action": "more-info"
-                                            },
-                                            "icon": "mdi:numeric-1-circle-outline",
-                                            "icon_height": "50px",
-                                            "name": "SVT1",
-                                            "show_icon": true,
-                                            "show_name": true,
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "script.play_svt2_on_chromecast",
-                                            "hold_action": {
-                                                "action": "more-info"
-                                            },
-                                            "icon": "mdi:numeric-2-circle-outline",
-                                            "icon_height": "50px",
-                                            "name": "SVT2",
-                                            "show_icon": true,
-                                            "show_name": true,
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "script.play_svtk_on_chromecast",
-                                            "hold_action": {
-                                                "action": "more-info"
-                                            },
-                                            "icon": "mdi:temperature-kelvin",
-                                            "icon_height": "50px",
-                                            "name": "Kunskap",
-                                            "show_icon": true,
-                                            "show_name": true,
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "script.play_rapport_on_chromecast",
-                                            "hold_action": {
-                                                "action": "more-info"
-                                            },
-                                            "icon": "mdi:television-classic",
-                                            "icon_height": "50px",
-                                            "name": "Rapport",
-                                            "show_icon": true,
-                                            "show_name": true,
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "show_state": false,
-                                    "type": "glance"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:music-note",
-                    "path": "musik",
-                    "title": "Musik"
-                },
-                {
+                    "icon": "mdi:cog",
+                    "path": "installningar",
+                    "title": "Inst\u00e4llningar",
                     "badges": [],
                     "cards": [
                         {
@@ -1148,13 +990,11 @@
                             "show_header_toggle": false,
                             "type": "entities"
                         }
-                    ],
-                    "icon": "mdi:settings",
-                    "path": "installningar",
-                    "title": "Inst\u00e4llningar",
-                    "type": "vertical-stack"
+                    ]
                 },
                 {
+                    "icon": "mdi:server",
+                    "title": "System",
                     "badges": [],
                     "cards": [
                         {
@@ -1166,7 +1006,7 @@
                                     "entity": "sensor.last_boot"
                                 },
                                 {
-                                    "entity": "sensor.processor_use"
+                                    "entity": "sensor.processor_use_percent"
                                 },
                                 {
                                     "entity": "sensor.cpu_temp"
@@ -1284,13 +1124,9 @@
                             ],
                             "type": "vertical-stack"
                         }
-                    ],
-                    "icon": "mdi:mixcloud",
-                    "title": "System"
+                    ]
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }

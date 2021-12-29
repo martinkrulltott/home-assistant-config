@@ -12,12 +12,12 @@ switch.plug_6: # light.bla_rummet
   friendly_name: "Blå rummet"
 switch.plug_7: # light.sovrummet
   friendly_name: "Sovrummet"
-switch.plug_8: # light.oanvand_ett
-  friendly_name: "Oanvänd ett"
-switch.plug_9:
-  friendly_name: "TVn"
-switch.plug_10: # light.oanvand_tva
-  friendly_name: "Oanvänd två"
+switch.plug_8: # light.extra_ett
+  friendly_name: "Extra ett"
+switch.plug_9: # light.extra_tva
+  friendly_name: "Extra två"
+switch.plug_10: # light.extra_tre
+  friendly_name: "Extra tre"
 
 light.bulb_1: # light.altan_gavel
   friendly_name: "Altan gavel"
@@ -47,6 +47,10 @@ light.bulb_13: # light.kontor_bord
   friendly_name: "Kontor bord"
 light.bulb_14: # light.badrum_bord
   friendly_name: "Badrum bord"
+light.bulb_15: # light.sovrum_gavel
+  friendly_name: "Sovrum gavel"
+light.bulb_16: # light.extra_glod_1
+  friendly_name: "Extra glod 1"
   
 binary_sensor.tradfri_motion_sensor_2:
   friendly_name: "Rörelse Gamla"
